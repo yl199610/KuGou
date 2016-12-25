@@ -5,6 +5,8 @@
 	<artifactId>KuGou</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
+	<name>ssm-template26 Maven Webapp</name>
+	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
