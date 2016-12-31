@@ -54,7 +54,7 @@ drop table kuSinger;
 select * from kuSinger;
 
 --歌曲表 
-create table kuSong(                --根据歌名来查询
+create table kuSong(                			   --根据歌名来查询
        kuSong_id int primary key,     
        kuSong_name varchar2(60) not null,          --歌名
        kuSong_img varchar2(400),                   --歌曲时长
