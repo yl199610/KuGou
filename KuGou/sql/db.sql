@@ -1,98 +1,131 @@
 create user kugou identified by a
 grant resource,connect to kugou
---ç”¨æˆ·è¡¨
+--ÓÃ»§±í
 create table kgUser(
-       kgUserId int primary key,
+       kgUserId Integer primary key,
        kgUserName varchar2(50) not null,
        kgUserPwd varchar2(50) default '1234',
-       kgUserEmail varchar2(50) not null,         --é‚®ç®±
-       kgUserSex varchar2(50) not null,           --æ€§åˆ«
-       kgUserBirthday varchar2(80) not null,      --ç”Ÿæ—¥
-       kgUserNote varchar2(400) not null,         --ä¸ªäººç®€ä»‹
-       kgUserPic varchar(200),                    --ä¸Šä¼ å›¾ç‰‡å­—æ®µï¼ˆå¯ä»¥å®¹è®¸ä¸ºç©ºï¼‰
-       kgUserState int default 0,                 --ä»£è¡¨ç”¨æˆ·çš„çŠ¶æ€(å¢åŠ åˆ é™¤ç”¨æˆ·åªéœ€è¦æ”¹çŠ¶æ€)0è¡¨ç¤ºåœ¨çº¿çŠ¶æ€
-       kgUserSong varchar2(20) default 'ä¸æ”¶è—'   --æ˜¯å¦æ”¶è—æ­Œæ›²
-       kgUserNext varchar2(100) default null,     --é¢„ç•™å­—æ®µ
-       kgUserSecond varchar2(100) default null,   --é¢„ç•™å­—æ®µäºŒ
+       kgUserEmail varchar2(50) not null,         --ÓÊÏä
+       kgUserSex varchar2(50) not null,           --ĞÔ±ğ
+       kgUserBirthday varchar2(80) not null,      --ÉúÈÕ
+       kgUserNote varchar2(400) not null,         --¸öÈË¼ò½é
+       kgUserPic varchar2(200),                    --ÉÏ´«Í¼Æ¬×Ö¶Î£¨¿ÉÒÔÈİĞíÎª¿Õ£©
+       kgUserState Integer default 0,                 --´ú±íÓÃ»§µÄ×´Ì¬(Ôö¼ÓÉ¾³ıÓÃ»§Ö»ĞèÒª¸Ä×´Ì¬)0±íÊ¾ÔÚÏß×´Ì¬
+       kgUserSong varchar2(20) default '²»ÊÕ²Ø',   --ÊÇ·ñÊÕ²Ø¸èÇú
+       kgUserNext varchar2(100) default null,     --Ô¤Áô×Ö¶Î
+       kgUserSecond varchar2(100) default null   --Ô¤Áô×Ö¶Î¶ş
 );
+
+create sequence seq_kgUserId start with 10000;
+drop sequence seq_kgUserId;
+
+select * from kgUser;
+
+insert into kgUser values(seq_kgUserId.nextval,'asd',1234,'12312@qq.com','ÄĞ',19950619,'asdasd','asd',0,1,3,2);
+
 drop table kgUser;
 select * from kgUser;
---æ”¶è—è¡¨
+--ÊÕ²Ø±í
 create table kgSave(
-       kgSaveId int primary key,
-       kuserSaveId references kgUser(kgUser_id),   --ç”¨æˆ·id
-       kgSaveSid int,                              --æ­Œæ›²id(é€šè¿‡æ­Œæ›²æŸ¥è¯¢)
-       kgSavenext varchar2(100) default null,       --é¢„ç•™å­—æ®µ
-       kgSavesecond varchar2(100) default null      --é¢„ç•™å­—æ®µäºŒ
+       kgSaveId Integer primary key,
+       kuserSaveId references kgUser(kgUserId),   --ÓÃ»§id
+       kgSaveSid Integer,                              --¸èÇúid(Í¨¹ı¸èÇú²éÑ¯)
+       kgSavenext varchar2(100) default null,       --Ô¤Áô×Ö¶Î
+       kgSavesecond varchar2(100) default null      --Ô¤Áô×Ö¶Î¶ş
 );
-drop table kgUser;
+
+create sequence seq_kgSaveId start with 10000;
+
+insert into kgSave values(seq_kgSaveId.nextval,10000,10000,1,1);
+
+drop table kgSave;
 select * from kgUser;
---ç®¡ç†å‘˜è¡¨
+--¹ÜÀíÔ±±í
 create table kgAdmin(
-       kgAdminId int primary key,
+       kgAdminId Integer primary key,
        kgAdminName varchar2(50) not null,
        kgAdminPwd varchar2(50) default 'a',
-       kgAdminState int default 0,                 --ä»£è¡¨ç”¨æˆ·çš„çŠ¶æ€(å¢åŠ åˆ é™¤ç”¨æˆ·åªéœ€è¦æ”¹çŠ¶æ€)
-       kgAdminNext varchar2(100) default null,     --é¢„ç•™å­—æ®µ
-       kgAdminSecond varchar2(100) default null    --é¢„ç•™å­—æ®µäºŒ
+       kgAdminState Integer default 0,                 --´ú±íÓÃ»§µÄ×´Ì¬(Ôö¼ÓÉ¾³ıÓÃ»§Ö»ĞèÒª¸Ä×´Ì¬)
+       kgAdminNext varchar2(100) default null,     --Ô¤Áô×Ö¶Î
+       kgAdminSecond varchar2(100) default null    --Ô¤Áô×Ö¶Î¶ş
 );
+create sequence seq_kgAdmin start with 10000;
+
+insert into kgAdmin values(seq_kgAdmin.nextval,'admin','admin',1,'asd','asd');
+
 drop table kgAdmin;
 select * from kgAdmin;
---æ­Œæ‰‹è¡¨
+--¸èÊÖ±í
 create table kuSinger(
-       kuSingerId int primary key,
+       kuSingerId Integer primary key,
        kuSingerName varchar2(50) not null,
-       kuSingerSex varchar2(20),                       --æ€§åˆ«
-       kuSingerImg varchar2(400) not null,             --æ­Œæ‰‹å›¾ç‰‡
-       kuSingerCode varchar2(10) not null,             --åŠ©è®°ç 
-       kuSingerSingerstate int default 0,              --ä»£è¡¨ç”¨æˆ·çš„çŠ¶æ€(å¢åŠ åˆ é™¤ç”¨æˆ·åªéœ€è¦æ”¹çŠ¶æ€)  
-       kuSingerSingernext varchar2(100) default null,  --é¢„ç•™å­—æ®µ
-       kuSingerSingersecond varchar2(100) default null --é¢„ç•™å­—æ®µäºŒ
+       kuSingerSex varchar2(20),                       --ĞÔ±ğ
+       kuSingerImg varchar2(400) not null,             --¸èÊÖÍ¼Æ¬
+       kuSingerCode varchar2(10) not null,             --Öú¼ÇÂë
+       kuSingerSingerstate Integer default 0,              --´ú±íÓÃ»§µÄ×´Ì¬(Ôö¼ÓÉ¾³ıÓÃ»§Ö»ĞèÒª¸Ä×´Ì¬)  
+       kuSingerSingernext varchar2(100) default null,  --Ô¤Áô×Ö¶Î
+       kuSingerSingersecond varchar2(100) default null --Ô¤Áô×Ö¶Î¶ş
 );
---æ­Œæ‰‹çš„å›½ç±   é¦–é¡µ å’Œæ­Œæ‰‹
+--¸èÊÖµÄ¹ú¼®   Ê×Ò³ ºÍ¸èÊÖ
+
+create sequence seq_kuSinger start with 10000;
+insert into kuSinger values(seq_kuSinger.nextval,'ºÇºÇ','ÄĞ','wqe','hh',0,1,1);
+
 drop table kuSinger;
 select * from kuSinger;
 
---æ­Œæ›²è¡¨ 
-create table kuSong(                			   --æ ¹æ®æ­Œåæ¥æŸ¥è¯¢
-       kuSongId int primary key,     
-       kuSongName varchar2(60) not null,          --æ­Œå
-       kuSongImg varchar2(400),                   --æ­Œæ›²æ—¶é•¿
-       kuSongWords varchar2(3600),                --æ­Œè¯è·¯å¾„
-       kuSongAddress varchar(20),                 --æ­Œæ›²è·¯å¾„
-       kuSongSongtime varchar(20),                --æ­Œæ›²æ—¶é—´--å¯¹åº”çš„æ­Œæ‰‹æ—¶é—´
-	   kuSong_year varchar2(20) not null,         --æ­Œæ›²å¹´ä»£
-       kuSongNext varchar2(100) default null,     --é¢„ç•™å­—æ®µ
-       kuSongSecond varchar2(100) default null    --é¢„ç•™å­—æ®µäºŒ
+--¸èÇú±í 
+create table kuSong(                			   --¸ù¾İ¸èÃûÀ´²éÑ¯
+       kuSongId Integer primary key,     
+       kuSongName varchar2(60) not null,          --¸èÃû
+       kuSongImg varchar2(400),                   --¸èÇúÊ±³¤
+       kuSongWords varchar2(3600),                --¸è´ÊÂ·¾¶
+       kuSongAddress varchar2(20),                 --¸èÇúÂ·¾¶
+       kuSongSongtime varchar2(20),                --¸èÇúÊ±¼ä--¶ÔÓ¦µÄ¸èÊÖÊ±¼ä
+	   kuSong_year varchar2(20) not null,         --¸èÇúÄê´ú
+       kuSongNext varchar2(100) default null,     --Ô¤Áô×Ö¶Î
+       kuSongSecond varchar2(100) default null    --Ô¤Áô×Ö¶Î¶ş
 );
+
+create sequence seq_kuSong start with 10000;
+insert into kuSong values(seq_kuSong.nextval,'xixi','4.12','wqe','hh',1995,'80',1,1);
+
 drop table kuSong;
 select * from kuSong;
--- æ­Œæ›²é£æ ¼
+-- ¸èÇú·ç¸ñ
 create table kuSongStyle(                     
-       kuSongStyleId int primary key,
-       kuSongStyleName varchar2(20) not null,		  --æ­Œæ›²é£æ ¼ç±»å‹
-       kuSongStylenext varchar2(100) default null,    --é¢„ç•™å­—æ®µ
-       kuSongStylesecond varchar2(100) default null   --é¢„ç•™å­—æ®µäºŒ
+       kuSongStyleId Integer primary key,
+       kuSongStyleName varchar2(20) not null,		  --¸èÇú·ç¸ñÀàĞÍ
+       kuSongStylenext varchar2(100) default null,    --Ô¤Áô×Ö¶Î
+       kuSongStylesecond varchar2(100) default null   --Ô¤Áô×Ö¶Î¶ş
 );
+create sequence seq_kuSongStyle start with 10000;
+insert into kuSongStyle values(seq_kuSongStyle.nextval,'Ò¡¹ö',1,1);
+
+
 drop table kuSongStyle;
 select * from kuSongStyle;
--- è¯¦ç»†è¡¨
+-- ÏêÏ¸±í
 create table kuSongDetail(
-       kuSongDetailId int primary key,                      
-       ksongsingId references kuSinger(kuSinger_id),           --æ­Œæ‰‹id
-       kudetailsongId references kuSong(kuSong_id),            --æ­Œæ›²id
-       kudetailstyleId references kuSongStyle(kuSongStyle_id), --é£æ ¼id
-       songplay int default 0,                      			--æ­Œæ›²æ’­æ”¾æ¬¡æ•°/åº”è¯¥å¯¹åº”ç›¸åº”æ­Œæ‰‹æ—¶å€™çš„æ¬¡æ•°
-       statue int default 0,                        			--0  æ”¶è—   æŸ¥çœ‹æ­Œæ›²
-       address varchar(20),                          			--ä¸‹è½½æ­Œæ›²çš„åœ°å€
-       kusingstatus int,                            			--çŠ¶æ€  å’Œä¸Šé¢çš„æ­Œæ›²ç›¸åŒ  æ­Œæ›²çš„æ’­æ”¾å’Œä¸æ’­æ”¾
-       detailtime varchar(20),                     			 	--å›ºå®šçš„æ­Œå‘å¸ƒæ—¶é—´
-       kunext varchar2(100) default null,           			--é¢„ç•™å­—æ®µ(è¯„è®º)
-       kusecond varchar2(100) default null          			--é¢„ç•™å­—æ®µäºŒ
+       kuSongDetailId Integer primary key,                      
+       ksongsingId references kuSinger(kuSingerId),           --¸èÊÖid
+       kudetailsongId references kuSong(kuSongId),            --¸èÇúid
+       kudetailstyleId references kuSongStyle(kuSongStyleId), --·ç¸ñid
+       songplay Integer default 0,                      			--¸èÇú²¥·Å´ÎÊı/Ó¦¸Ã¶ÔÓ¦ÏàÓ¦¸èÊÖÊ±ºòµÄ´ÎÊı
+       statue Integer default 0,                        			--0  ÊÕ²Ø   ²é¿´¸èÇú
+       address varchar2(20),                          			--ÏÂÔØ¸èÇúµÄµØÖ·
+       kusingstatus Integer,                            			--×´Ì¬  ºÍÉÏÃæµÄ¸èÇúÏàÍ¬  ¸èÇúµÄ²¥·ÅºÍ²»²¥·Å
+       detailtime varchar2(20),                     			 	--¹Ì¶¨µÄ¸è·¢²¼Ê±¼ä
+       kunext varchar2(100) default null,           			--Ô¤Áô×Ö¶Î(ÆÀÂÛ)
+       kusecond varchar2(100) default null          			--Ô¤Áô×Ö¶Î¶ş
 );
+create sequence seq_kuSongDetail start with 10000;
+
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10000,10000,10000,1,0,'www.baidu.com',1,199619,1,1);
+
 drop table kuSongDetail;
 select * from kuSongDetail;
 
---è¯„è®ºè¡¨
+--ÆÀÂÛ±í
 
 commit;
