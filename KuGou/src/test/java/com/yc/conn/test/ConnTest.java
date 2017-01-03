@@ -1,7 +1,5 @@
 package com.yc.conn.test;
 
-
-
 import static org.junit.Assert.assertNotNull;
 
 import java.sql.Connection;
