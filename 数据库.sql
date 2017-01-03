@@ -61,7 +61,7 @@ create table kuSong(                			   --根据歌名来查询
        kuSongWords varchar2(3600),                --歌词路径
        kuSongAddress varchar(20),                 --歌曲路径
        kuSongSongtime varchar(20),                --歌曲时间--对应的歌手时间
-	   --kuSong_year varchar2(20) not null,        --歌曲年代
+	   kuSong_year varchar2(20) not null,         --歌曲年代
        kuSongNext varchar2(100) default null,     --预留字段
        kuSongSecond varchar2(100) default null    --预留字段二
 );
