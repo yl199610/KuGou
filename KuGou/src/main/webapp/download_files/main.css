@@ -50,7 +50,7 @@ p.tuijian_version_info{ font-size:14px; color:#35332a; margin:12px 0 0 60px;}
 .tuijian_product_other_item:hover{box-shadow: 0 0 20px rgba(0,0,0,0.25);}
 .tuijian_product_other_item:hover .tuijian_product_title{color:#199be5;}
 .tuijian_product_other_item a.icon_img{ width:110px; height:100%; text-indent: -99em; background-position:50% 50%;  }
-.tuijian_products_hr{ margin-top:4px; width:288px; height:3px; background:url('../images/tuijian_sprite.png?20140212') no-repeat 0 -180px; font-size:0px;}
+.tuijian_products_hr{ margin-top:4px; width:288px; height:3px; font-size:0px;}
 .tuijian_products_other_hr{ margin-top:4px; width:1000px; height:3px; border-bottom:1px solid #ddd;/*background:url('../images/tuijian_sprite.png?20140212') no-repeat 0 -193px; */font-size:0px;}
 .tuijian_products_other_hr span{ position: relative; display: block; width:65px; bottom: -3px;  border-bottom: 2px solid #40bdef; border-right:15px solid #fff; }
 .tuijian_product_other_description{ width:175px;}
@@ -62,7 +62,7 @@ p.tuijian_version_info{ font-size:14px; color:#35332a; margin:12px 0 0 60px;}
 .tuijian_product_other_download .tuijian_product_download:hover{ background-color:#0090e2;}
 .tuijian_product_other_download .tuijian_product_other_version{float: left; margin-top:2px; font-size: 14px; color:#c3c3c3; vertical-align: middle;}
 
-.tuijian_shuoba{ display:inline; margin:6px 6px 0 6px; width:50px; height:50px; background:url('../images/tuijian_sprite.png?20140212') no-repeat -280px -115px; text-indent:-9999px;}
+.tuijian_shuoba{ display:inline; margin:6px 6px 0 6px; width:50px; height:50px;text-indent:-9999px;}
 
 .tuijian_products_other_wrap{background-color:#eeeff0; } 
 .tuijian_products_other {display: block;width: 1000px;margin: 0px auto; padding:50px 0px 30px 0px;}
@@ -99,23 +99,23 @@ p.tuijian_version_info{ font-size:14px; color:#35332a; margin:12px 0 0 60px;}
 .windows_head a, .mac_head a{ text-decoration:none;}
 .windows_head_content{ position:relative; margin-left:485px; padding-top:50px;}
 .mac_head_content{ position:relative; margin-left:568px; padding-top:50px;}
-.windows_head_download{ margin-top:19px; text-indent:-9999px; width:169px; height:56px; background:url('../images/windows_sprite.png?v=2014_01_10_11_56_31') no-repeat 0 0; display:block;}
+.windows_head_download{ margin-top:19px; text-indent:-9999px; width:169px; height:56px;display:block;}
 .windows_head_download:hover{ background-position:-174px 0;}
-.windows_qqsoft_download{ margin-top:5px; text-align:center; width:169px; height:46px;line-height: 46px;font-size:18px;color:#fff;background:url('../images/windows_sprite.png?v=2014_01_10_11_56_31') no-repeat -174px -360px; display:block;}
+.windows_qqsoft_download{ margin-top:5px; text-align:center; width:169px; height:46px;line-height: 46px;font-size:18px;color:#fff;display:block;}
 .windows_qqsoft_download:hover{ background-position:-174px -410px;}
-.mac_head_download{ margin-top:5px; text-indent:-9999px; width:169px; height:46px; background:url('../images/windows_sprite.png?v=2014_01_10_11_56_31') no-repeat 0 -196px; display:block;}
+.mac_head_download{ margin-top:5px; text-indent:-9999px; width:169px; height:46px;display:block;}
 .mac_head_download:hover{ background-position:-174px -196px;}
-.mac_head_download_appstore{ margin-top:15px; text-indent:-9999px; width:169px; height:55px; background:url('../images/windows_sprite.png?v=2014_01_10_11_56_31') no-repeat 0 -245px; display:block;}
+.mac_head_download_appstore{ margin-top:15px; text-indent:-9999px; width:169px; height:55px;display:block;}
 .mac_head_download_appstore:hover{ background-position:-174px -245px;}
-.windows_head_download_vip{ margin:34px 210px 0 0; padding-left:13px; font-size:14px; line-height:21px; background:url('../images/windows_sprite.png?v=2014_01_10_11_56_31') no-repeat 0 -168px;}
+.windows_head_download_vip{ margin:34px 210px 0 0; padding-left:13px; font-size:14px; line-height:21px;}
 .windows_head_download_vip:hover{ text-decoration:underline;}
 .windows_head_version{ color:#838383; margin:10px 0;}
 
 .windows_changlog_box{ position:absolute; top:248px; left:76px; z-index:10; display:none;}
 .mac_changelog_box{ position:absolute; top:290px; left:76px; z-index:10; display:none;}
-.windows_changelog_box_top{ font-size:0px; width:275px; height:17px; background:url('../images/windows_sprite.png?v=2014_01_10_11_56_31') no-repeat 0 -141px; display:block;}
-.windows_changelog_box_bottom{ font-size:0px; width:275px; height:6px; background:url('../images/windows_sprite.png?v=2014_01_10_11_56_31') no-repeat 0 -158px; display:block;}
-.windows_changelog_box_content{ padding-left:20px; width:275px; background:url('../images/windows_changelog_box.png') repeat-y 0 0;}
+.windows_changelog_box_top{ font-size:0px; width:275px; height:17px; display:block;}
+.windows_changelog_box_bottom{ font-size:0px; width:275px; height:6px; display:block;}
+.windows_changelog_box_content{ padding-left:20px; width:275px;}
 .windows_changelog_version{ color:#5b5b5b;}
 .windows_changelog{ color:#484848; font-size:14px;}
 .windows_changelog_detail{ color:#6b6b6b; line-height:20px; padding-bottom:8px; width:240px;}
@@ -124,7 +124,7 @@ p.tuijian_version_info{ font-size:14px; color:#35332a; margin:12px 0 0 60px;}
 .windows_feature{ width:401px; margin-left:23px;}
 .windows_feature_right{ margin:0 0 45px 523px; height:69px;}
 .windows_feature_left{ display:inline;}
-.windows_feature span{ margin-right:20px; display:block; width:69px; height:69px; background-image:url('../images/windows_sprite.png?v=2015_11_03_11_56_31'); background-repeat:no-repeat;}
+.windows_feature span{ margin-right:20px; display:block; width:69px; height:69px; background-repeat:no-repeat;}
 .windows_feature h3{ font-size:18px; color:#484848; font-weight:normal;}
 .windows_feature p{color:#828282; line-height:20px;}
 .windows_feature_radio{ background-position:0 -468px;}
@@ -148,20 +148,20 @@ p.tuijian_version_info{ font-size:14px; color:#35332a; margin:12px 0 0 60px;}
 .fanxing_head_qrcode_block img{ border:1px solid #d6d6d6;}
 .iphone_head_qrcode_block{font-weight: bold;margin-top: 40px;font-family: \5b8b\4f53;color: #323232;width: 101px;text-align: center;}
 .iphone_head_version{color: #a7a7a7;margin: 10px 0;}
-.iphone_head_download{ margin-top:5px; text-indent:-9999px; width:169px; height:46px; background:url('../images/android_iphone_sprite.png?201408260234') no-repeat 0 -345px; display:block;}
+.iphone_head_download{ margin-top:5px; text-indent:-9999px; width:169px; height:46px;display:block;}
 .iphone_head_download:hover{ background-position:-174px -345px;}
-.iphone_head_download_appstore{ margin-top:19px; text-indent:-9999px; width:169px; height:55px; background:url('../images/android_iphone_sprite.png?201408260234') no-repeat 0 -395px; display:block;}
+.iphone_head_download_appstore{ margin-top:19px; text-indent:-9999px; width:169px; height:55px;display:block;}
 .iphone_head_download_appstore:hover{ background-position:-174px -395px;}
-.iphone_head_download_vip{margin: 91px 109px 0 0;padding-left: 13px;font-size: 14px;line-height: 21px;background: url('../images/android_iphone_sprite.png') no-repeat 0 -168px;}
+.iphone_head_download_vip{margin: 91px 109px 0 0;padding-left: 13px;font-size: 14px;line-height: 21px;}
 .iphone_head_download_vip:hover{ text-decoration:underline;}
 
 /* 2014年8月25日 10:27:15 添加; android 改版*/
 .android_head_qrcode_block{margin-top: 18px;width: 125px;height:125px;display: inline-block;*display: inline;*zoom: 1;margin-right: 18px;}
 .android_head_qrcode_block img{width: 125px;height: 125px;}
 .android_head_version{color:#a7a7a7; margin:45px 0 10px 0px;width: 230px;display: inline-block;*display: inline;*zoom: 1;vertical-align: top;}
-.android_head_download{ margin:19px 15px 0px 7px; text-indent:-9999px; width:119px; height:43px; background:url('../images/android_iphone_sprite.png?201408260234') no-repeat -469px -395px;display: inline-block;*display: inline;*zoom: 1;}
+.android_head_download{ margin:19px 15px 0px 7px; text-indent:-9999px; width:119px; height:43px; display: inline-block;*display: inline;*zoom: 1;}
 .android_head_download:hover{ background-position:-469px -438px;}
-.android_head_download_vip{ margin:0px 109px 0 0;height:20px;line-height: 20px; padding-left:13px; font-size:14px;background:url('../images/android_iphone_sprite.png?201408260234') no-repeat 0 -168px;vertical-align:middle;display: inline-block;*display: inline;*zoom: 1;}
+.android_head_download_vip{ margin:0px 109px 0 0;height:20px;line-height: 20px; padding-left:13px; font-size:14px;vertical-align:middle;display: inline-block;*display: inline;*zoom: 1;}
 .android_head_download_vip:hover{ text-decoration:underline;}
 .android_download_link{height: 40px;line-height: 40px;vertical-align: middle;}
 .android_head_title{color: #7b7b7b;font-size: 14px;height: 20px;line-height:20px;vertical-align:middle;display: inline-block;*display: inline;*zoom: 1;}
