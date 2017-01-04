@@ -15,8 +15,8 @@ public class KuSong {
 	}
 	
 
-	public KuSong(Integer kuSongId, String kuSongName, String kuSongImg, String kuSongWords, String kuSongAddress,
-			String kuSongSongtime, String kuSongYear, String kuSongNext, String kuSongSecond) {
+	public KuSong(Integer kuSongId,  String kuSongAddress,String kuSongImg, String kuSongName,String kuSongNext,  String kuSongSecond,String kuSongSongtime
+			,String kuSongWords, String kuSongYear) {
 		this.kuSongId = kuSongId;
 		this.kuSongName = kuSongName;
 		this.kuSongImg = kuSongImg;

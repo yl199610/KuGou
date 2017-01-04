@@ -8,6 +8,12 @@ public class KuAdmin {
      private String kgAdminNext;
      private String kgAdminSecond;
      public KuAdmin() {}
+     
+	public KuAdmin(String kgAdminName, String kgAdminPwd) {
+		this.kgAdminName = kgAdminName;
+		this.kgAdminPwd = kgAdminPwd;
+	}
+
 	public KuAdmin(Integer kgAdminId, String kgAdminName, String kgAdminPwd, Integer kgAdminState, String kgAdminNext,
 			String kgAdminSecond) {
 		this.kgAdminId = kgAdminId;
