@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.kg.mapper.AdminMapper">
+
+	<select id="getUser" parameterType="KuAdmin" resultType="KuAdmin">
+		select * from kgAdmin where kgAdminName=#{kgAdminName} and kgAdminPwd=#{kgAdminPwd}
+	</select>
+	
+	<update id="updateUser" parameterType="KuAdmin">
+		update kgAdmin set kgAdminPwd=#{kgAdminPwd} where kgAdminName=#{kgAdminName}
+	</update>
+	
+</mapper>
