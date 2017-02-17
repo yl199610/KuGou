@@ -52,7 +52,7 @@ create table kgSave(
 );
 create sequence seq_kgSaveId start with 2000;
 drop sequence seq_kgSaveId;
-insert into kgSave values(seq_kgSaveId.nextval,500,1000,1,1);
+insert into kgSave values(seq_kgSaveId.nextval,501,1000,1,1);
 drop table kgSave;
 select * from kgUser;
 

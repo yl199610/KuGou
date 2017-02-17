@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -32,7 +33,33 @@ public class SongHandler {
 	@ResponseBody
 	public boolean add(KuSong song){
 		LogManager.getLogger().debug("请求songHandler处理add....\n"+song);
-		//return songService.addSong(song);
-		return false;
+		return songService.addSong(song);
 	}
+	
+	@RequestMapping("/del")
+	@ResponseBody
+	public boolean del(@RequestParam(name="cnid")int id){
+		LogManager.getLogger().debug("请求songHandler处理delete....\n"+id);
+		return songService.delSong(id);
+	}
+	
+	/**
+	 * 根据id查出所有信息
+	 */
+	@RequestMapping("/detail")
+	@ResponseBody
+	public KuSong detail(@RequestParam(name="sid")int sid){
+		LogManager.getLogger().debug("请求songHandler处理delete....\n"+sid);
+		return songService.getSongMsg(sid);
+	}
+	
+	
+	@RequestMapping("/modify")
+	@ResponseBody
+	public boolean modify(KuSong song){
+		LogManager.getLogger().debug("请求songHandler处理modify....\n"+song);
+		return songService.modifySongMsg(song);
+	}
+	
+	
 }

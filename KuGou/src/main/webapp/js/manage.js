@@ -3,7 +3,7 @@ $("#leftSider").accordion({
 });
 
 
-var urlJson={"歌曲信息":"songMsg.jsp","歌曲添加":"addSong.jsp","歌手信息":"singerMsg.jsp","歌手添加":"addSinger.jsp","风格信息":"styleMsg.jsp","风格添加":"addStyle.jsp"}
+var urlJson={"歌曲信息":"songMsg.jsp","歌曲添加":"addSong.jsp","歌手信息":"singerMsg.jsp","歌手添加":"addSinger.jsp","风格信息":"styleMsg.jsp","风格添加":"addStyle.jsp","用户信息":"userMsg.jsp"}
 
 
 $(".menutree").tree({

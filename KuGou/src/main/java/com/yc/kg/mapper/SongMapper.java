@@ -7,4 +7,12 @@ public interface SongMapper {
 
 	PaginationBean<KuSong> getUsersByPagination(PaginationBean<KuSong> songBean);
 
+	boolean addSongMsg(KuSong song);
+
+	boolean delSongMsg(int id);
+
+	KuSong SongMsg(int sid);
+
+	boolean modifySongMsg(KuSong song);
+
 }

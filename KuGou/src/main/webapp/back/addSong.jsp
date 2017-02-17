@@ -17,7 +17,7 @@
 		<input name="kuSongYear"  value="0" required="required" placeholder="请输入歌曲年代" /><br />
 		<input name="kuSongNext"  value="0" required="required" placeholder="预留" /><br />
 		<input name="kuSongSecond"  value="0"required="required" placeholder="预留" /><br />
-		<input type="button" value="添加" onClick="addSong()"/>
+		<input type="submit" value="添加" onClick="addSong()"/>
 	</form>
 	<script type="text/javascript" src="js/addSong.js"></script>
 </body>

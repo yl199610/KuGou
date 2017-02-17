@@ -20,7 +20,7 @@
 			<div id="nav"></div>
 		</div>
 	</div>
-	<div data-options="region:'south'" style="height: 130px;">
+	<div data-options="region:'south'" style="height: 100px;">
 		<div id="footer">
 			<p class="">
 				24小时客户服务热线：010-68988888 &#160;&#160;&#160;&#160; <a href="#">常见问题解答</a> &#160;&#160;&#160;&#160;
@@ -53,6 +53,12 @@
 				<ul class="menutree">
 					<li><span>风格信息</span></li>
 					<li><span>风格添加</span></li>
+				</ul>
+			</div>
+			<div title="用户管理" data-options="iconCls:'icon-mini-add'">
+				<ul class="menutree">
+					<li><span>用户信息</span></li>
+					<li><span>用户添加</span></li>
 				</ul>
 			</div>
 		</div>
