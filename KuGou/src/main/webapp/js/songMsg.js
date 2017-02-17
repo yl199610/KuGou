@@ -53,7 +53,7 @@ $('#songInfo').datagrid({
 function songOperatorFun(operType, id){
 	switch(operType){
 	case 1:
-		stopDp(id);
+		stopSong(id);
 		break;	
 	case 2:
 		parent.updateSong(id);
@@ -62,13 +62,13 @@ function songOperatorFun(operType, id){
 }
 
 
-function stopDp(id){
-	$.messager.confirm('确认','您确认想要删除记录吗,删除后记录将无法恢复？',function(r){    
+function stopSong(id){
+	$.messager.confirm('确认','您确认想要删除吗,删除后记录将无法恢复？',function(r){    
 	    if (r){
-	        $.get("dp/archive?cnid="+id,function(data){
-				$('#departmentInfo').datagrid("reload");
+	        $.get("song/del?cnid="+id,function(data){
+				$('#songInfo').datagrid("reload");
 	        	$.messager.show({
-					title:'删除部门',
+					title:'删除歌曲',
 					msg:returndata.trim()=="true"?"删除成功...":"删除失败!!!",
 					showType:'show',
 					style:{

@@ -18,4 +18,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(select * from kuSong order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
 	</select>
 	
+	
+	<insert id="addSongMsg" parameterType="KuSong">
+		insert into KuSong values(seq_kuSong.nextval,#{kuSongName},#{kuSongImg},#{kuSongWords},#{kuSongAddress},#{kuSongSongtime},#{kuSongYear},#{kuSongNext},#{kuSongSecond})
+	</insert>
+	
+	<delete id="delSongMsg" parameterType="int">
+		delete from KuSong where kuSongId=#{id}
+	</delete>
+	
+	<select id="SongMsg" parameterType="int" resultType="KuSong">
+		select * from kuSong where kuSongId=#{sid}
+	</select>
+	
+	<update id="modifySongMsg" parameterType="KuSong">
+		update kuSong set kuSongName=#{kuSongName},kuSongImg=#{kuSongImg},kuSongWords=#{kuSongWords},
+		kuSongAddress=#{kuSongAddress},kuSongSongtime=#{kuSongSongtime},kuSongYear=#{kuSongYear},kuSongNext=#{kuSongNext},kuSongSecond=#{kuSongSecond}
+		where kuSongId=#{kuSongId}
+	</update>
+	
 </mapper>

@@ -25,6 +25,26 @@ public class SongServiceImpl implements SongService{
 		}
 		return songMapper.getUsersByPagination(songBean);
 	}
+
+	@Override
+	public boolean addSong(KuSong song) {
+		return songMapper.addSongMsg(song);
+	}
+
+	@Override
+	public boolean delSong(int id) {
+		return songMapper.delSongMsg(id);
+	}
+
+	@Override
+	public KuSong getSongMsg(int sid) {
+		return songMapper.SongMsg(sid);
+	}
+
+	@Override
+	public boolean modifySongMsg(KuSong song) {
+		return songMapper.modifySongMsg(song);
+	}
 	
 	
 }
