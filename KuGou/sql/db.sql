@@ -72,6 +72,7 @@ drop table kgAdmin;
 select * from kgAdmin;
 drop sequence seq_admin;
 
+
 --歌手表
 create table kuSinger(
        kuSingerId Integer primary key,
@@ -127,7 +128,6 @@ insert into kuSongDetail values(seq_kuSongDetail.nextval,3333,1000,4444,0,1,'mus
 drop sequence seq_kuSongDetail;
 select * from kuSongDetail;
 drop table seq_kuSongDetail;
-
 --歌手的国籍   首页 和歌手
 
 --评论表
