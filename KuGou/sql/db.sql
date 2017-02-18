@@ -41,7 +41,7 @@ drop table kuSong
 create sequence seq_kuSong start with 1000;
 drop sequence seq_kuSong;
 insert into kuSong values(seq_kuSong.nextval,'小孩','4:12','music/1.mp3','music/1.lrc','1995','80','','');
-
+insert into kuSong values(seq_kuSong.nextval,'不煽情','5:43','music/3.mp3','music/3.lrc','1997','80','','');
 --收藏表
 create table kgSave(
        kgSaveId Integer primary key,
@@ -99,7 +99,7 @@ create table kuSongStyle(
        kuSongStylesecond varchar2(100) default null   --预留字段二
 );
 create sequence seq_kuSongStyle start with 4444;
-insert into kuSongStyle values(seq_kuSongStyle.nextval,'摇滚','','');
+insert into kuSongStyle values(seq_kuSongStyle.nextval,'流行','','');
 drop table kuSongStyle;
 select * from kuSongStyle;
 

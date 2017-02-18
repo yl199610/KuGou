@@ -3,6 +3,7 @@ package com.yc.kg.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.yc.kg.entity.KuSong;
 import com.yc.kg.entity.KuSongStyle;
 import com.yc.kg.entity.PaginationBean;
 import com.yc.kg.mapper.StyleMapper;
@@ -24,6 +25,26 @@ public class StyleServiceImpl implements StyleService{
 			songBean.setPageSize(Integer.parseInt(pageSize));
 		}
 		return styleMapper.getStyleByPagination(songBean);
+	}
+
+	@Override
+	public boolean addSongStyle(KuSongStyle style) {
+		return styleMapper.addSongStyleMsg(style);
+	}
+
+	@Override
+	public boolean delSongStyle(int id) {
+		return styleMapper.delSongStyleMsg(id);
+	}
+
+	@Override
+	public KuSongStyle getSongStyleMsg(int sid) {
+		return styleMapper.SongStyleMsg(sid);
+	}
+
+	@Override
+	public boolean modifySongStyleMsg(KuSongStyle style) {
+		return styleMapper.modifySongStyleMsg(style);
 	}
 
 	

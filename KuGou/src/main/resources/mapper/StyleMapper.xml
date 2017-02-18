@@ -18,4 +18,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(select * from kuSongStyle order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
 	</select>
 	
+		<insert id="addSongStyleMsg" parameterType="KuSongStyle">
+		insert into kuSongStyle values(seq_kuSongStyle.nextval,#{kuSongStyleName},#{kuSongStylenext},#{kuSongStylesecond})
+	</insert>
+	
+	<delete id="delSongStyleMsg" parameterType="int">
+		delete from kuSongStyle where kuSongStyleId=#{id}
+	</delete>
+	
+	<select id="SongStyleMsg" parameterType="int" resultType="KuSongStyle">
+		select * from kuSongStyle where kuSongStyleId=#{sid}
+	</select>
+	
+	<update id="modifySongStyleMsg" parameterType="KuSongStyle">
+		update kuSongStyle set kuSongStyleName=#{kuSongStyleName},kuSongStylenext=#{kuSongStylenext},kuSongStylesecond=#{kuSongStylesecond}
+		where kuSongStyleId=#{kuSongStyleId}
+	</update>
+	
 </mapper>
