@@ -11,7 +11,6 @@ $.get("song/detail?sid="+cnid,function(data){
 	$("#kuSongSecond").val(data.kuSongSecond);
 },"json");
 
-
 //修改
 function modifySong(){
 		$("#sModifyForm").form({

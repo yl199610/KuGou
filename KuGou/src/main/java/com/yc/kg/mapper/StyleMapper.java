@@ -7,4 +7,12 @@ public interface StyleMapper {
 
 	PaginationBean<KuSongStyle> getStyleByPagination(PaginationBean<KuSongStyle> songBean);
 
+	boolean addSongStyleMsg(KuSongStyle style);
+
+	boolean delSongStyleMsg(int id);
+
+	KuSongStyle SongStyleMsg(int sid);
+
+	boolean modifySongStyleMsg(KuSongStyle style);
+
 }
