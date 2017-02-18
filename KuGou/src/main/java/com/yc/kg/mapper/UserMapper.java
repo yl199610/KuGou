@@ -9,4 +9,6 @@ public interface UserMapper {
 
 	KuUser userMsg(int sid);
 
+	int updateUser(KuUser user);
+
 }

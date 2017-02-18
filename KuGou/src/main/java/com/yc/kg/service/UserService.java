@@ -9,4 +9,6 @@ public interface UserService {
 
 	KuUser getUserMsg(int sid);
 
+	boolean modifyUser(KuUser user);
+
 }
