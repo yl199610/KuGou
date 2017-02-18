@@ -82,6 +82,7 @@
 	
 	<div id="songModify"></div>
 	<div id="singerModify"></div>
+	<div id="styleModify"></div>
 	
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>

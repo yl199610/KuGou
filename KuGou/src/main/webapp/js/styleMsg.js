@@ -43,12 +43,12 @@ function styleOperatorFun(operType, id){
 
 
 function stopDp(id){
-	$.messager.confirm('确认','您确认想要删除记录吗,删除后记录将无法恢复？',function(r){    
+	$.messager.confirm('确认','您确认想要删除吗,删除后将无法恢复？',function(r){    
 	    if (r){
-	        $.get("dp/archive?cnid="+id,function(data){
-				$('#departmentInfo').datagrid("reload");
+	        $.get("style/del?cnid="+id,function(data){
+				$('#styleInfo').datagrid("reload");
 	        	$.messager.show({
-					title:'删除部门',
+					title:'删除风格',
 					msg:returndata.trim()=="true"?"删除成功...":"删除失败!!!",
 					showType:'show',
 					style:{

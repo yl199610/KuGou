@@ -15,7 +15,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getUsers" resultType="KuSinger">
 		select * from
 		(select m.*,rownum rn from
-		(select * from kuSinger order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
+		(select * from kuSinger where  kuSingerSingernext!=0 order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
 	</select>
+	
+	<update id="delSingerMsg" parameterType="int">
+		update kuSinger set kuSingerSingernext=0 where  kuSingerId=#{kuSingerId}
+	</update>
+	
+	<select id="SingerMsg" parameterType="int" resultType="KuSinger">
+		select * from kuSinger where kuSingerId=#{sid}
+	</select>
+	
+	<update id="modifySingerMsg" parameterType="KuSinger">
+		update kuSinger set kuSingerName=#{kuSingerName},kuSingerSex=#{kuSingerSex},kuSingerImg=#{kuSingerImg},
+		kuSingerCode=#{kuSingerCode},kuSingerSingerstate=#{kuSingerSingerstate},kuSingerSingernext=#{kuSingerSingernext},kuSingerSingersecond=#{kuSingerSingersecond}
+		where kuSingerId=#{kuSingerId}
+	</update>
+	
+	<insert id="addSingerMsg" parameterType="KuSinger">
+		insert into kuSinger values(seq_singer.nextval,#{kuSingerName},#{kuSingerSex},#{kuSingerImg},#{kuSingerCode},#{kuSingerSingerstate},1,#{kuSingerSingersecond})
+	</insert>
 	
 </mapper>

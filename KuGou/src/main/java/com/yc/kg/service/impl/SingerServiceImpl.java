@@ -25,6 +25,26 @@ public class SingerServiceImpl implements SingerService{
 		}
 		return singerMapper.getSingerByPagination(singerBean);
 	}
+
+	@Override
+	public boolean getSingerMsg(int sid) {
+		return singerMapper.delSingerMsg(sid);
+	}
+
+	@Override
+	public KuSinger getSingerMsgs(int sid) {
+		return singerMapper.SingerMsg(sid);
+	}
+
+	@Override
+	public boolean modifySingerMsg(KuSinger singer) {
+		return singerMapper.modifySingerMsg(singer);
+	}
+
+	@Override
+	public boolean addsinger(KuSinger singer) {
+		return singerMapper.addSingerMsg(singer);
+	}
 	
 	
 }

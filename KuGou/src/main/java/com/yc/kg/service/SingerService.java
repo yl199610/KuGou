@@ -7,4 +7,12 @@ public interface SingerService {
 
 	PaginationBean<KuSinger> listPartSinger(String page, String rows);
 
+	boolean getSingerMsg(int sid);
+
+	KuSinger getSingerMsgs(int sid);
+
+	boolean modifySingerMsg(KuSinger singer);
+
+	boolean addsinger(KuSinger singer);
+
 }
