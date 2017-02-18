@@ -6,15 +6,14 @@ import java.io.IOException;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.yc.kg.entity.KuSong;
 import com.yc.kg.entity.KuUser;
 import com.yc.kg.entity.PaginationBean;
-import com.yc.kg.service.SongService;
 import com.yc.kg.service.UserService;
 import com.yc.kg.util.ServletUtil;
 
@@ -58,6 +57,12 @@ public class UserHandler {
 		//return userService.modifyUser();
 		return false;
 	}
-		
+	
+	
+	@RequestMapping("/reg")
+	public String login(KuUser user,ModelMap map) {//ModelMap   逻辑操作和实体类    request.setAttribute
+		return "page:/forgetSuccess.jsp";
+	}
+	
 	
 }
