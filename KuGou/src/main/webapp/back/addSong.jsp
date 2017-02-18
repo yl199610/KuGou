@@ -9,7 +9,7 @@
 </head>
 <body>
 	<form name="songForm" id="songForm" style="margin-left: 200px; margin-top: 40px;" method="post">
-		<input name="kuSongName" id="kuSongName" value="0" required="required" placeholder="请输入歌名" /><br />
+		<input name="kuSongName" value="0" required="required" placeholder="请输入歌名" /><br />
 		<input name="kuSongImg"  value="0" required="required" placeholder="请输入歌曲时长" /><br />
 		<input name="kuSongWords"  value="0" required="required" placeholder="请输入歌词路径" /><br />
 		<input name="kuSongAddress"  value="0" required="required" placeholder="请输入歌曲路径" /><br />

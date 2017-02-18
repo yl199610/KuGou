@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zh-CN"><head>
 <meta charset="UTF-8">
@@ -236,13 +237,13 @@ function logStat(type, name, p1, p2, p3, p4) {
             <div class="kg_lgn_reg_ct" id="regCntList">
                 <!-- 邮箱注册 -->
                 <div class="kg_lgn_reg_ct_item">
-                    <form id="t01Form">
+                    <form id="t01Form" action="user/reg" method="post">
                         <table class="kg_lgn_reg_tb" width="100%">
                             <tbody><tr>
                                 <td width="300" valign="top" align="right"><label for="t01Email" class="kg_lgn_reg_tb_tl"><span class="red">*</span> 邮箱：</label></td>
                                 <td>
                                     <div class="kg_lgn_textbox_area kg_lgn_textbox_email">
-                                        <div class="kg_lgn_textbox"><input id="t01Email" maxlength="30" name="email" class="kg_lgn_textbox_ipt" autocomplete="off" type="text"></div>
+                                        <div class="kg_lgn_textbox"><input id="t01Email" maxlength="30" name="kgUserEmail" class="kg_lgn_textbox_ipt" autocomplete="off" type="text"></div>
                                         <div class="kg_lgn_tips"><i class="kg_lgn_tips_icon"></i><span class="kg_lgn_tips_txt"></span></div>
                                     </div>
                                 </td>
@@ -252,7 +253,7 @@ function logStat(type, name, p1, p2, p3, p4) {
                                 <td valign="top" align="right"><label for="t01Psw" class="kg_lgn_reg_tb_tl"><span class="red">*</span> 密码：</label></td>
                                 <td>
                                     <div class="kg_lgn_textbox_area kg_lgn_textbox_password">
-                                        <div class="kg_lgn_textbox"><input maxlength="16" id="t01Psw" name="password" class="kg_lgn_textbox_ipt" type="password"></div>
+                                        <div class="kg_lgn_textbox"><input maxlength="16" id="t01Psw" name="kgUserPwd" class="kg_lgn_textbox_ipt" type="password"></div>
                                         <div class="kg_lgn_tips"><i class="kg_lgn_tips_icon"></i><span class="kg_lgn_tips_txt"></span></div>
                                         <div class="kg_lgn_psw_strong" id="t01PswStrong">
                                             <div class="kg_lgn_psw_txt">密码强度:弱</div>
@@ -274,8 +275,8 @@ function logStat(type, name, p1, p2, p3, p4) {
                             <tr>
                                 <td width="300" align="right"><label for="t01Sex" class="kg_lgn_reg_tb_tl"><span class="red">*</span> 性别：</label></td>
                                 <td id="t01Sex">
-                                    <input name="UM_Sex" value="1" type="radio"> 男　
-                                    <input name="UM_Sex" value="0" type="radio"> 女
+                                    <input name="kgUserSex" value="1" type="radio"> 男　
+                                    <input name="kgUserSex" value="0" type="radio"> 女
                                 </td>
                             </tr>
                             <tr>
@@ -312,7 +313,8 @@ function logStat(type, name, p1, p2, p3, p4) {
                             <tr>
                                 <td></td>
                                 <td>
-                                    <span class="reg_btn_s01" id="t01Submit"><input name="" value="注册" type="button"></span>
+                                     <span class="reg_btn_s01" id="t01Submit"><input name="" value="注册" type="button"></span>
+                                    <span class="reg_btn_s" id="tSubmit"><input name="" value="注册" type="submit"></span>
                                     <span id="t01Msg" class="reg_inset_msg" style="display: none;"></span>
                                 </td>
                             </tr>
@@ -436,9 +438,10 @@ function logStat(type, name, p1, p2, p3, p4) {
                                 </td>
                             </tr>
                             <tr>
-                                <td valign="top" align="right"><label for="t03Code" class="kg_lgn_reg_tb_tl"><span class="red">*</span> 验证码：</label></td>
-                                <td>
-                                    <div class="kg_lgn_textbox_area kg_lgn_textbox_code">
+                              <td valign="top" align="right"><label for="t03Code" class="kg_lgn_reg_tb_tl"><span class="red">*</span> 验证码：</label></td>
+                            
+ 								   <td>
+                                     <div class="kg_lgn_textbox_area kg_lgn_textbox_code">
                                         <div class="kg_lgn_textbox" style="display:none;">
                                             <input id="t03Code" maxlength="6" name="code" class="kg_lgn_textbox_ipt" type="text">
                                         </div>
