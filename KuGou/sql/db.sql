@@ -40,8 +40,8 @@ select * from kuSong;
 drop table kuSong
 create sequence seq_kuSong start with 1000;
 drop sequence seq_kuSong;
-insert into kuSong values(seq_kuSong.nextval,'小孩','4:12','music/1.mp3','music/1.lrc','1995','80','','');
-
+insert into kuSong values(seq_kuSong.nextval,'asd','4:12','music/1.mp3','music/1.lrc','1995','y','','');
+delete kuSong;
 --收藏表
 create table kgSave(
        kgSaveId Integer primary key,
@@ -86,10 +86,15 @@ create table kuSinger(
 );
 drop table kuSinger;
 select * from kuSinger;
+delete from kuSinger where kuSingerId=10000
+delete kuSinger;
 create sequence seq_singer start with 3333;
 insert into kuSinger values(seq_singer.nextval,'黑豹','男','images/2.jpg','H',0,'','');
 
-
+update kuSinger set kuSingerName='hehehheh',kuSingerSex='男',kuSingerImg='images/2.jpg',
+		kuSingerCode='H',kuSingerSingerstate=0,kuSingerSingernext='',kuSingerSingersecond=''
+		where kuSingerId=3335;
+		
 
 -- 歌曲风格
 create table kuSongStyle(                     

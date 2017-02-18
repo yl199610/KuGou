@@ -7,4 +7,12 @@ public interface SingerMapper {
 
 	PaginationBean<KuSinger> getSingerByPagination(PaginationBean<KuSinger> singerBean);
 
+	boolean delSingerMsg(int id);
+
+	KuSinger SingerMsg(int sid);
+
+	boolean modifySingerMsg(KuSinger singer);
+
+	boolean addSingerMsg(KuSinger singer);
+
 }

@@ -760,7 +760,7 @@ $(document).ready(function(){
  * @param { Number || Array }
  * @param { String }
  */
-function phpLogClick(key,type){
+ function phpLogClick(key,type){
     if(!key){return;}
     var src = (new Date()).getTime();
     switch(type){
@@ -769,7 +769,7 @@ function phpLogClick(key,type){
         default:  src = '' + key + '&url=&t=' + src; break;
     };
     (new Image()).src = src;
-}
+} 
 
 // apm统计
 (function() {
