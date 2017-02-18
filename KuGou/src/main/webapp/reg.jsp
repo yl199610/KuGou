@@ -27,8 +27,29 @@
 				<input name="kgUserSex" value="1" type="radio"> 女</td></tr>
 				<tr><td>验证码</td><td><img src="vcode.jpg" title="看不清，换一张"/>
 				<input name="vcode" placeholder="请输入验证码" id="vcode"  required="required"/></td></tr>
-				<tr><td><input type="submit" value="注册" id="loginBtn"/></td></tr>
+				<tr><td><input type="submit" value="注册" id="zhucheBtn" onClick="zhuche()"/></td></tr>
 			</table>
+			
+				<div id="addDiv">
+			<form id="addForm" method="post"  enctype="multipart/form-data">
+				<input id="kgUserId" name="kgUserId" readonly="readonly"/>
+				<br><input id="kgUserName" name="kgUserName"/>
+				<br><input id="kgUserPwd" name="kgUserPwd"/>
+				<br><input id="kgUserEmail" name="kgUserEmail" />
+				<br><input id="kgUserSex" name="kgUserSex" />
+				<br><input id="kgUserBirthday" name="kgUserBirthday" />
+				<br><input id="kgUserNote" name="kgUserNote"/>
+				<br><input type="file" name="picData"  onchange="chgPic(this)"/>
+				<img src="images/1.jpg" id="pic">
+				<br><input id="kgUserState" name="kgUserState" />
+				<br><input id="kgUserSong" name="kgUserSong" />
+				<br><input id="kgUserNext" name="kgUserNext" />
+				<br><input id="kgUserSecond" name="kgUserSecond" />
+				<p><a class="closeBtn" href="javascript:void(0)">关闭</a>&nbsp;
+				<a class="updateBtn" href="javascript:void(0)">修改</a></p>		
+			</form>
+		</div>
+	
 		</form>
 	</div>
 	<script type="text/javascript">
@@ -48,5 +69,10 @@
 			return true; 
 		}
 	</script>
+	
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="js/reg.js"></script>
 </body>
 </html>
