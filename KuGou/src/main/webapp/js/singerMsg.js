@@ -53,12 +53,12 @@ function singerOperatorFun(operType, id){
 
 
 function stopDp(id){
-	$.messager.confirm('确认','您确认想要删除记录吗,删除后记录将无法恢复？',function(r){    
+	$.messager.confirm('确认','您确认想要删除记录吗,删除后记录将无法恢复？',function(r){  
 	    if (r){
-	        $.get("dp/archive?cnid="+id,function(data){
-				$('#departmentInfo').datagrid("reload");
+	        $.get("sing/del?sid="+id,function(data){
+				$('#singerInfo').datagrid("reload");
 	        	$.messager.show({
-					title:'删除部门',
+					title:'删除歌手',
 					msg:returndata.trim()=="true"?"删除成功...":"删除失败!!!",
 					showType:'show',
 					style:{

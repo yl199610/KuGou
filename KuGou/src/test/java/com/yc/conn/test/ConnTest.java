@@ -38,7 +38,6 @@ public class ConnTest {
 		assertNotNull(con);	
 	}
 	
-	
 	@Test
 	public void testConn02() {
 		Connection con = sqlSessionFactory.openSession().getConnection();

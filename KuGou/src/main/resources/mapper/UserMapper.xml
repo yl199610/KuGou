@@ -22,4 +22,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from kgUser where kgUserId=#{sid}
 	</select>
 	
+	
+	<update
+		id="updateUser"
+		parameterType="KuUser">
+		update kgUser set
+		kgUserId=#{kgUserId},kgUserName=#{kgUserName},kgUserPwd=#{kgUserPwd},kgUserEmail=#{kgUserEmail},kgUserSex=#{kgUserSex},
+		kgUserBirthday=#{kgUserBirthday},kgUserNote=#{kgUserNote},kgUserSong=#{kgUserSong},kgUserNext=#{kgUserNext},kgUserSecond=#{kgUserSecond}
+		<if test="kgUserPic!=null">,kgUserPic=#{kgUserPic}</if>
+		where kgUserId=#{kgUserId}
+	</update>
+	
 </mapper>

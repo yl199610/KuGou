@@ -58,13 +58,7 @@
 			<div title="用户管理" data-options="iconCls:'icon-mini-add'">
 				<ul class="menutree">
 					<li><span>用户信息</span></li>
-					<li><span>用户添加</span></li>
-				</ul>
-			</div>
-			<div title="收藏管理" data-options="iconCls:'icon-mini-add'">
-				<ul class="menutree">
-					<li><span>已收藏歌曲信息</span></li>
-					<li><span>收藏添加</span></li>
+					
 				</ul>
 			</div>
 		</div>
