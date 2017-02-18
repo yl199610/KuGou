@@ -69,7 +69,7 @@ create sequence seq_kgAdmin start with 1;
 insert into kgAdmin values(seq_kgAdmin.nextval,'admin','admin',0,'','');
 drop table kgAdmin;
 select * from kgAdmin;
-
+drop sequence seq_admin;
 create sequence seq_admin start with 2222;
 insert into kgAdmin values(seq_admin.nextval,'a','a',0,'','');
 
@@ -86,10 +86,11 @@ create table kuSinger(
 );
 drop table kuSinger;
 select * from kuSinger;
-delete from kuSinger where kuSingerId=10000
+delete from kuSinger where kuSingerId=3335;
 delete kuSinger;
 create sequence seq_singer start with 3333;
-insert into kuSinger values(seq_singer.nextval,'黑豹','男','images/2.jpg','H',0,'','');
+insert into kuSinger values(seq_singer.nextval,'嘿嘿','男','images/2.jpg','H',0,0,'');
+drop sequence seq_singer;
 
 update kuSinger set kuSingerName='hehehheh',kuSingerSex='男',kuSingerImg='images/2.jpg',
 		kuSingerCode='H',kuSingerSingerstate=0,kuSingerSingernext='',kuSingerSingersecond=''
@@ -107,6 +108,7 @@ create sequence seq_kuSongStyle start with 4444;
 insert into kuSongStyle values(seq_kuSongStyle.nextval,'摇滚','','');
 drop table kuSongStyle;
 select * from kuSongStyle;
+drop sequence seq_kuSongStyle;
 
 -- 详细表
 create table kuSongDetail(
@@ -126,7 +128,7 @@ create sequence seq_kuSongDetail start with 5555;
 insert into kuSongDetail values(seq_kuSongDetail.nextval,3333,1000,4444,0,1,'music/1.mp3',1,1999-06-19,'','');
 drop table kuSongDetail;
 select * from kuSongDetail;
-
+drop sequence seq_kuSongDetail;
 --歌手的国籍   首页 和歌手
 
 --评论表

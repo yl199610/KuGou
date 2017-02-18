@@ -15,12 +15,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getUsers" resultType="KuSinger">
 		select * from
 		(select m.*,rownum rn from
-		(select * from kuSinger order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
+		(select * from kuSinger where  kuSingerSingernext!=0 order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
 	</select>
 	
-	<delete id="delSingerMsg" parameterType="int">
-		delete from kuSinger where kuSingerId=#{id}
-	</delete>
+	<update id="delSingerMsg" parameterType="int">
+		update kuSinger set kuSingerSingernext=0 where  kuSingerId=#{kuSingerId}
+	</update>
 	
 	<select id="SingerMsg" parameterType="int" resultType="KuSinger">
 		select * from kuSinger where kuSingerId=#{sid}
