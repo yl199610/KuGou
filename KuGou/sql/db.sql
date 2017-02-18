@@ -70,11 +70,7 @@ insert into kgAdmin values(seq_kgAdmin.nextval,'admin','admin',0,default,default
 drop table kgAdmin;
 select * from kgAdmin;
 drop sequence seq_admin;
-<<<<<<< HEAD
-create sequence seq_admin start with 2222;
-insert into kgAdmin values(seq_admin.nextval,'a','a',0,'','');
-=======
->>>>>>> branch 'master' of ssh://git@github.com/yl199610/KuGou
+
 
 --歌手表
 create table kuSinger(
@@ -89,20 +85,10 @@ create table kuSinger(
 );
 drop table kuSinger;
 select * from kuSinger;
-<<<<<<< HEAD
-delete from kuSinger where kuSingerId=3335;
-delete kuSinger;
-=======
 delete from kuSinger where kuSingerId=10000
 drop sequence seq_singer;
->>>>>>> branch 'master' of ssh://git@github.com/yl199610/KuGou
 create sequence seq_singer start with 3333;
-<<<<<<< HEAD
-insert into kuSinger values(seq_singer.nextval,'嘿嘿','男','images/2.jpg','H',0,0,'');
-drop sequence seq_singer;
-=======
 insert into kuSinger values(seq_singer.nextval,'黑豹','男','images/2.jpg','H',0,default,default);
->>>>>>> branch 'master' of ssh://git@github.com/yl199610/KuGou
 
 update kuSinger set kuSingerName='hehehheh',kuSingerSex='男',kuSingerImg='images/2.jpg',
 		kuSingerCode='H',kuSingerSingerstate=0,kuSingerSingernext='',kuSingerSingersecond=''
@@ -121,11 +107,7 @@ insert into kuSongStyle values(seq_kuSongStyle.nextval,'摇滚',default,default)
 drop table kuSongStyle;
 select * from kuSongStyle;
 drop sequence seq_kuSongStyle;
-<<<<<<< HEAD
 
-=======
-
->>>>>>> branch 'master' of ssh://git@github.com/yl199610/KuGou
 -- 详细表
 create table kuSongDetail(
        kuSongDetailId Integer primary key,                      
@@ -144,12 +126,7 @@ create sequence seq_kuSongDetail start with 5555;
 insert into kuSongDetail values(seq_kuSongDetail.nextval,3333,1000,4444,0,1,'music/1.mp3',1,1999-06-19,default,default);
 drop sequence seq_kuSongDetail;
 select * from kuSongDetail;
-<<<<<<< HEAD
-drop sequence seq_kuSongDetail;
-=======
 drop table seq_kuSongDetail;
-
->>>>>>> branch 'master' of ssh://git@github.com/yl199610/KuGou
 --歌手的国籍   首页 和歌手
 
 --评论表
