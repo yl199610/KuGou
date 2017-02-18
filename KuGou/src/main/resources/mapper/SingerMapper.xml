@@ -33,7 +33,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	
 	<insert id="addSingerMsg" parameterType="KuSinger">
-		insert into kuSinger values(seq_singer.nextval,#{kuSingerName},#{kuSingerSex},#{kuSingerImg},#{kuSingerCode},#{kuSingerSingerstate},#{kuSingerSingernext},#{kuSingerSingersecond})
+		insert into kuSinger values(seq_singer.nextval,#{kuSingerName},#{kuSingerSex},#{kuSingerImg},#{kuSingerCode},#{kuSingerSingerstate},1,#{kuSingerSingersecond})
 	</insert>
 	
 </mapper>
