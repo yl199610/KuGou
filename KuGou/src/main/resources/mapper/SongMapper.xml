@@ -15,17 +15,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getUsers" resultType="KuSong">
 		select * from
 		(select m.*,rownum rn from
-		(select * from kuSong where kuSongNext!=0 order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
+		(select * from kuSong where kuSongNext=1 order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
 	</select>
 	
 	
 	<insert id="addSongMsg" parameterType="KuSong">
-		insert into KuSong values(seq_kuSong.nextval,#{kuSongName},#{kuSongImg},#{kuSongWords},#{kuSongAddress},#{kuSongSongtime},#{kuSongYear},#{kuSongNext},#{kuSongSecond})
+		insert into KuSong values(seq_kuSong.nextval,#{kuSongName},#{kuSongImg},#{kuSongWords},#{kuSongAddress},#{kuSongSongtime},#{kuSongYear},1,#{kuSongSecond})
 	</insert>
 	
-	<delete id="delSongMsg" parameterType="int">
-		delete from KuSong where kuSongId=#{id}
-	</delete>
+	<update id="delSongMsg" parameterType="int">
+			update KuSong set kuSongNext=0 where kuSongId=#{id}
+	</update>
 	
 	<select id="SongMsg" parameterType="int" resultType="KuSong">
 		select * from kuSong where kuSongId=#{sid}

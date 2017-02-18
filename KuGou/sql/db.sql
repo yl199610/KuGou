@@ -40,13 +40,9 @@ select * from kuSong;
 drop table kuSong
 create sequence seq_kuSong start with 1000;
 drop sequence seq_kuSong;
-<<<<<<< HEAD
-insert into kuSong values(seq_kuSong.nextval,'小孩','4:12','music/1.mp3','music/1.lrc','1995','80','','');
-insert into kuSong values(seq_kuSong.nextval,'不煽情','5:43','music/3.mp3','music/3.lrc','1997','80','','');
-=======
 insert into kuSong values(seq_kuSong.nextval,'同学','4:12','music/1.mp3','music/1.lrc','1995','90',default,'二');
+insert into kuSong values(seq_kuSong.nextval,'天下','3:12','music/3.mp3','music/1.lrc','1995','90',3,'二');
 delete kuSong;
->>>>>>> branch 'master' of ssh://git@github.com/yl199610/KuGou
 --收藏表
 create table kgSave(
        kgSaveId Integer primary key,
@@ -107,11 +103,7 @@ create table kuSongStyle(
        kuSongStylesecond varchar2(100) default 1   --预留字段二
 );
 create sequence seq_kuSongStyle start with 4444;
-<<<<<<< HEAD
-insert into kuSongStyle values(seq_kuSongStyle.nextval,'流行','','');
-=======
 insert into kuSongStyle values(seq_kuSongStyle.nextval,'摇滚',default,default);
->>>>>>> branch 'master' of ssh://git@github.com/yl199610/KuGou
 drop table kuSongStyle;
 select * from kuSongStyle;
 drop sequence seq_kuSongStyle;
