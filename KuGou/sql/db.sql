@@ -102,7 +102,7 @@ create table kuSongStyle(
        kuSongStylesecond varchar2(100) default 1   --预留字段二
 );
 create sequence seq_kuSongStyle start with 100;
-insert into kuSongStyle values(seq_kuSongStyle.nextval,'纯音乐',default,default);
+insert into kuSongStyle values(seq_kuSongStyle.nextval,'摇滚',default,default);
 drop table kuSongStyle;
 select * from kuSongStyle;
 drop sequence seq_kuSongStyle;
@@ -122,7 +122,7 @@ create table kuSongDetail(
        kusecond varchar2(100) default 1          			--预留字段二
 );
 create sequence seq_kuSongDetail start with 10000;
-insert into kuSongDetail values(seq_kuSongDetail.nextval,10000,1000,100,0,1,'music/1.mp3',1,1999-06-19,default,default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,z,1000,4444,0,1,'music/1.mp3',1,1999-06-19,default,default);
 drop sequence seq_kuSongDetail;
 select * from kuSongDetail;
 drop table kuSongDetail;
