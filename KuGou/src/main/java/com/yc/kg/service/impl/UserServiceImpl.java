@@ -30,6 +30,12 @@ public class UserServiceImpl implements UserService{
 	public KuUser getUserMsg(int sid) {
 		return userMapper.userMsg(sid);
 	}
+
+	@Override
+	public boolean modifyUser(KuUser user) {
+		
+		return userMapper.updateUser(user)>0;
+	}
 	
 	
 }

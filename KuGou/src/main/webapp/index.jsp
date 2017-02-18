@@ -1,4 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +27,7 @@
     DD_belatedPNG.fix('.icon,.logoImg,.icon-play_s,.cptT,.Cover,.sliderPages a,.logo,.office-verification,.footerIcon a,#chinaSingerContent .cptB,.download a');
     </script>
     <![endif]-->
-
+<link type="text/css" rel="stylesheet" href="css/index.css">
 
 <script type="text/javascript" src="index_files/time.js"></script>
 <script type="text/javascript" src="index_files/time_002.js"></script>
@@ -40,16 +40,15 @@
 			<h1 class="logo">
 				<img src="index_files/logo.png" alt="">
 			</h1>
+				<span id="back"><a target="_blank" href="./login.jsp">[后台管理]</a></span>
 			<div class="topNav fr">
 				<ul>
+					<li><a target="_blank" href="./reg.jsp">注册</a></li>
+					<li><a href="" class="kuLogin">登录</a><a hidefocus="true"
+						href="http://www.kugou.com/newuc/login/outlogin" class="logout">退出登录</a></li>
 					<li><a target="_blank" href="./server.html">客服中心</a></li>
 					<li><a target="_blank" href="./join.html">招贤纳士</a></li>
 					<li><a target="_blank" href="./VIP.html">会员中心 </a></li>
-					<li><input name="kgusername" placeholder="请输入用户名"/></li>
-					<li><input type="password" name="kguserpwd" placeholder="请输入密码"/></li>
-					<li><a href="" class="userLogin">登录</a><a hidefocus="true"
-						href="http://www.kugou.com/newuc/login/outlogin" class="logout">退出登录</a></li>
-					<li><a target="_blank" href="./emailReg.html">注册</a></li>
 				</ul>
 			</div>
 		</div>

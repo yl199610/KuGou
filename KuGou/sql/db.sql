@@ -46,7 +46,7 @@ delete kuSong;
 create table kgSave(
        kgSaveId Integer primary key,
        kuserSaveId references kgUser(kgUserId),   --用户id
-       kgSaveSid Integer,                              --歌曲id(通过歌曲查询)
+       kgSaveSid Integer,                          --歌曲id(通过歌曲查询)
        kgSavenext varchar2(100) default null,       --预留字段
        kgSavesecond varchar2(100) default null      --预留字段二
 );
