@@ -1,5 +1,7 @@
 package com.yc.kg.web.handler;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,5 +62,14 @@ public class StyleHandler {
 		LogManager.getLogger().debug("请求styleHandler处理modify....\n"+style);
 		return styleService.modifySongStyleMsg(style);
 	}
+	
+	@RequestMapping("/all")
+	@ResponseBody
+	public List<KuSongStyle> list(){
+		LogManager.getLogger().debug("请求styleHandler处理all....");
+		return styleService.getAllStyle();
+	}
+
+	
 	
 }
