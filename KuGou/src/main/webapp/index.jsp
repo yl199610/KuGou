@@ -1804,9 +1804,9 @@
                         if(fs.complete){
                             _this.remove(fs);
                         } else {
-                            fs.onload = function(){
+                           /*   fs.onload = function(){
                                 _this.remove(this);
-                            }
+                            } */ 
                             fs.onerror = function(){
                                 _this.remove(this);
                             }
