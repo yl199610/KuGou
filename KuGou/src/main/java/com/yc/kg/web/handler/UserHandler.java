@@ -74,10 +74,7 @@ public class UserHandler {
 	
 		System.out.println("注册号suer"+user);
 		if(userService.zhuche(user)>0){
-			
-			
 			return "redirect:/zhuchesuccess.jsp";
-			
 		}else {
 			return "redirect:/page/manage.jsp";
 		}
