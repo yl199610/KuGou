@@ -1865,7 +1865,7 @@
                     _this.fSImgsCopy.push(markImgs[i]);
                 }
 
-                for(var i = 0, len = _this.fSImgs.length; i < len; i++){
+/*                 for(var i = 0, len = _this.fSImgs.length; i < len; i++){
                     fs = _this.fSImgsCopy[i];
                     if(fs){
                         if(fs.complete){
@@ -1879,7 +1879,7 @@
                             }
                         }
                     }
-                } 
+                }  */
                 
         },
         remove: function (elm){
@@ -2066,18 +2066,11 @@
           s.parentNode.insertBefore(apm, s);
         })();
     </script>
-<<<<<<< HEAD
-	<!-- 	<script src="index_files/hijacked-min.js"></script>
- -->
-	<!-- Wed Dec 28 2016 18:39:00 GMT+0800 (CST) -->
-
-=======
 <!-- 	<script src="index_files/hijacked-min.js"></script>
  -->	<!-- Wed Dec 28 2016 18:39:00 GMT+0800 (CST) -->
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
->>>>>>> branch 'master' of ssh://git@github.com/yl199610/KuGou
 </body>
 </html>
