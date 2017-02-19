@@ -96,6 +96,8 @@ $("#modifyForm").form({
 			}
 		});
 
+
+
 $(".closeBtn").linkbutton({
 	iconCls : "icon-cancel",
 	onClick : function() {

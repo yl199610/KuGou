@@ -12,4 +12,8 @@ public interface UserMapper {
 	int updateUser(KuUser user);
 
 	KuUser getUser(KuUser user);
+
+	int insertUser(KuUser user);
+
+
 }

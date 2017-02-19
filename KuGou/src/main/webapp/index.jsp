@@ -4,6 +4,8 @@
 <html lang="en">
 <head>
 <base href="/KuGou/">
+<link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
+<link type="text/css" rel="stylesheet" href="easyui/themes/default/easyui.css">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <script src="index_files/collect.js"></script>
 <script src="index_files/hm.js"></script>
@@ -33,7 +35,7 @@
 <script type="text/javascript" src="index_files/time.js"></script>
 <script type="text/javascript" src="index_files/time_002.js"></script>
 <script type="text/javascript" src="index_files/time_003.js"></script>
-<script type="text/javascript" src="js/Index.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 </head>
 
 <body>
@@ -51,10 +53,10 @@
 								<c:when test="${loginUser eq null }">
 								<span><a target="_blank" href="./reg.jsp">注册</a></span>
 									<label> 登录名 </label>
-									<input name="kgUserName" class="login_input" required="required"
+									<input name="kgUserName" required="required"
 										placeholder="输入用户名" />
 									<label> 密&#160;&#160;码 </label>
-									<input type="password"  name="kgUserPwd" class="login_input"
+									<input type="password"  name="kgUserPwd" 
 										required="required" placeholder="输入密码" />
 									<input type="submit" class="login_sub" value="登录" />
 									<label id="error"></label>
@@ -2063,9 +2065,18 @@
           s.parentNode.insertBefore(apm, s);
         })();
     </script>
+<<<<<<< HEAD
 	<!-- 	<script src="index_files/hijacked-min.js"></script>
  -->
 	<!-- Wed Dec 28 2016 18:39:00 GMT+0800 (CST) -->
 
+=======
+<!-- 	<script src="index_files/hijacked-min.js"></script>
+ -->	<!-- Wed Dec 28 2016 18:39:00 GMT+0800 (CST) -->
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+>>>>>>> branch 'master' of ssh://git@github.com/yl199610/KuGou
 </body>
 </html>

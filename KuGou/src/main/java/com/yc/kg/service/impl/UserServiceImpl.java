@@ -38,8 +38,13 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
+
 	public KuUser userlogin(KuUser user) {
 		return userMapper.getUser(user);
+	}
+
+	public int zhuche(KuUser user) {
+		return userMapper.insertUser(user);
 	}
 	
 	

@@ -19,8 +19,8 @@ $('#singerInfo').datagrid({
 		width : 18,
 		align:'center'
 	}, {
-		field : 'kuSongWords',
-		title : '歌手图片',
+		field : 'kuSingerCode',
+		title : '歌手助记码',
 		width : 40,
 		align:'center'
 	},{

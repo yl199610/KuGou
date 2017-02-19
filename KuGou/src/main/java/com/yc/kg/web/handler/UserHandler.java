@@ -54,7 +54,6 @@ public class UserHandler {
 		
 		if(picData!=null){
 			try {
-			
 				picData.transferTo(new File(ServletUtil.UPLOAD_DIR,picData.getOriginalFilename()));
 				user.setKgUserPic("/"+ServletUtil.UPLOAD_DIR_NAME+"/"+picData.getOriginalFilename());//图片上传
 			System.out.println("picData.getOriginalFilename()"+picData.getOriginalFilename());
@@ -69,6 +68,7 @@ public class UserHandler {
 	}
 	
 	
+
 	/**
 	 * 登录
 	 */
@@ -85,6 +85,8 @@ public class UserHandler {
 			return false;
 		}
 	}
+
+
 	
 	protected <T> T getReqParam2Obj(HttpServletRequest request, Class<T> clazz) {
 		//1.取到要转换成的对象的实例
@@ -124,4 +126,20 @@ public class UserHandler {
 		}
 		return t;
 	}
+	
+	@RequestMapping("/zhuche")
+	public String zhuche(KuUser user) {//ModelMap   逻辑操作和实体类    request.setAttribute
+		LogManager.getLogger().debug("请求userHandler注册用户3...");
+	
+		System.out.println("注册号suer"+user);
+		if(userService.zhuche(user)>0){
+			
+			
+			return "redirect:/zhuchesuccess.jsp";
+			
+		}else {
+			return "redirect:/page/manage.jsp";
+		}
+	}
+
 }

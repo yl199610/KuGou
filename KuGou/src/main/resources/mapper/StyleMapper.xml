@@ -5,26 +5,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.yc.kg.mapper.StyleMapper">
 
 	<resultMap type="paginationBean" id="paginationBeanMap">
-		<collection property="rows" column="{pageSize=pageSize ,currPage=currPage}" select="getUsers"/>
+		<collection property="rows" column="{pageSize=pageSize ,currPage=currPage}" select="getSongStyle"/>
 	</resultMap>
 	
 	<select id="getStyleByPagination" parameterType="paginationBean" resultMap="paginationBeanMap">
 		select count(1) total,ceil(count(1)/${pageSize}) totalPage,${pageSize} pageSize,${currPage} currPage from kuSongStyle
 	</select>
 	
-	<select id="getUsers" resultType="KuSongStyle">
+	<select id="getSongStyle" resultType="KuSongStyle">
 		select * from
 		(select m.*,rownum rn from
-		(select * from kuSongStyle order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
+		(select * from kuSongStyle where kuSongStylenext=1 order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
 	</select>
 	
 		<insert id="addSongStyleMsg" parameterType="KuSongStyle">
-		insert into kuSongStyle values(seq_kuSongStyle.nextval,#{kuSongStyleName},#{kuSongStylenext},#{kuSongStylesecond})
+		insert into kuSongStyle values(seq_kuSongStyle.nextval,#{kuSongStyleName},1,#{kuSongStylesecond})
 	</insert>
 	
-	<delete id="delSongStyleMsg" parameterType="int">
-		delete from kuSongStyle where kuSongStyleId=#{id}
-	</delete>
+	<update id="delSongStyleMsg" parameterType="int">
+		update kuSongStyle set kuSongStylenext=0
+		where kuSongStyleId=#{kuSongStyleId}
+	</update>
 	
 	<select id="SongStyleMsg" parameterType="int" resultType="KuSongStyle">
 		select * from kuSongStyle where kuSongStyleId=#{sid}

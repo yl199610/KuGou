@@ -10,7 +10,6 @@
 <body>
 	<form name="styleForm" id="styleForm" style="margin-left: 200px; margin-top: 40px;" method="post">
 		<input name="kuSongStyleName" id="kuSongStyleName" value="0" required="required" placeholder="请输入风格名" /><br />
-		<input name="kuSongStylenext"  value="0" required="required" placeholder="预留1" /><br />
 		<input name="kuSongStylesecond"  value="0" required="required" placeholder="预留2" /><br />
 		<input type="button" value="添加" onClick="addStyle()"/>
 	</form>
