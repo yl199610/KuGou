@@ -17,5 +17,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(select m.*,rownum rn from
 		(select * from kgSave order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
 	</select>
+	<insert id="insertDetail" parameterType="KuSongDetail">
+		insert into KuSongDetail values(seq_kuSongDetail.nextval,#{ksongsingId},#{kudetailsongId},#{kudetailstyleId},#{songplay},#{statue},#{address},#{kusingstatus},#{detailtime},#{kunext},#{kusecond})
+	</insert>
 	
 </mapper>

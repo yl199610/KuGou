@@ -1,5 +1,7 @@
 package com.yc.kg.web.handler;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.yc.kg.entity.KuSinger;
 import com.yc.kg.entity.KuSong;
 import com.yc.kg.entity.PaginationBean;
 import com.yc.kg.service.SongService;
@@ -60,6 +63,13 @@ public class SongHandler {
 		LogManager.getLogger().debug("请求songHandler处理modify....\n"+song);
 		return songService.modifySongMsg(song);
 	}
+	//获得歌手名称到下拉框
+	@RequestMapping("/getAllSong")
+	@ResponseBody
+	public List<KuSong> get(){
+		LogManager.getLogger().debug("请求songHandler处理get....\n");
+		return songService.getSong();
+	}		
 	
 	
 }

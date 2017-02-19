@@ -36,3 +36,6 @@ function logout(){
 socket.onmessage = function(message){
 	$.messager.alert('信用卡消息',message.data,'warning');
 }
+
+
+

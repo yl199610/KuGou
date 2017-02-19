@@ -58,7 +58,11 @@
 			<div title="用户管理" data-options="iconCls:'icon-mini-add'">
 				<ul class="menutree">
 					<li><span>用户信息</span></li>
-					
+				</ul>
+			</div>
+			<div title="详细管理" data-options="iconCls:'icon-mini-add'">
+				<ul class="menutree">
+					<li><span>详细信息</span></li>
 				</ul>
 			</div>
 		</div>

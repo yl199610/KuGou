@@ -1,5 +1,7 @@
 package com.yc.kg.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,6 +46,11 @@ public class SingerServiceImpl implements SingerService{
 	@Override
 	public boolean addsinger(KuSinger singer) {
 		return singerMapper.addSingerMsg(singer);
+	}
+
+	@Override
+	public List<KuSinger> getSinger() {
+		return singerMapper.getSingerMsg();
 	}
 	
 	
