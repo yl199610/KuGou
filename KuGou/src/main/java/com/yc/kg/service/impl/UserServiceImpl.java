@@ -36,6 +36,11 @@ public class UserServiceImpl implements UserService{
 		
 		return userMapper.updateUser(user)>0;
 	}
+
+	@Override
+	public KuUser userlogin(KuUser user) {
+		return userMapper.getUser(user);
+	}
 	
 	
 }

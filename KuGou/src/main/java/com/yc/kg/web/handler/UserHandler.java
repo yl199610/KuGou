@@ -2,11 +2,17 @@ package com.yc.kg.web.handler;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Enumeration;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -63,12 +69,59 @@ public class UserHandler {
 	}
 	
 	
-	@RequestMapping("/reg")
-	public String login(KuUser user,ModelMap map) {//ModelMap   逻辑操作和实体类    request.setAttribute
-		return "page:/forgetSuccess.jsp";
+	/**
+	 * 登录
+	 */
+	@RequestMapping("/login")
+	@ResponseBody
+	public boolean login(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		KuUser kuser = getReqParam2Obj(request , KuUser.class);
+		HttpSession session = request.getSession();
+		if(userService.userlogin(kuser)!=null){
+			session.setAttribute("loginUser", kuser.getKgUserName());
+			return true;
+		}else{
+			session.setAttribute("errorMsg", "用户名或密码错误");
+			return false;
+		}
 	}
 	
-
-	
-
+	protected <T> T getReqParam2Obj(HttpServletRequest request, Class<T> clazz) {
+		//1.取到要转换成的对象的实例
+		T t =null;
+		try {
+			t=clazz.newInstance();
+		} catch (InstantiationException | IllegalAccessException e) {
+			LogManager.getLogger().error("创建"+clazz.getName()+"实例对象失败");
+		}
+		//2.取到所有的请求参数名
+		Enumeration<String> paramNames = request.getParameterNames();
+		while(paramNames.hasMoreElements()){
+			String valName = paramNames.nextElement();
+			String val=request.getParameter(valName);
+			System.out.println(valName+"===="+val);
+			
+			String suff = String.format("et%c%s", Character.toUpperCase(valName.charAt(0)), valName.substring(1) );
+			
+			try {
+				Class<?> paramType = clazz.getMethod("g"+suff).getReturnType();
+				Method sm = clazz.getMethod("s" + suff , paramType);
+				
+				if(paramType.getName().intern() == int.class.getName().intern() ||
+						paramType.getName().intern() ==Integer.class.getName().intern()){
+					sm.invoke(t, Integer.parseInt(val));
+				}else if(paramType.getName().intern()==double.class.getName().intern() ||
+						paramType.getName().intern()==Double.class.getName().intern()){
+					sm.invoke(t, Double.parseDouble(val));
+				}else{
+					sm.invoke(t, val);
+				}
+			}catch (NoSuchMethodException  | SecurityException e) {
+				LogManager.getLogger().warn("在"+clazz.getName()+"中，没有对应的" + e.getMessage()+"方法");
+			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+				LogManager.getLogger().warn(e.getMessage()+"传入参数格式不正确，转换数据类型失败");
+			} 
+		}
+		return t;
+	}
 }

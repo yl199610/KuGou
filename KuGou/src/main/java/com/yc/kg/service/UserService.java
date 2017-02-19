@@ -11,4 +11,5 @@ public interface UserService {
 
 	boolean modifyUser(KuUser user);
 
+	KuUser userlogin(KuUser kuser);
 }
