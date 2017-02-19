@@ -30,5 +30,8 @@
 
 	<mvc:default-servlet-handler />
 	<mvc:annotation-driven />
+	<websocket:handlers>
+		<websocket:mapping path="/pushmsg" handler="pushMsgHandler" />
+	</websocket:handlers>
 
 </beans>

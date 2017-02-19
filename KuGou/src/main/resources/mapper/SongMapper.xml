@@ -36,5 +36,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		kuSongAddress=#{kuSongAddress},kuSongSongtime=#{kuSongSongtime},kuSongYear=#{kuSongYear},kuSongNext=#{kuSongNext},kuSongSecond=#{kuSongSecond}
 		where kuSongId=#{kuSongId}
 	</update>
-	
+	<select id="getOneSong" resultType="KuSong">
+		select * from (select * from kuSong order by dbms_random.value)where rownum&lt;2
+	</select>	
 </mapper>
