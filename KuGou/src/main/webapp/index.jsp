@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +35,7 @@
 <script type="text/javascript" src="index_files/time.js"></script>
 <script type="text/javascript" src="index_files/time_002.js"></script>
 <script type="text/javascript" src="index_files/time_003.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 </head>
 
 <body>
@@ -43,12 +44,29 @@
 			<h1 class="logo">
 				<img src="index_files/logo.png" alt="">
 			</h1>
-				<span id="back"><a target="_blank" href="./login.jsp">[后台管理]</a></span>
+			<span id="back"><a target="_blank" href="./login.jsp">[后台管理]</a></span>
 			<div class="topNav fr">
 				<ul>
-					<li><a target="_blank" href="./reg.jsp">注册</a></li>
-					<li><a href="" class="kuLogin">登录</a><a hidefocus="true"
-						href="http://www.kugou.com/newuc/login/outlogin" class="logout">退出登录</a></li>
+					<li>
+						<form onsubmit="return login()" id="userloginForm">
+							<c:choose>
+								<c:when test="${loginUser eq null }">
+								<span><a target="_blank" href="./reg.jsp">注册</a></span>
+									<label> 登录名 </label>
+									<input name="kgUserName" required="required"
+										placeholder="输入用户名" />
+									<label> 密&#160;&#160;码 </label>
+									<input type="password"  name="kgUserPwd" 
+										required="required" placeholder="输入密码" />
+									<input type="submit" class="login_sub" value="登录" />
+									<label id="error"></label>
+								</c:when>
+								<c:otherwise>
+									<label>欢迎<span style='color: green;'>${loginUser }</span>使用本网站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<a href='javascript:void(0)' onclick='logout()'>注销用户</a>
+								</c:otherwise>
+							</c:choose>
+						</form></li>
 					<li><a target="_blank" href="./server.html">客服中心</a></li>
 					<li><a target="_blank" href="./join.html">招贤纳士</a></li>
 					<li><a target="_blank" href="./VIP.html">会员中心 </a></li>
@@ -93,8 +111,7 @@
 				<ul>
 
 
-					<li class="sliderItem"
-						data-show="1"
+					<li class="sliderItem" data-show="1"
 						style="width: 1349px; position: absolute; display: none;"><a
 						target="_blank" href="http://download.kugou.com/download/kugou_pc"
 						title="换肤新体验 酷狗英雄主题"
@@ -103,8 +120,7 @@
 
 					</a></li>
 
-					<li class="sliderItem"
-						data-show="0"
+					<li class="sliderItem" data-show="0"
 						style="width: 1349px; position: absolute; display: list-item;">
 
 						<a target="_blank"
@@ -116,8 +132,7 @@
 					</a>
 					</li>
 
-					<li class="sliderItem"
-						data-show="0"
+					<li class="sliderItem" data-show="0"
 						style="width: 1349px; position: absolute; display: none;"><a
 						target="_blank"
 						href="http://sdn.kugou.com/link.aspx?id=42070&amp;dl=1"
@@ -127,8 +142,7 @@
 
 					</a></li>
 
-					<li class="sliderItem"
-						data-show="0"
+					<li class="sliderItem" data-show="0"
 						style="width: 1349px; position: absolute; display: none;"><a
 						target="_blank"
 						href="http://tj.kugou.com/front/link.php?id=8012&amp;dl=1"
@@ -138,8 +152,7 @@
 
 					</a></li>
 
-					<li class="sliderItem"
-						data-show="1"
+					<li class="sliderItem" data-show="1"
 						style="width: 1349px; position: absolute; display: none;"><a
 						target="_blank"
 						href="http://sdn.kugou.com/link.aspx?id=45911&amp;dl=1"
@@ -170,7 +183,8 @@
 					viewBox="0 0 1349 500" preserveAspectRatio="none">
 					<filter id="blur_meuw1qewh">
 					<feGaussianBlur in="SourceGraphic" stdDeviation="20"></feGaussianBlur></filter>
-					<image x="0" y="0" width="1349" height="500" externalResourcesRequired="true"
+					<image x="0" y="0" width="1349" height="500"
+						externalResourcesRequired="true"
 						style="filter:url(#blur_meuw1qewh)" preserveAspectRatio="none"></image></svg>
 			</div>
 			<div class="overlayer"></div>
@@ -266,7 +280,8 @@
 								loading="1" class=" " height="160" width="160">
 
 							<div class="Cover">
-								<a target="_blank" href="http://www.kugou.com/yy/special/single/19004.html"> </a>
+								<a target="_blank"
+									href="http://www.kugou.com/yy/special/single/19004.html"> </a>
 								<div class="playBtn icon icon-play_s" data-index="2"
 									data-id="19004">播放</div>
 							</div>
@@ -284,14 +299,14 @@
 								<span class="icon icon-select_icon"></span><span class="num">35.7万</span>
 							</p>
 
-							<img
-								src="index_files/20161226152023736609.jpg"
+							<img src="index_files/20161226152023736609.jpg"
 								src="http://imge.kugou.com/soft/collection/150/20161226/20161226152023736609.jpg"
 								_def="http://static.kgimg.com/public/root/images/rankdefalut.jpg"
 								loading="1" class=" " height="160" width="160">
 
 							<div class="Cover" style="visibility: hidden;">
-								<a target="_blank" href="http://www.kugou.com/yy/special/single/121322.html">
+								<a target="_blank"
+									href="http://www.kugou.com/yy/special/single/121322.html">
 								</a>
 								<div class="playBtn icon icon-play_s" data-index="3"
 									data-id="121322" style="display: none;">播放</div>
@@ -347,7 +362,8 @@
 							<a href="http://www.kugou.com/yy/rank/home/1-22943.html">
 								<div class="Cover">
 									<div class="playBtn icon icon-play_s" data-id="22943">播放</div>
-								</div> <span class="arrow icon-big_arrow_right"></span> <img src="index_files/T1KpY4BgxT1RCvBVdK.jpg"
+								</div> <span class="arrow icon-big_arrow_right"></span> <img
+								src="index_files/T1KpY4BgxT1RCvBVdK.jpg"
 								src="http://imge.kugou.com/v2/rank_cover/T1KpY4BgxT1RCvBVdK.jpg_240x240.jpg"
 								_def="http://static.kgimg.com/public/root/images/rankdefalut.jpg"
 								loading="1" class=" " height="98" width="98">
@@ -375,7 +391,8 @@
 							<a href="http://www.kugou.com/yy/rank/home/1-6666.html">
 								<div class="Cover">
 									<div class="playBtn icon icon-play_s" data-id="6666">播放</div>
-								</div> <span class="arrow icon-big_arrow_right"></span> <img src="index_files/T1M4h4BKKj1RCvBVdK.jpg"
+								</div> <span class="arrow icon-big_arrow_right"></span> <img
+								src="index_files/T1M4h4BKKj1RCvBVdK.jpg"
 								src="http://imge.kugou.com/v2/rank_cover/T1M4h4BKKj1RCvBVdK.jpg_240x240.jpg"
 								_def="http://static.kgimg.com/public/root/images/rankdefalut.jpg"
 								loading="1" class=" " height="98" width="98">
@@ -403,7 +420,8 @@
 							<a href="http://www.kugou.com/yy/rank/home/1-8888.html">
 								<div class="Cover">
 									<div class="playBtn icon icon-play_s" data-id="8888">播放</div>
-								</div> <span class="arrow icon-big_arrow_right"></span> <img src="index_files/T1fHd4BXd_1RCvBVdK.jpg"
+								</div> <span class="arrow icon-big_arrow_right"></span> <img
+								src="index_files/T1fHd4BXd_1RCvBVdK.jpg"
 								src="http://imge.kugou.com/v2/rank_cover/T1fHd4BXd_1RCvBVdK.jpg_240x240.jpg"
 								_def="http://static.kgimg.com/public/root/images/rankdefalut.jpg"
 								loading="1" class=" " height="98" width="98">
@@ -447,27 +465,32 @@
 					<div class="itemContent">
 						<div class="tabC" id="SongtabContent" style="margin-top: -560px;">
 							<ul style="display: none; z-index: 1;">
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;C56B0AA19C1E6F7FC09C2DBD5EA02EB0&quot;,&quot;time&quot;:&quot;04:40&quot;,&quot;timeLen&quot;:280000,&quot;Filename&quot;:&quot;本兮 - 我梦见我梦见我&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;C56B0AA19C1E6F7FC09C2DBD5EA02EB0&quot;,&quot;time&quot;:&quot;04:40&quot;,&quot;timeLen&quot;:280000,&quot;Filename&quot;:&quot;本兮 - 我梦见我梦见我&quot;}">
 									<a href=""> <span class="songName">本兮 - 我梦见我梦见我</span> <span
-										class="songTime">04:40</span> <span class="icon playBtn icon-play"></span>
+										class="songTime">04:40</span> <span
+										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;DB7B29E52B735CEB82F6CAD9A0DF00AE&quot;,&quot;time&quot;:&quot;04:07&quot;,&quot;timeLen&quot;:247000,&quot;Filename&quot;:&quot;孙露 - 两个朋友&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;DB7B29E52B735CEB82F6CAD9A0DF00AE&quot;,&quot;time&quot;:&quot;04:07&quot;,&quot;timeLen&quot;:247000,&quot;Filename&quot;:&quot;孙露 - 两个朋友&quot;}">
 									<a href=""> <span class="songName">孙露 - 两个朋友</span> <span
 										class="songTips"></span> <span class="songTime">04:07</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;68E8F3A20E9058C19BE61DA653FF8DD0&quot;,&quot;time&quot;:&quot;04:03&quot;,&quot;timeLen&quot;:243000,&quot;Filename&quot;:&quot;唐古、贺一航 - 爱情天堂&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;68E8F3A20E9058C19BE61DA653FF8DD0&quot;,&quot;time&quot;:&quot;04:03&quot;,&quot;timeLen&quot;:243000,&quot;Filename&quot;:&quot;唐古、贺一航 - 爱情天堂&quot;}">
 									<a href=""> <span class="songName">唐古、贺一航 - 爱情天堂</span> <span
 										class="songTips"></span> <span class="songTime">04:03</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;5966C84210F8E179D8E88EC9BEDF093C&quot;,&quot;time&quot;:&quot;02:44&quot;,&quot;timeLen&quot;:164000,&quot;Filename&quot;:&quot;成龙、MIC男团 - 美丽的神话【功夫瑜伽主题曲】&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;5966C84210F8E179D8E88EC9BEDF093C&quot;,&quot;time&quot;:&quot;02:44&quot;,&quot;timeLen&quot;:164000,&quot;Filename&quot;:&quot;成龙、MIC男团 - 美丽的神话【功夫瑜伽主题曲】&quot;}">
 									<a href=""> <span class="songName">成龙、MIC男团 -
 											美丽的神话【功夫瑜伽主题曲】</span> <span class="songTips"></span> <span
 										class="songTime">02:44</span> <span
@@ -475,14 +498,16 @@
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;CA0710061BD1ECE42AA024F3FCEB4827&quot;,&quot;time&quot;:&quot;04:53&quot;,&quot;timeLen&quot;:293000,&quot;Filename&quot;:&quot;金志文 - It s Time To Play&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;CA0710061BD1ECE42AA024F3FCEB4827&quot;,&quot;time&quot;:&quot;04:53&quot;,&quot;timeLen&quot;:293000,&quot;Filename&quot;:&quot;金志文 - It s Time To Play&quot;}">
 									<a href=""> <span class="songName">金志文 - It s Time
 											To Play</span> <span class="songTips"></span> <span class="songTime">04:53</span>
 										<span class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;5940C4632DDFAE9559266DF6BAED2E1F&quot;,&quot;time&quot;:&quot;03:09&quot;,&quot;timeLen&quot;:189000,&quot;Filename&quot;:&quot;李熙郁、陈艾森 - 发歌【广州城市宣传曲】&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;5940C4632DDFAE9559266DF6BAED2E1F&quot;,&quot;time&quot;:&quot;03:09&quot;,&quot;timeLen&quot;:189000,&quot;Filename&quot;:&quot;李熙郁、陈艾森 - 发歌【广州城市宣传曲】&quot;}">
 									<a href=""> <span class="songName">李熙郁、陈艾森 -
 											发歌【广州城市宣传曲】</span> <span class="songTips"></span> <span
 										class="songTime">03:09</span> <span
@@ -490,63 +515,72 @@
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;1FEC01E1E0A9EB32DAB1DEAA0007D405&quot;,&quot;time&quot;:&quot;04:23&quot;,&quot;timeLen&quot;:263000,&quot;Filename&quot;:&quot;魏晨 - 不变&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;1FEC01E1E0A9EB32DAB1DEAA0007D405&quot;,&quot;time&quot;:&quot;04:23&quot;,&quot;timeLen&quot;:263000,&quot;Filename&quot;:&quot;魏晨 - 不变&quot;}">
 									<a href=""> <span class="songName">魏晨 - 不变</span> <span
 										class="songTime">04:23</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;905DAFCE86945D422F970317003E3BF7&quot;,&quot;time&quot;:&quot;05:00&quot;,&quot;timeLen&quot;:300000,&quot;Filename&quot;:&quot;玖月奇迹 - 两根筷子&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;905DAFCE86945D422F970317003E3BF7&quot;,&quot;time&quot;:&quot;05:00&quot;,&quot;timeLen&quot;:300000,&quot;Filename&quot;:&quot;玖月奇迹 - 两根筷子&quot;}">
 									<a href=""> <span class="songName">玖月奇迹 - 两根筷子</span> <span
 										class="songTips"></span> <span class="songTime">05:00</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;BF8B78FDE09D3177C9795E676BA50A89&quot;,&quot;time&quot;:&quot;03:17&quot;,&quot;timeLen&quot;:197000,&quot;Filename&quot;:&quot;童可可 - 少女心&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;BF8B78FDE09D3177C9795E676BA50A89&quot;,&quot;time&quot;:&quot;03:17&quot;,&quot;timeLen&quot;:197000,&quot;Filename&quot;:&quot;童可可 - 少女心&quot;}">
 									<a href=""> <span class="songName">童可可 - 少女心</span> <span
 										class="songTips"></span> <span class="songTime">03:17</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;753F88E81ADBAA89E2955BB8882BF3F6&quot;,&quot;time&quot;:&quot;03:52&quot;,&quot;timeLen&quot;:232000,&quot;Filename&quot;:&quot;谈莉娜 - 吸引&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;753F88E81ADBAA89E2955BB8882BF3F6&quot;,&quot;time&quot;:&quot;03:52&quot;,&quot;timeLen&quot;:232000,&quot;Filename&quot;:&quot;谈莉娜 - 吸引&quot;}">
 									<a href=""> <span class="songName">谈莉娜 - 吸引</span> <span
 										class="songTips"></span> <span class="songTime">03:52</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;3C2DF55C14A09E088C28143A48479972&quot;,&quot;time&quot;:&quot;04:04&quot;,&quot;timeLen&quot;:244000,&quot;Filename&quot;:&quot;丽江小倩 - 我们的歌&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;3C2DF55C14A09E088C28143A48479972&quot;,&quot;time&quot;:&quot;04:04&quot;,&quot;timeLen&quot;:244000,&quot;Filename&quot;:&quot;丽江小倩 - 我们的歌&quot;}">
 									<a href=""> <span class="songName">丽江小倩 - 我们的歌</span> <span
 										class="songTips"></span> <span class="songTime">04:04</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;936D74C8E9E1DCB7C8C22C6DECBAADA9&quot;,&quot;time&quot;:&quot;04:40&quot;,&quot;timeLen&quot;:280000,&quot;Filename&quot;:&quot;简弘亦 - 你就不要想起我&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;936D74C8E9E1DCB7C8C22C6DECBAADA9&quot;,&quot;time&quot;:&quot;04:40&quot;,&quot;timeLen&quot;:280000,&quot;Filename&quot;:&quot;简弘亦 - 你就不要想起我&quot;}">
 									<a href=""> <span class="songName">简弘亦 - 你就不要想起我</span> <span
 										class="songTips"></span> <span class="songTime">04:40</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;98A83E36744F7EA05058E11C2EBACC6C&quot;,&quot;time&quot;:&quot;03:44&quot;,&quot;timeLen&quot;:224000,&quot;Filename&quot;:&quot;孟佳 - Who s That Girl&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;98A83E36744F7EA05058E11C2EBACC6C&quot;,&quot;time&quot;:&quot;03:44&quot;,&quot;timeLen&quot;:224000,&quot;Filename&quot;:&quot;孟佳 - Who s That Girl&quot;}">
 									<a href=""> <span class="songName">孟佳 - Who s That
 											Girl</span> <span class="songTips"></span> <span class="songTime">03:44</span>
 										<span class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;110D83A8A49CF276CC550BFE891E6251&quot;,&quot;time&quot;:&quot;04:08&quot;,&quot;timeLen&quot;:248000,&quot;Filename&quot;:&quot;徐佳莹 - 是日救星&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;110D83A8A49CF276CC550BFE891E6251&quot;,&quot;time&quot;:&quot;04:08&quot;,&quot;timeLen&quot;:248000,&quot;Filename&quot;:&quot;徐佳莹 - 是日救星&quot;}">
 									<a href=""> <span class="songName">徐佳莹 - 是日救星</span> <span
 										class="songTime">04:08</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;09BAEF78C2107DC6C5F39D03902C7272&quot;,&quot;time&quot;:&quot;04:38&quot;,&quot;timeLen&quot;:278000,&quot;Filename&quot;:&quot;肖央 - 不想上班【情圣主题曲】&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;09BAEF78C2107DC6C5F39D03902C7272&quot;,&quot;time&quot;:&quot;04:38&quot;,&quot;timeLen&quot;:278000,&quot;Filename&quot;:&quot;肖央 - 不想上班【情圣主题曲】&quot;}">
 									<a href=""> <span class="songName">肖央 - 不想上班【情圣主题曲】</span>
 
 										<span class="songTime">04:38</span> <span
@@ -554,14 +588,16 @@
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;E1AA572D2BD8A0460787912224BF2259&quot;,&quot;time&quot;:&quot;04:43&quot;,&quot;timeLen&quot;:283000,&quot;Filename&quot;:&quot;林俊杰 - 精舞门(Live)&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;E1AA572D2BD8A0460787912224BF2259&quot;,&quot;time&quot;:&quot;04:43&quot;,&quot;timeLen&quot;:283000,&quot;Filename&quot;:&quot;林俊杰 - 精舞门(Live)&quot;}">
 									<a href=""> <span class="songName">林俊杰 - 精舞门(Live)</span> <span
 										class="songTips"></span> <span class="songTime">04:43</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;5CC5CD23C2593A2BEB94CA9271C91BB1&quot;,&quot;time&quot;:&quot;03:53&quot;,&quot;timeLen&quot;:233000,&quot;Filename&quot;:&quot;朱婧汐 - 寂寞烟火(太平洋对岸版)&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;5CC5CD23C2593A2BEB94CA9271C91BB1&quot;,&quot;time&quot;:&quot;03:53&quot;,&quot;timeLen&quot;:233000,&quot;Filename&quot;:&quot;朱婧汐 - 寂寞烟火(太平洋对岸版)&quot;}">
 									<a href=""> <span class="songName">朱婧汐 -
 											寂寞烟火(太平洋对岸版)</span> <span class="songTips"></span> <span
 										class="songTime">03:53</span> <span
@@ -569,21 +605,24 @@
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;3F12F295ED775EB938B8D7715557F364&quot;,&quot;time&quot;:&quot;04:27&quot;,&quot;timeLen&quot;:267000,&quot;Filename&quot;:&quot;潘玮柏、关晓彤 - 漫动作&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;3F12F295ED775EB938B8D7715557F364&quot;,&quot;time&quot;:&quot;04:27&quot;,&quot;timeLen&quot;:267000,&quot;Filename&quot;:&quot;潘玮柏、关晓彤 - 漫动作&quot;}">
 									<a href=""> <span class="songName">潘玮柏、关晓彤 - 漫动作</span> <span
 										class="songTime">04:27</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;A9BF2EB89C7CDE6FC49B486AAFB3B330&quot;,&quot;time&quot;:&quot;04:19&quot;,&quot;timeLen&quot;:259000,&quot;Filename&quot;:&quot;邰正宵 - 爱在当下&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;A9BF2EB89C7CDE6FC49B486AAFB3B330&quot;,&quot;time&quot;:&quot;04:19&quot;,&quot;timeLen&quot;:259000,&quot;Filename&quot;:&quot;邰正宵 - 爱在当下&quot;}">
 									<a href=""> <span class="songName">邰正宵 - 爱在当下</span> <span
 										class="songTips"></span> <span class="songTime">04:19</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;90574CD3866B58F2B4219EF1089BC14E&quot;,&quot;time&quot;:&quot;03:48&quot;,&quot;timeLen&quot;:228000,&quot;Filename&quot;:&quot;陈乔恩 - Yes I Do【放弃我,抓紧我插曲】&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;90574CD3866B58F2B4219EF1089BC14E&quot;,&quot;time&quot;:&quot;03:48&quot;,&quot;timeLen&quot;:228000,&quot;Filename&quot;:&quot;陈乔恩 - Yes I Do【放弃我,抓紧我插曲】&quot;}">
 									<a href=""> <span class="songName">陈乔恩 - Yes I
 											Do【放弃我,抓紧我插曲】</span> <span class="songTips"></span> <span
 										class="songTime">03:48</span> <span
@@ -591,14 +630,16 @@
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;ACD7084A6F7BA59413697DED942284BD&quot;,&quot;time&quot;:&quot;03:13&quot;,&quot;timeLen&quot;:193000,&quot;Filename&quot;:&quot;何静 - 火锅舞&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;ACD7084A6F7BA59413697DED942284BD&quot;,&quot;time&quot;:&quot;03:13&quot;,&quot;timeLen&quot;:193000,&quot;Filename&quot;:&quot;何静 - 火锅舞&quot;}">
 									<a href=""> <span class="songName">何静 - 火锅舞</span> <span
 										class="songTime">03:13</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;EAE248D0F8A8A60B88FDA9B886A98C1E&quot;,&quot;time&quot;:&quot;03:53&quot;,&quot;timeLen&quot;:233000,&quot;Filename&quot;:&quot;王力宏 - 列王的纷争【列王的纷争主题曲】&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;EAE248D0F8A8A60B88FDA9B886A98C1E&quot;,&quot;time&quot;:&quot;03:53&quot;,&quot;timeLen&quot;:233000,&quot;Filename&quot;:&quot;王力宏 - 列王的纷争【列王的纷争主题曲】&quot;}">
 									<a href=""> <span class="songName">王力宏 -
 											列王的纷争【列王的纷争主题曲】</span> <span class="songTips"></span> <span
 										class="songTime">03:53</span> <span
@@ -606,14 +647,16 @@
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;BA9603986162592B57C7744372D1B080&quot;,&quot;time&quot;:&quot;03:29&quot;,&quot;timeLen&quot;:209000,&quot;Filename&quot;:&quot;何晟铭 - 北极光&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;BA9603986162592B57C7744372D1B080&quot;,&quot;time&quot;:&quot;03:29&quot;,&quot;timeLen&quot;:209000,&quot;Filename&quot;:&quot;何晟铭 - 北极光&quot;}">
 									<a href=""> <span class="songName">何晟铭 - 北极光</span> <span
 										class="songTime">03:29</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;F046654F74243F0599329BB69AF73927&quot;,&quot;time&quot;:&quot;04:12&quot;,&quot;timeLen&quot;:252000,&quot;Filename&quot;:&quot;梁朝伟、李宇春 - 十年【摆渡人岁月版主题曲】&quot;}">
+								<li
+									data="{&quot;first&quot;:1,&quot;Hash&quot;:&quot;F046654F74243F0599329BB69AF73927&quot;,&quot;time&quot;:&quot;04:12&quot;,&quot;timeLen&quot;:252000,&quot;Filename&quot;:&quot;梁朝伟、李宇春 - 十年【摆渡人岁月版主题曲】&quot;}">
 									<a href=""> <span class="songName">梁朝伟、李宇春 -
 											十年【摆渡人岁月版主题曲】</span> <span class="songTips"></span> <span
 										class="songTime">04:12</span> <span
@@ -626,56 +669,64 @@
 							<ul style="display: none; z-index: 1;">
 
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;8F1B5211E6D2A05107C6090696B939B8&quot;,&quot;time&quot;:&quot;04:26&quot;,&quot;timeLen&quot;:266000,&quot;Filename&quot;:&quot;Bon Jovi - New Year s Day&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;8F1B5211E6D2A05107C6090696B939B8&quot;,&quot;time&quot;:&quot;04:26&quot;,&quot;timeLen&quot;:266000,&quot;Filename&quot;:&quot;Bon Jovi - New Year s Day&quot;}">
 									<a href=""> <span class="songName">Bon Jovi - New
 											Year s Day</span> <span class="songTime">04:26</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;6D2F19B68B32452B3BC30EB425B5B69F&quot;,&quot;time&quot;:&quot;04:15&quot;,&quot;timeLen&quot;:255000,&quot;Filename&quot;:&quot;Greyson Chance - London&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;6D2F19B68B32452B3BC30EB425B5B69F&quot;,&quot;time&quot;:&quot;04:15&quot;,&quot;timeLen&quot;:255000,&quot;Filename&quot;:&quot;Greyson Chance - London&quot;}">
 									<a href=""> <span class="songName">Greyson Chance -
 											London</span> <span class="songTime">04:15</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;AAD04C2366B4FEB19F2BE8760EB9C1C8&quot;,&quot;time&quot;:&quot;03:26&quot;,&quot;timeLen&quot;:206000,&quot;Filename&quot;:&quot;Mario - Let Me Help You&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;AAD04C2366B4FEB19F2BE8760EB9C1C8&quot;,&quot;time&quot;:&quot;03:26&quot;,&quot;timeLen&quot;:206000,&quot;Filename&quot;:&quot;Mario - Let Me Help You&quot;}">
 									<a href=""> <span class="songName">Mario - Let Me
 											Help You</span> <span class="songTime">03:26</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;3C5FFAC386778A0633ADC50D7F088968&quot;,&quot;time&quot;:&quot;03:17&quot;,&quot;timeLen&quot;:197000,&quot;Filename&quot;:&quot;Galantis - Pillow Fight&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;3C5FFAC386778A0633ADC50D7F088968&quot;,&quot;time&quot;:&quot;03:17&quot;,&quot;timeLen&quot;:197000,&quot;Filename&quot;:&quot;Galantis - Pillow Fight&quot;}">
 									<a href=""> <span class="songName">Galantis - Pillow
 											Fight</span> <span class="songTime">03:17</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;28EF7D9EBC0CAC98DAB7B6D7310B01C7&quot;,&quot;time&quot;:&quot;03:36&quot;,&quot;timeLen&quot;:216000,&quot;Filename&quot;:&quot;Pentatonix - O Come, All Ye Faithful&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;28EF7D9EBC0CAC98DAB7B6D7310B01C7&quot;,&quot;time&quot;:&quot;03:36&quot;,&quot;timeLen&quot;:216000,&quot;Filename&quot;:&quot;Pentatonix - O Come, All Ye Faithful&quot;}">
 									<a href=""> <span class="songName">Pentatonix - O
 											Come, All Ye Faithful</span> <span class="songTime">03:36</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;9873D9F9E1E0652A912BD9272D4DFB48&quot;,&quot;time&quot;:&quot;02:43&quot;,&quot;timeLen&quot;:163000,&quot;Filename&quot;:&quot;blink-182 - She s Out of Her Mind&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;9873D9F9E1E0652A912BD9272D4DFB48&quot;,&quot;time&quot;:&quot;02:43&quot;,&quot;timeLen&quot;:163000,&quot;Filename&quot;:&quot;blink-182 - She s Out of Her Mind&quot;}">
 									<a href=""> <span class="songName">blink-182 - She s
 											Out of Her Mind</span> <span class="songTime">02:43</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;884CEDDB91435E5B2519966F59B71084&quot;,&quot;time&quot;:&quot;03:33&quot;,&quot;timeLen&quot;:213000,&quot;Filename&quot;:&quot;Little Mix - Touch&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;884CEDDB91435E5B2519966F59B71084&quot;,&quot;time&quot;:&quot;03:33&quot;,&quot;timeLen&quot;:213000,&quot;Filename&quot;:&quot;Little Mix - Touch&quot;}">
 									<a href=""> <span class="songName">Little Mix -
 											Touch</span> <span class="songTime">03:33</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;386388819A1E3FC526411E854C61323B&quot;,&quot;time&quot;:&quot;04:49&quot;,&quot;timeLen&quot;:289000,&quot;Filename&quot;:&quot;Years &amp; Years - Both Sides Now (Torch Songs)&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;386388819A1E3FC526411E854C61323B&quot;,&quot;time&quot;:&quot;04:49&quot;,&quot;timeLen&quot;:289000,&quot;Filename&quot;:&quot;Years &amp; Years - Both Sides Now (Torch Songs)&quot;}">
 									<a href=""> <span class="songName">Years &amp; Years
 											- Both Sides Now (Torch Songs)</span> <span class="songTime">04:49</span>
 										<span class="icon playBtn icon-play"></span>
@@ -1017,21 +1068,24 @@
 
 							</ul>
 							<ul style="display: none; z-index: 1;">
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;9CF5D5168D93220278DF3F7BB07BCE87&quot;,&quot;time&quot;:&quot;04:35&quot;,&quot;timeLen&quot;:275000,&quot;Filename&quot;:&quot;Aqours - Daydream Warrior&quot;}">
-									<a href=""> <span class="songName">Aqours - Daydream Warrior</span>
-									 <span class="songTime">04:35</span>
-									  <span class="icon playBtn icon-play"></span>
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;9CF5D5168D93220278DF3F7BB07BCE87&quot;,&quot;time&quot;:&quot;04:35&quot;,&quot;timeLen&quot;:275000,&quot;Filename&quot;:&quot;Aqours - Daydream Warrior&quot;}">
+									<a href=""> <span class="songName">Aqours - Daydream
+											Warrior</span> <span class="songTime">04:35</span> <span
+										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;DF86A8960C16C645F587972F23A28FD9&quot;,&quot;time&quot;:&quot;03:52&quot;,&quot;timeLen&quot;:232000,&quot;Filename&quot;:&quot;NMB48 - 僕以外の誰か&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;DF86A8960C16C645F587972F23A28FD9&quot;,&quot;time&quot;:&quot;03:52&quot;,&quot;timeLen&quot;:232000,&quot;Filename&quot;:&quot;NMB48 - 僕以外の誰か&quot;}">
 									<a href=""> <span class="songName">NMB48 - 僕以外の誰か</span> <span
 										class="songTime">03:52</span> <span
 										class="icon playBtn icon-play"></span>
 								</a>
 								</li>
 
-								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;AD5A455004BDC79765666E7D544198BF&quot;,&quot;time&quot;:&quot;04:05&quot;,&quot;timeLen&quot;:245000,&quot;Filename&quot;:&quot;中村悠一、内山昂輝、小野賢章 - 無重力フィーバー【WWW.迷糊餐厅 ED】&quot;}">
+								<li
+									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;AD5A455004BDC79765666E7D544198BF&quot;,&quot;time&quot;:&quot;04:05&quot;,&quot;timeLen&quot;:245000,&quot;Filename&quot;:&quot;中村悠一、内山昂輝、小野賢章 - 無重力フィーバー【WWW.迷糊餐厅 ED】&quot;}">
 									<a href=""> <span class="songName">中村悠一、内山昂輝、小野賢章 -
 											無重力フィーバー【WWW.迷糊餐厅 ED】</span> <span class="songTime">04:05</span> <span
 										class="icon playBtn icon-play"></span>
@@ -1237,7 +1291,8 @@
 						<div class="cpt cptBigL">
 
 							<a target="_blank"
-								href="http://www.kugou.com/mvweb/html/mv_593042.html"> <img src="index_files/20161223101646866205.jpg"
+								href="http://www.kugou.com/mvweb/html/mv_593042.html"> <img
+								src="index_files/20161223101646866205.jpg"
 								src="http://imge.kugou.com/mvhdpic/400/20161223/20161223101646866205.jpg"
 								_def="http://static.kgimg.com/public/root/images/mv_defalut.jpg"
 								loading="1" class=" " height="175" width="320">
@@ -1256,7 +1311,9 @@
 
 						<div class="cpt cptMidL">
 
-							<a target="_blank" href="http://www.kugou.com/mvweb/html/mv_593024.html"> <img src="index_files/20161221235852242998.jpg"
+							<a target="_blank"
+								href="http://www.kugou.com/mvweb/html/mv_593024.html"> <img
+								src="index_files/20161221235852242998.jpg"
 								src="http://imge.kugou.com/commendpic/20161221/20161221235852242998.jpg"
 								_def="http://static.kgimg.com/public/root/images/mv_defalut.jpg"
 								loading="1" class=" " height="84" width="154">
@@ -1276,7 +1333,8 @@
 						<div class="cpt cptMidL">
 
 							<a target="_blank"
-								href="http://www.kugou.com/mvweb/html/mv_593026.html"> <img src="index_files/20161221235626567243.jpg"
+								href="http://www.kugou.com/mvweb/html/mv_593026.html"> <img
+								src="index_files/20161221235626567243.jpg"
 								src="http://imge.kugou.com/commendpic/20161221/20161221235626567243.jpg"
 								_def="http://static.kgimg.com/public/root/images/mv_defalut.jpg"
 								loading="1" class=" " height="84" width="154">
@@ -1310,7 +1368,8 @@
 						<h3>
 							<b>热门</b>电台
 						</h3>
-						<a target="_blank" href="http://www.kugou.com/fmweb/html/index.html" class="more fr">更多</a>
+						<a target="_blank"
+							href="http://www.kugou.com/fmweb/html/index.html" class="more fr">更多</a>
 					</div>
 					<div class="itemContent">
 						<ul>
@@ -1334,7 +1393,8 @@
 											style="display: none;"></div>
 									</div>
 									<div class="radioLogo">
-										<img src="index_files/radio_2.jpg"  src="http://static.kgimg.com/public/root//images/radio_2.jpg"
+										<img src="index_files/radio_2.jpg"
+											src="http://static.kgimg.com/public/root//images/radio_2.jpg"
 											class="  " loading="1" height="100" width="100">
 									</div>
 									<div class="radioKind">中文DJ</div>
@@ -1347,7 +1407,8 @@
 											style="display: none;"></div>
 									</div>
 									<div class="radioLogo">
-										<img src="index_files/radio_3.jpg" class="  " loading="1" src="http://static.kgimg.com/public/root//images/radio_3.jpg" 
+										<img src="index_files/radio_3.jpg" class="  " loading="1"
+											src="http://static.kgimg.com/public/root//images/radio_3.jpg"
 											height="100" width="100">
 									</div>
 									<div class="radioKind">酷狗热歌</div>
@@ -1360,8 +1421,9 @@
 											style="display: none;"></div>
 									</div>
 									<div class="radioLogo">
-										<img src="index_files/radio_4.jpg" src="http://static.kgimg.com/public/root//images/radio_4.jpg"
-											 class="  " loading="1" height="100" width="100">
+										<img src="index_files/radio_4.jpg"
+											src="http://static.kgimg.com/public/root//images/radio_4.jpg"
+											class="  " loading="1" height="100" width="100">
 									</div>
 									<div class="radioKind">网络红歌</div>
 									<div class="radioName">斯琴高丽 - 情如花</div>
@@ -1373,8 +1435,9 @@
 											style="display: none;"></div>
 									</div>
 									<div class="radioLogo">
-										<img src="index_files/radio_5.jpg" src="http://static.kgimg.com/public/root//images/radio_5.jpg"
-										 class="  " loading="1" height="100" width="100">
+										<img src="index_files/radio_5.jpg"
+											src="http://static.kgimg.com/public/root//images/radio_5.jpg"
+											class="  " loading="1" height="100" width="100">
 									</div>
 									<div class="radioKind">经典</div>
 									<div class="radioName">G.E.M.邓紫棋 - 泡沫 - DJ版</div>
@@ -1386,7 +1449,8 @@
 											style="display: none;"></div>
 									</div>
 									<div class="radioLogo">
-										<img src="index_files/radio_6.jpg"  src="http://static.kgimg.com/public/root//images/radio_6.jpg"
+										<img src="index_files/radio_6.jpg"
+											src="http://static.kgimg.com/public/root//images/radio_6.jpg"
 											class="  " loading="1" height="100" width="100">
 									</div>
 									<div class="radioKind">老情歌</div>
@@ -1400,7 +1464,7 @@
 									<div class="radioLogo">
 										<img src="index_files/radio_7.jpg"
 											src="http://static.kgimg.com/public/root//images/radio_7.jpg"
-											 class="  " loading="1" height="100" width="100">
+											class="  " loading="1" height="100" width="100">
 									</div>
 									<div class="radioKind">新歌</div>
 									<div class="radioName">Owl City - Wolf Bite</div>
@@ -1414,7 +1478,7 @@
 									<div class="radioLogo">
 										<img src="index_files/radio_8.jpg"
 											src="http://static.kgimg.com/public/root//images/radio_8.jpg"
-											 class="  " loading="1" height="100" width="100">
+											class="  " loading="1" height="100" width="100">
 									</div>
 									<div class="radioKind">动漫</div>
 									<div class="radioName">刘若英、黄立行 - 分开旅行</div>
@@ -1426,7 +1490,7 @@
 											style="display: none;"></div>
 									</div>
 									<div class="radioLogo">
-										<img src="index_files/radio_9.jpg" 
+										<img src="index_files/radio_9.jpg"
 											src="http://static.kgimg.com/public/root//images/radio_9.jpg"
 											class="  " loading="1" height="100" width="100">
 									</div>
@@ -1440,7 +1504,7 @@
 											style="display: none;"></div>
 									</div>
 									<div class="radioLogo">
-										<img src="index_files/radio_10.jpg" 
+										<img src="index_files/radio_10.jpg"
 											src="http://static.kgimg.com/public/root//images/radio_10.jpg"
 											class="  " loading="1" height="100" width="100">
 									</div>
@@ -1478,9 +1542,10 @@
 
 												<a target="_blank" class="singerLink"
 													href="http://www.kugou.com/yy/singer/home/3060.html"> <img
-													class="singerImg " src="index_files/20161121115938576.jpg" 
+													class="singerImg " src="index_files/20161121115938576.jpg"
 													src="http://singerimg.kugou.com/uploadpic/pass/softhead/240/20161121/20161121115938576.jpg"
-													_def="http://static.kgimg.com/public/root/images/singdefalut.jpg" loading="1">
+													_def="http://static.kgimg.com/public/root/images/singdefalut.jpg"
+													loading="1">
 													<div class="Cover">
 														<div class="playBtn icon">播放</div>
 													</div>
@@ -1496,7 +1561,8 @@
 
 												<a target="_blank" class="singerLink"
 													href="http://www.kugou.com/yy/singer/home/86281.html">
-													<img class="singerImg " src="index_files/20161012161017418.jpg" 
+													<img class="singerImg "
+													src="index_files/20161012161017418.jpg"
 													src="http://singerimg.kugou.com/uploadpic/pass/softhead/240/20161012/20161012161017418.jpg"
 													_def="http://static.kgimg.com/public/root/images/singdefalut.jpg"
 													loading="1">
@@ -1515,7 +1581,7 @@
 
 												<a target="_blank" class="singerLink"
 													href="http://www.kugou.com/yy/singer/home/3520.html"> <img
-													class="singerImg " src="index_files/20160929135052342.jpg" 
+													class="singerImg " src="index_files/20160929135052342.jpg"
 													src="http://singerimg.kugou.com/uploadpic/pass/softhead/240/20160929/20160929135052342.jpg"
 													_def="http://static.kgimg.com/public/root/images/singdefalut.jpg"
 													loading="1">
@@ -1534,7 +1600,8 @@
 
 												<a target="_blank" class="singerLink"
 													href="http://www.kugou.com/yy/singer/home/420.html"> <img
-													class="singerImg " src="index_files/20160923162150990653.jpg" 
+													class="singerImg "
+													src="index_files/20160923162150990653.jpg"
 													src="http://singerimg.kugou.com/uploadpic/pass/softhead/240/20160923/20160923162150990653.jpg"
 													_def="http://static.kgimg.com/public/root/images/singdefalut.jpg"
 													loading="1">
@@ -1553,7 +1620,7 @@
 
 												<a target="_blank" class="singerLink"
 													href="http://www.kugou.com/yy/singer/home/4107.html"> <img
-													class="singerImg " src="index_files/20161227160952462.jpg" 
+													class="singerImg " src="index_files/20161227160952462.jpg"
 													src="http://singerimg.kugou.com/uploadpic/pass/softhead/240/20161227/20161227160952462.jpg"
 													_def="http://static.kgimg.com/public/root/images/singdefalut.jpg"
 													loading="1">
@@ -1798,7 +1865,7 @@
                     _this.fSImgsCopy.push(markImgs[i]);
                 }
 
-                for(var i = 0, len = _this.fSImgs.length; i < len; i++){
+/*                 for(var i = 0, len = _this.fSImgs.length; i < len; i++){
                     fs = _this.fSImgsCopy[i];
                     if(fs){
                         if(fs.complete){
@@ -1812,7 +1879,7 @@
                             }
                         }
                     }
-                } 
+                }  */
                 
         },
         remove: function (elm){

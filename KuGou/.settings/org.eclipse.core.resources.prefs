@@ -5,4 +5,3 @@ eclipse.preferences.version=1
 encoding//sql/db.sql=UTF-8
 encoding//src/main/java/com/yc/kg/web/filter/CharacterEncodingFilter.java=UTF-8
 encoding//src/test/java/com/yc/conn/test/ConnTest.java=UTF-8
-encoding/<project>=UTF-8

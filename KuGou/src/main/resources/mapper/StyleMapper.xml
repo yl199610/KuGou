@@ -8,6 +8,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<collection property="rows" column="{pageSize=pageSize ,currPage=currPage}" select="getSongStyle"/>
 	</resultMap>
 	
+	<select id="getAllStyle" resultType="KuSongStyle">
+		select * from kuSongStyle
+	</select>
+	
 	<select id="getStyleByPagination" parameterType="paginationBean" resultMap="paginationBeanMap">
 		select count(1) total,ceil(count(1)/${pageSize}) totalPage,${pageSize} pageSize,${currPage} currPage from kuSongStyle
 	</select>
@@ -35,5 +39,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update kuSongStyle set kuSongStyleName=#{kuSongStyleName},kuSongStylenext=#{kuSongStylenext},kuSongStylesecond=#{kuSongStylesecond}
 		where kuSongStyleId=#{kuSongStyleId}
 	</update>
-	
 </mapper>

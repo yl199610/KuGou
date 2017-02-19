@@ -1,9 +1,10 @@
 package com.yc.kg.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.yc.kg.entity.KuSong;
 import com.yc.kg.entity.KuSongStyle;
 import com.yc.kg.entity.PaginationBean;
 import com.yc.kg.mapper.StyleMapper;
@@ -46,6 +47,12 @@ public class StyleServiceImpl implements StyleService{
 	public boolean modifySongStyleMsg(KuSongStyle style) {
 		return styleMapper.modifySongStyleMsg(style);
 	}
+
+	@Override
+	public List<KuSongStyle> getAllStyle() {
+		return styleMapper.getAllStyle();
+	}
+
 
 	
 }

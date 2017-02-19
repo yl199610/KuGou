@@ -1,5 +1,7 @@
 package com.yc.kg.mapper;
 
+import java.util.List;
+
 import com.yc.kg.entity.KuSongStyle;
 import com.yc.kg.entity.PaginationBean;
 
@@ -14,5 +16,7 @@ public interface StyleMapper {
 	KuSongStyle SongStyleMsg(int sid);
 
 	boolean modifySongStyleMsg(KuSongStyle style);
+
+	List<KuSongStyle> getAllStyle();
 
 }
