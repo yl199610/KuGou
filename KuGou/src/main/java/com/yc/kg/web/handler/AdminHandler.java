@@ -67,7 +67,7 @@ public class AdminHandler {
 	 */
 	@RequestMapping("/login")
 	public String login(KuAdmin admin,ModelMap map) {//ModelMap   逻辑操作和实体类    request.setAttribute
-		System.out.println("==========="+admin);
+		//System.out.println("==========="+admin);
 		admin=adminService.login(admin);
 		if(admin!=null){
 			map.put("loginUser",admin);//放到sessoin

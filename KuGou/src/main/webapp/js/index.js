@@ -36,19 +36,33 @@ function logout(){
 socket.onmessage = function(message){
 	$.messager.alert('信用卡消息',message.data,'warning');
 }
-
-$(document).ready(function() {
-	loadSongStyleInfo();
-})
 function loadSongStyleInfo() {
 	$.post("style/all", function(data) {
 		var styleAllStr = "";
 		var i=0;
 		for (i=0; i < data.length; i++) {
-			styleAllStr += '<span class="MenuItem" data="'+ data[i].kuSongStyleId +'">'+ data[i].kuSongStyleName +'</span>';
+			styleAllStr += '<a href="javascript:void(0)" class="MenuItem" onclick="findstyledetail('+data[i].kuSongStyleId+')">'+ data[i].kuSongStyleName +'&nbsp;&nbsp;&nbsp;&nbsp;</a>';
 		}
 		$("#SongtabMenu")[0].innerHTML = styleAllStr ;
 	}, "json");
 }
 
+
+function findstyledetail(kuSongStyleId){
+	
+	$.post("style/findStyle?kuSongStyleId="+kuSongStyleId, function(data) {
+		 
+		alert(data+"data");
+	/*	var styleAllStr = "";
+		var i=0;
+		for (i=0; i < data.length; i++) {
+			styleAllStr += '<span class="MenuItem" onclick="findstyledetail('+data[i].kuSongStyleId+')">'+ data[i].kuSongStyleName +'</span>';
+		}
+		$("#SongtabMenu")[0].innerHTML = styleAllStr ;*/
+	}, "json");
+	
+	
+	
+	
+}
 

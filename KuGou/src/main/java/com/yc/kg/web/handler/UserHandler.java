@@ -88,6 +88,7 @@ public class UserHandler {
 
 
 	
+	
 	protected <T> T getReqParam2Obj(HttpServletRequest request, Class<T> clazz) {
 		//1.取到要转换成的对象的实例
 		T t =null;
