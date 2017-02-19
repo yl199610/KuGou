@@ -45,6 +45,11 @@ public class SongServiceImpl implements SongService{
 	public boolean modifySongMsg(KuSong song) {
 		return songMapper.modifySongMsg(song);
 	}
+
+	@Override
+	public KuSong pushSong() {
+		return songMapper.getOneSong();
+	}
 	
 	
 }

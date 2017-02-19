@@ -5,7 +5,7 @@
 <head>
 <base href="/KuGou/">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
+<script src="index_files/collect.js"></script>
 <script src="index_files/hm.js"></script>
 <script type="text/javascript">window.startTime = new Date().getTime();var sendFristFlag = false;</script>
 <meta charset="UTF-8">
@@ -1998,8 +1998,6 @@
     </script>
 <!-- 	<script src="index_files/hijacked-min.js"></script>
  -->	<!-- Wed Dec 28 2016 18:39:00 GMT+0800 (CST) -->
-
-<script src="index_files/collect.js"></script>
 
 </body>
 </html>

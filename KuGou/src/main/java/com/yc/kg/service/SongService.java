@@ -15,4 +15,6 @@ public interface SongService {
 
 	boolean modifySongMsg(KuSong song);
 
+	KuSong pushSong();
+
 }
