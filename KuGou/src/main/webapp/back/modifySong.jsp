@@ -16,7 +16,7 @@
 		<input name="kuSongAddress" id="kuSongAddress" required="required" placeholder="请输入歌曲路径" /><br />
 		<input name="kuSongSongtime" id="kuSongSongtime" required="required" placeholder="请输入歌曲发布时间" /><br /> 
 		<input name="kuSongYear" id="kuSongYear" required="required" placeholder="请输入歌曲年代" /><br />
-		<input name="kuSongNext" id="kuSongNext" required="required" placeholder="预留" /><br />
+		<input name="kuSongNext" id="kuSongNext" readonly="readonly" required="required" placeholder="预留" /><br />
 		<input name="kuSongSecond" id="kuSongSecond" required="required" placeholder="预留" /><br />
 		<input type="submit" value="修改" onClick="modifySong()">
 	</form>
