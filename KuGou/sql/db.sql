@@ -1,5 +1,5 @@
-create user kugou identified by a
-grant resource,connect to kugou
+--create user kugou identified by a
+--grant resource,connect to kugou
 --用户表(改)
 create table kgUser(
        kgUserId Integer primary key,
@@ -17,9 +17,11 @@ create table kgUser(
 );
 
 create sequence seq_kgUserId start with 500;
-drop sequence seq_kgUserId;
 select * from kgUser;
-drop table kgUser;
+
+insert into kgUser(kgUserId,kgUserName,kgUserPwd,kgUserEmail,kgUserSex,kgUserBirthday) values(seq_kgUserId.nextval,'a','a','18473437551@163.com','男','1995-06-19')
+insert into kgUser(kgUserId,kgUserName,kgUserPwd,kgUserEmail,kgUserSex,kgUserBirthday) values(seq_kgUserId.nextval,#{kgUserName},#{kgUserPwd},#{kgUserEmail},#{kgUserSex},
+		#{kgUserBirthday} )		
 insert into kgUser values(seq_kgUserId.nextval,'a','a','18473437551@163.com',
 '男','1995-06-19','喜欢歌曲','images/1.jpg',0,'不收藏',default,'预留字段二');
 
@@ -37,11 +39,12 @@ create table kuSong(                			   --根据歌名来查询
        kuSongSecond varchar2(100)			    --预留字段二
 );
 select * from kuSong;
-drop table kuSong;
+
 create sequence seq_kuSong start with 1000;
-drop sequence seq_kuSong;
+
 insert into kuSong values(seq_kuSong.nextval,'同学','4:12','music/1.mp3','music/1.lrc','1995','90',default,'二');
-delete kuSong;
+insert into kuSong values(seq_kuSong.nextval,'天下','3:12','music/3.mp3','music/1.lrc','1995','90',3,'二');
+
 --收藏表(改)
 create table kgSave(
        kgSaveId Integer primary key,
@@ -51,9 +54,9 @@ create table kgSave(
        kgSavesecond varchar2(100)			      --预留字段二
 );
 create sequence seq_kgSaveId start with 1000;
-drop sequence seq_kgSaveId;
+
 insert into kgSave values(seq_kgSaveId.nextval,500,1000,1,1);
-drop table kgSave;
+
 select * from kgSave;
 
 --管理员表(改)
@@ -67,9 +70,9 @@ create table kgAdmin(
 );
 create sequence seq_kgAdmin start with 1;
 insert into kgAdmin values(seq_kgAdmin.nextval,'admin','admin',0,default,default);
-drop table kgAdmin;
+
 select * from kgAdmin;
-drop sequence seq_kgAdmin;
+
 
 --歌手表(改)
 create table kuSinger(
@@ -82,16 +85,16 @@ create table kuSinger(
        kuSingerSingernext varchar2(100) default 1,  --预留字段
        kuSingerSingersecond varchar2(100) default 1 --预留字段二
 );
-drop table kuSinger;
+
 select * from kuSinger;
-delete from kuSinger where kuSingerId=10000
-drop sequence seq_singer;
+--delete from kuSinger where kuSingerId=10000;
+
 create sequence seq_singer start with 10000;
 insert into kuSinger values(seq_singer.nextval,'黑豹','男','images/2.jpg','H',0,default,default);
 
-update kuSinger set kuSingerName='hehehheh',kuSingerSex='男',kuSingerImg='images/2.jpg',
-		kuSingerCode='H',kuSingerSingerstate=0,kuSingerSingernext='',kuSingerSingersecond=''
-		where kuSingerId=3335;
+--update kuSinger set kuSingerName='hehehheh',kuSingerSex='男',kuSingerImg='images/2.jpg',
+		--kuSingerCode='H',kuSingerSingerstate=0,kuSingerSingernext='',kuSingerSingersecond=''
+		--where kuSingerId=3335;
 		
 
 -- 歌曲风格(改)
@@ -103,9 +106,9 @@ create table kuSongStyle(
 );
 create sequence seq_kuSongStyle start with 100;
 insert into kuSongStyle values(seq_kuSongStyle.nextval,'摇滚',default,default);
-drop table kuSongStyle;
+
 select * from kuSongStyle;
-drop sequence seq_kuSongStyle;
+
 
 -- 详细表(改)
 create table kuSongDetail(
@@ -121,11 +124,31 @@ create table kuSongDetail(
        kunext varchar2(100) default 1,           			--预留字段
        kusecond varchar2(100) default 1          			--预留字段二
 );
+
 create sequence seq_kuSongDetail start with 10000;
-insert into kuSongDetail values(seq_kuSongDetail.nextval,z,1000,4444,0,1,'music/1.mp3',1,1999-06-19,default,default);
-drop sequence seq_kuSongDetail;
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10000,1000,100,0,1,'music/1.mp3',1,1999-06-19,default,default);
+select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId and  where kudetailstyleId=4444
+select * from kuSongDetail kd, kuSinger k,kuSong ks where kd.ksongsingId=k.kuSingerId and kd.kudetailsongId=ks.kuSongId
+and  kudetailstyleId=4444
 select * from kuSongDetail;
+
+
+--一次性删除(不要轻易改动)
+drop sequence seq_kgUserId;
 drop table kuSongDetail;
+drop sequence seq_kuSongStyle;
+drop table kuSongStyle;
+drop sequence seq_singer;
+drop table kuSinger;
+drop table kgSave;
+drop table kuSong;
+drop sequence seq_kgSaveId;
+drop table kgUser;
+drop sequence seq_kuSong;
+drop table kgAdmin;
+drop sequence seq_kgAdmin;
+drop sequence seq_kuSongDetail;
+
 
 --歌手的国籍   首页 和歌手
 

@@ -15,4 +15,6 @@ public interface SongMapper {
 
 	boolean modifySongMsg(KuSong song);
 
+	KuSong getOneSong();
+
 }
