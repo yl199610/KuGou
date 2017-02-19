@@ -4,6 +4,8 @@
 <html lang="en">
 <head>
 <base href="/KuGou/">
+<link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
+<link type="text/css" rel="stylesheet" href="easyui/themes/default/easyui.css">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <script src="index_files/collect.js"></script>
 <script src="index_files/hm.js"></script>
@@ -432,9 +434,10 @@
 						<h3>
 							<b>新歌</b>首发
 						</h3>
-					<div class="tabT" id="SongtabMenu">
-							<span class="MenuItem" data="0">华语</span> <span class="MenuItem"
-								data="1">欧美</span> <span class="MenuItem active" data="2">韩国</span>
+						<div class="tabT" id="SongtabMenu">
+							<span class="MenuItem" data="0">华语</span>
+							<span class="MenuItem" data="1">欧美</span>
+							<span class="MenuItem active" data="2">韩国</span>
 							<span class="MenuItem" data="3">日本</span>
 						</div>
 						<button class="playAll">
@@ -1998,6 +2001,9 @@
     </script>
 <!-- 	<script src="index_files/hijacked-min.js"></script>
  -->	<!-- Wed Dec 28 2016 18:39:00 GMT+0800 (CST) -->
-
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

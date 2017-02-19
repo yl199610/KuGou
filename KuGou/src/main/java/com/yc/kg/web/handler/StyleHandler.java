@@ -30,14 +30,6 @@ public class StyleHandler {
 		return styleService.listPartStyle(page,rows);
 	}
 	
-	@RequestMapping("/all")
-	@ResponseBody
-	public List<KuSongStyle> list(){
-		LogManager.getLogger().debug("请求styleHandler处理all....");
-		return styleService.getAllStyle();
-	}
-
-	
 	@RequestMapping("/add")
 	@ResponseBody
 	public boolean add(KuSongStyle style){
