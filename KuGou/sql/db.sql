@@ -129,7 +129,7 @@ select * from kuSongStyle;
 -- 详细表(改)
 create table kuSongDetail(
        kuSongDetailId Integer primary key,                      
-       ksongsingId references kuSinger(kuSingerI d),          --歌手id
+       ksongsingId references kuSinger(kuSingerId),          --歌手id
        kudetailsongId references kuSong(kuSongId),            --歌曲id
        kudetailstyleId references kuSongStyle(kuSongStyleId), --风格id
        songplay Integer default 0,                      			--歌曲播放次数/应该对应相应歌手时候的次数

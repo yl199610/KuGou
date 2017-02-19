@@ -39,4 +39,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update kuSongStyle set kuSongStyleName=#{kuSongStyleName},kuSongStylenext=#{kuSongStylenext},kuSongStylesecond=#{kuSongStylesecond}
 		where kuSongStyleId=#{kuSongStyleId}
 	</update>
+	<select id="findStyle" parameterType="int" resultType="KuSongDetail">
+			select * from 
+	</select>
+	
+	
+	
 </mapper>

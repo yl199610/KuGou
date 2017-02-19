@@ -2,6 +2,7 @@ package com.yc.kg.service;
 
 import java.util.List;
 
+import com.yc.kg.entity.KuSongDetail;
 import com.yc.kg.entity.KuSongStyle;
 import com.yc.kg.entity.PaginationBean;
 
@@ -18,5 +19,7 @@ public interface StyleService {
 	boolean modifySongStyleMsg(KuSongStyle style);
 
 	List<KuSongStyle> getAllStyle();
+
+	List<KuSongDetail> findStyle(int styleid);
 
 }

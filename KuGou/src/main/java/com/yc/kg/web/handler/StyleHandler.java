@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.yc.kg.entity.KuSongDetail;
 import com.yc.kg.entity.KuSongStyle;
 import com.yc.kg.entity.PaginationBean;
 import com.yc.kg.service.StyleService;
@@ -69,6 +70,16 @@ public class StyleHandler {
 		return styleService.getAllStyle();
 	}
 
+	
+	@RequestMapping("/findStyle")
+	@ResponseBody
+	public List<KuSongDetail> findStyle(@RequestParam(name="kuSongStyleId")int styleid){
+		LogManager.getLogger().debug("请求styleHandler处理styleid...."+styleid);
+		
+		List<KuSongDetail>details=styleService.findStyle(styleid);
+		System.out.println(details);
+		return details;
+	}
 	
 	
 }
