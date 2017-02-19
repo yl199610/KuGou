@@ -127,7 +127,9 @@ create table kuSongDetail(
 
 create sequence seq_kuSongDetail start with 10000;
 insert into kuSongDetail values(seq_kuSongDetail.nextval,10000,1000,100,0,1,'music/1.mp3',1,1999-06-19,default,default);
-
+select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId and  where kudetailstyleId=4444
+select * from kuSongDetail kd, kuSinger k,kuSong ks where kd.ksongsingId=k.kuSingerId and kd.kudetailsongId=ks.kuSongId
+and  kudetailstyleId=4444
 select * from kuSongDetail;
 
 

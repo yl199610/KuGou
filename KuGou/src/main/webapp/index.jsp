@@ -453,8 +453,9 @@
 							<b>新歌</b>首发
 						</h3>
 						<div class="tabT" id="SongtabMenu">
-							<span class="MenuItem" data="0">华语</span> <span class="MenuItem"
-								data="1">欧美</span> <span class="MenuItem active" data="2">韩国</span>
+							<span class="MenuItem" data="0">华语</span>
+							<span class="MenuItem" data="1">欧美</span>
+							<span class="MenuItem active" data="2">韩国</span>
 							<span class="MenuItem" data="3">日本</span>
 						</div>
 						<button class="playAll">
