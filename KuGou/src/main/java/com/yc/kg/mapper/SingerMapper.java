@@ -1,5 +1,7 @@
 package com.yc.kg.mapper;
 
+import java.util.List;
+
 import com.yc.kg.entity.KuSinger;
 import com.yc.kg.entity.PaginationBean;
 
@@ -14,5 +16,7 @@ public interface SingerMapper {
 	boolean modifySingerMsg(KuSinger singer);
 
 	boolean addSingerMsg(KuSinger singer);
+
+	List<KuSinger> getSingerMsg();
 
 }

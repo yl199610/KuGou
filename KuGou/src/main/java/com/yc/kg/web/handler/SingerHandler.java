@@ -1,5 +1,7 @@
 package com.yc.kg.web.handler;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -65,4 +67,12 @@ public class SingerHandler {
 		LogManager.getLogger().debug("请求songHandler处理add....\n"+singer);
 		return singerService.addsinger(singer);
 	}	
+	//获得歌手名称到下拉框
+	@RequestMapping("/getAllSing")
+	@ResponseBody
+	public List<KuSinger> get(){
+		LogManager.getLogger().debug("请求songHandler处理get....\n");
+		return singerService.getSinger();
+	}		
+	
 }

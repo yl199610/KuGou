@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yc.kg.entity.KgSave;
+import com.yc.kg.entity.KuSongDetail;
 import com.yc.kg.entity.PaginationBean;
 import com.yc.kg.mapper.SaveMapper;
 import com.yc.kg.service.SaveService;
@@ -24,6 +25,11 @@ public class SaveServiceImpl implements SaveService{
 			singerBean.setPageSize(Integer.parseInt(pageSize));
 		}
 		return saveMapper.getSaveSongByPagination(singerBean);
+	}
+
+	@Override
+	public boolean addDetail(KuSongDetail kd) {
+		return saveMapper.insertDetail(kd);
 	}
 	
 	

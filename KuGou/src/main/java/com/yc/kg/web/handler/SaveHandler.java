@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yc.kg.entity.KgSave;
+import com.yc.kg.entity.KuSongDetail;
 import com.yc.kg.entity.PaginationBean;
 import com.yc.kg.service.SaveService;
 
@@ -25,6 +26,14 @@ public class SaveHandler {
 	public PaginationBean<KgSave> list(String page,String rows){
 		LogManager.getLogger().debug("请求saveHandler处理list....");
 		return saveService.listPartSave(page,rows);
+	}
+
+	//详细表的添加
+	@RequestMapping("/add")
+	@ResponseBody
+	public boolean addDetail(KuSongDetail kd){
+		LogManager.getLogger().debug("请求saveHandler处理add...."+kd);
+		return saveService.addDetail(kd);
 	}
 
 }

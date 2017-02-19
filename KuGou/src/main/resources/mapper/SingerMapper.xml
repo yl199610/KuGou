@@ -36,4 +36,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into kuSinger values(seq_singer.nextval,#{kuSingerName},#{kuSingerSex},#{kuSingerImg},#{kuSingerCode},#{kuSingerSingerstate},1,#{kuSingerSingersecond})
 	</insert>
 	
+	<select id="getSingerMsg" resultType="KuSinger">
+		select * from kuSinger where  kuSingerSingernext!=0
+	</select>
 </mapper>

@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<select id="getAllStyle" resultType="KuSongStyle">
-		select * from kuSongStyle
+		select * from kuSongStyle where kuSongStylenext=1
 	</select>
 	
 	<select id="getStyleByPagination" parameterType="paginationBean" resultMap="paginationBeanMap">

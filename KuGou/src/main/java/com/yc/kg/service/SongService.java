@@ -1,5 +1,7 @@
 package com.yc.kg.service;
 
+import java.util.List;
+
 import com.yc.kg.entity.KuSong;
 import com.yc.kg.entity.PaginationBean;
 
@@ -16,5 +18,7 @@ public interface SongService {
 	boolean modifySongMsg(KuSong song);
 
 	KuSong pushSong();
+
+	List<KuSong> getSong();
 
 }
