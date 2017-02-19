@@ -4,7 +4,7 @@
 <html>
 <head>
 <base href="/KuGou/">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
 <title>后台管理</title>
 </head>
 <body>

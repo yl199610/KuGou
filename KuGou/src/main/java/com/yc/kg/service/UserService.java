@@ -11,4 +11,6 @@ public interface UserService {
 
 	boolean modifyUser(KuUser user);
 
+	int zhuche(KuUser user);
+
 }

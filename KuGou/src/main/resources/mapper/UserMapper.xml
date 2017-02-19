@@ -33,4 +33,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where kgUserId=#{kgUserId}
 	</update>
 	
+	
+	<insert id="insertUser" parameterType="KuUser">
+		insert into kgUser(kgUserId,kgUserName,kgUserPwd,kgUserEmail,kgUserSex,kgUserBirthday) values(seq_kgUserId.nextval,#{kgUserName},#{kgUserPwd},#{kgUserEmail},#{kgUserSex},
+		#{kgUserBirthday} )
+
+	</insert>
+	
 </mapper>
