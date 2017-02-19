@@ -38,13 +38,10 @@ socket.onmessage = function(message){
 }
 
 $(document).ready(function() {
-	alert("0");
 	loadSongStyleInfo();
 })
 function loadSongStyleInfo() {
 	$.post("style/all", function(data) {
-		 alert(JSON.stringify(data)); //JSON.stringify() ,把json对象转换成json字符串
-		alert(data.length);
 		var styleAllStr = "";
 		var i=0;
 		for (i=0; i < data.length; i++) {
