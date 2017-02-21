@@ -36,6 +36,7 @@ function logout(){
 socket.onmessage = function(message){
 	$.messager.alert('信用卡消息',message.data,'warning');
 }
+loadSongStyleInfo();
 function loadSongStyleInfo() {
 	$.post("style/all", function(data) {
 		var styleAllStr = "";
@@ -49,16 +50,29 @@ function loadSongStyleInfo() {
 
 
 function findstyledetail(kuSongStyleId){
-	
 	$.post("style/findStyle?kuSongStyleId="+kuSongStyleId, function(data) {
-		 
-		alert(data+"data");
-	/*	var styleAllStr = "";
-		var i=0;
+		$("#tabC").empty();
+//		alert(JSON.Stringify(data));
+//		 $.each(data.kuSinger, function(i, item) { 
+//			alert(item.kuSingerId);
+//		 });
+/*		 var jsonarray = eval(data);
+		 var name=jsonarray[0].kuSinger.kuSingerName;//歌手表的歌曲名
+		 var singer=jsonarray[0].kuSong.kuSongName;//歌曲表歌曲名
+		 alert(jsonarray[0].kuSongDetailId);//详细表id
+		 alert(name);
+		 alert(singer);*/
 		for (i=0; i < data.length; i++) {
-			styleAllStr += '<span class="MenuItem" onclick="findstyledetail('+data[i].kuSongStyleId+')">'+ data[i].kuSongStyleName +'</span>';
-		}
-		$("#SongtabMenu")[0].innerHTML = styleAllStr ;*/
+			 var jsonarray = eval(data);
+			 //歌曲时间   歌词路径(显示歌词)   歌曲路径(播放歌曲)   详细表id(增加点击率 或 跳转到播放器页面 点击播放全部跳转到播放器页面)
+			 var singer=jsonarray[i].kuSinger.kuSingerName;//歌手表的歌曲名
+			 var song=jsonarray[i].kuSong.kuSongName;//歌曲表歌曲名
+			 var songSinger=singer+"--"+song;
+			 var SongSingerStr='';
+			 SongSingerStr+='<ul><li><a href=""><span class="songName">'+songSinger+'</span>'
+				 +'<span class="songTime">04:26</span><span class="icon playBtn icon-play"></span></a></li></ul>';
+		}	
+		$("#SongtabContent")[0].innerHTML = SongSingerStr;
 	}, "json");
 	
 	

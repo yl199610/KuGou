@@ -1,5 +1,7 @@
 package com.yc.kg.mapper;
 
+import java.util.List;
+
 import com.yc.kg.entity.KuUser;
 import com.yc.kg.entity.PaginationBean;
 
@@ -11,7 +13,7 @@ public interface UserMapper {
 
 	int updateUser(KuUser user);
 
-	KuUser getUser(KuUser user);
+	List<KuUser> getUser(KuUser user);
 
 	int insertUser(KuUser user);
 

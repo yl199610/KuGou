@@ -468,15 +468,11 @@
 					
 					<div class="itemContent">
 						<div class="tabC" id="SongtabContent" style="margin-top: -560px;"><!--风格歌曲  -->
-							<ul style="display: none; z-index: 1;">
-
-								<li
-									data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;8F1B5211E6D2A05107C6090696B939B8&quot;,&quot;time&quot;:&quot;04:26&quot;,&quot;timeLen&quot;:266000,&quot;Filename&quot;:&quot;Bon Jovi - New Year s Day&quot;}">
-									<a href=""> <span class="songName">Bon Jovi - New
-											Year s Day</span> <span class="songTime">04:26</span> <span
-										class="icon playBtn icon-play"></span>
-								</a>
-							</li>
+							<ul>
+								<li data="{&quot;first&quot;:0,&quot;Hash&quot;:&quot;8F1B5211E6D2A05107C6090696B939B8&quot;,&quot;time&quot;:&quot;04:26&quot;,&quot;timeLen&quot;:266000,&quot;Filename&quot;:&quot;Bon Jovi - New Year s Day&quot;}">
+									<a href=""> <span class="songName">Bon Jovi - New Year s Day</span>
+									 <span class="songTime">04:26</span> <span class="icon playBtn icon-play"></span> </a>
+								</li>
 							</ul>
 						</div>
 					</div>

@@ -1,5 +1,7 @@
 package com.yc.kg.service;
 
+import java.util.List;
+
 import com.yc.kg.entity.KuUser;
 import com.yc.kg.entity.PaginationBean;
 
@@ -11,8 +13,7 @@ public interface UserService {
 
 	boolean modifyUser(KuUser user);
 
-
-	KuUser userlogin(KuUser kuser);
+	List<KuUser> userlogin(KuUser kuser);
 
 	int zhuche(KuUser user);
 

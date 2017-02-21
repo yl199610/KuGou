@@ -1,5 +1,7 @@
 package com.yc.kg.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,7 +41,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 
-	public KuUser userlogin(KuUser user) {
+	public List<KuUser> userlogin(KuUser user) {
 		return userMapper.getUser(user);
 	}
 

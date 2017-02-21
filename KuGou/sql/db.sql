@@ -155,10 +155,11 @@ and  kudetailstyleId=4444
 --insert into kuSongDetail values(seq_kuSongDetail.nextval,10021,1021,121,0,1,'music/6039.mp3',1,'1999-06-19',default,default);
 
 --insert into kuSongDetail values(seq_kuSongDetail.nextval,10000,1000,100,0,1,'music/6039.mp3',1,'1999-06-19',default,default);
-select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId and  where kudetailstyleId=4444;
+
 select * from kuSongDetail kd, kuSinger k,kuSong ks where kd.ksongsingId=k.kuSingerId and kd.kudetailsongId=ks.kuSongId
-and  kudetailstyleId=4444;
+and  kudetailstyleId=4444 and k.kuSingerSingernext!=0 and ks.kuSongNext=1
 select * from kuSongDetail;
+
 
 select * from kuSongStyle;
 --一次性删除(不要轻易改动)
