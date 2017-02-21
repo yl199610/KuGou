@@ -1,5 +1,7 @@
 package com.yc.kg.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,8 +41,9 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 
-	public boolean userlogin(KuUser user) {
-		return userMapper.getUser(user)>0;
+	public List<KuUser> userlogin(KuUser user) {
+		return userMapper.getUser(user);
+
 	}
 
 	public int zhuche(KuUser user) {

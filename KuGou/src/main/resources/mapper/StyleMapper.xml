@@ -39,10 +39,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update kuSongStyle set kuSongStyleName=#{kuSongStyleName},kuSongStylenext=#{kuSongStylenext},kuSongStylesecond=#{kuSongStylesecond}
 		where kuSongStyleId=#{kuSongStyleId}
 	</update>
-	<select id="findStyle" parameterType="int" resultType="KuSongDetail">
-			select * from 
-	</select>
+<!-- 	<select id="findStyle" parameterType="int" resultType="KuSongDetail">
+		select * from kuSongDetail kd, kuSinger k,kuSong ks where kd.ksongsingId=k.kuSingerId and kd.kudetailsongId=ks.kuSongId
+and  kudetailstyleId=#{styleid}
+	</select> -->
 	
-	
+  <resultMap id="detailMap" type="KuSongDetail">
+    <id property="kuSongDetailId" column="kuSongDetailId" />
+    <result property="songplay" column="songplay" />
+    <result property="statue" column="statue" />
+    <result property="address" column="address" />
+    <association property="KuSong" javaType="KuSong">
+      <id property="kuSongId" column="kuSongId" />
+      <result property="kuSongName" column="kuSongName" />
+    </association>
+    <association property="kuSinger" javaType="KuSinger">
+      <id property="kuSingerId" column="kuSingerId" />
+      <result property="kuSingerName" column="kuSingerName" />
+    </association>
+  </resultMap>
+  
+  <select id="findStyle" parameterType="int" resultMap="detailMap">
+  	select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+	join kuSong k on kd.kudetailsongId=k.kuSongId where kudetailstyleId=#{styleid}
+	and ks.kuSingerSingernext!=0 and k.kuSongNext=1
+  </select>
+  
+  
+  
 	
 </mapper>

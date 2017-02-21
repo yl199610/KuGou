@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Enumeration;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -77,7 +78,11 @@ public class UserHandler {
 	public boolean login(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		KuUser kuser = getReqParam2Obj(request , KuUser.class);
 		HttpSession session = request.getSession();
-		if(userService.userlogin(kuser)){
+
+		List<KuUser> user=userService.userlogin(kuser);
+		System.out.println(user);
+		if(user.size()>0){
+
 			session.setAttribute("loginUser", kuser.getKgUserName());
 			return true;
 		}else{

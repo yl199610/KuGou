@@ -14,20 +14,16 @@ public class KuSongDetail {
      private String detailtime;
      private String kunext;
      private String kusecond;
-     private List<KuSongStyle> kuSongStyle;
-     private  List<KuSinger> kuSinger;
+     private KuSong KuSong;
+     private KuSinger kuSinger;
      
-     
-     public KuSongDetail() {}
+	public KuSongDetail() {
+	}
 
 
-
-
-	public KuSongDetail(Integer kuSongDetailId, Integer ksongsingId,
-			Integer kudetailsongId, Integer kudetailstyleId, Integer songplay,
-			Integer statue, String address, Integer kusingstatus,
-			String detailtime, String kunext, String kusecond,
-			List<KuSongStyle> kuSongStyle, List<KuSinger> kuSinger) {
+	public KuSongDetail(Integer kuSongDetailId, Integer ksongsingId, Integer kudetailsongId, Integer kudetailstyleId,
+			Integer songplay, Integer statue, String address, Integer kusingstatus, String detailtime, String kunext,
+			String kusecond, com.yc.kg.entity.KuSong kuSong, KuSinger kuSinger) {
 		super();
 		this.kuSongDetailId = kuSongDetailId;
 		this.ksongsingId = ksongsingId;
@@ -40,11 +36,9 @@ public class KuSongDetail {
 		this.detailtime = detailtime;
 		this.kunext = kunext;
 		this.kusecond = kusecond;
-		this.kuSongStyle = kuSongStyle;
+		KuSong = kuSong;
 		this.kuSinger = kuSinger;
 	}
-
-
 
 
 	public Integer getKuSongDetailId() {
@@ -158,44 +152,35 @@ public class KuSongDetail {
 
 
 
-	public List<KuSongStyle> getKuSongStyle() {
-		return kuSongStyle;
+	public KuSong getKuSong() {
+		return KuSong;
 	}
 
 
-
-	public void setKuSongStyle(List<KuSongStyle> kuSongStyle) {
-		this.kuSongStyle = kuSongStyle;
+	public void setKuSong(KuSong kuSong) {
+		KuSong = kuSong;
 	}
 
 
-
-
-	public List<KuSinger> getKuSinger() {
+	public KuSinger getKuSinger() {
 		return kuSinger;
 	}
 
 
-
-
-	public void setKuSinger(List<KuSinger> kuSinger) {
+	public void setKuSinger(KuSinger kuSinger) {
 		this.kuSinger = kuSinger;
 	}
 
 
-
 	@Override
 	public String toString() {
-		return "KuSongDetail [kuSongDetailId=" + kuSongDetailId
-				+ ", ksongsingId=" + ksongsingId + ", kudetailsongId="
-				+ kudetailsongId + ", kudetailstyleId=" + kudetailstyleId
-				+ ", songplay=" + songplay + ", statue=" + statue
-				+ ", address=" + address + ", kusingstatus=" + kusingstatus
-				+ ", detailtime=" + detailtime + ", kunext=" + kunext
-				+ ", kusecond=" + kusecond + ", kuSongStyle=" + kuSongStyle
-				+ ", kuSinger=" + kuSinger + "]";
+		return "\nKuSongDetail [kuSongDetailId=" + kuSongDetailId + ", ksongsingId=" + ksongsingId + ", kudetailsongId="
+				+ kudetailsongId + ", kudetailstyleId=" + kudetailstyleId + ", songplay=" + songplay + ", statue="
+				+ statue + ", address=" + address + ", kusingstatus=" + kusingstatus + ", detailtime=" + detailtime
+				+ ", kunext=" + kunext + ", kusecond=" + kusecond + ", KuSong=" + KuSong + ", kuSinger=" + kuSinger
+				+ "]";
 	}
 
 
-    
+
 }

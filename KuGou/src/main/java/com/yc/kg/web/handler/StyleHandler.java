@@ -74,10 +74,20 @@ public class StyleHandler {
 	@RequestMapping("/findStyle")
 	@ResponseBody
 	public List<KuSongDetail> findStyle(@RequestParam(name="kuSongStyleId")int styleid){
-		LogManager.getLogger().debug("请求styleHandler处理styleid...."+styleid);
-		
+		LogManager.getLogger().debug("请求styleHandler处理styleid....\n"+styleid);
 		List<KuSongDetail>details=styleService.findStyle(styleid);
-		System.out.println(details);
+		for (int i = 0; i < details.size(); i++) {
+			System.out.println("--------------\n"+details.get(i).getKuSinger());
+			details.get(i).getKuSong();
+		}
+//		for (int j = 0; j <1000; j++) {
+//			KuSongDetail kd=details.get(j);
+//			s.setSinger(kd.getKuSinger().get(j).getKuSingerName());
+//			s.setSong(kd.getKuSong().get(j).getKuSongName());
+//			System.out.println(kd.getKuSinger()+"-"+kd.getKuSong());
+//			ss.add(s);
+//		}
+//		System.out.println(ss);
 		return details;
 	}
 	
