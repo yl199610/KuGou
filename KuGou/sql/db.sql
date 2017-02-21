@@ -15,7 +15,7 @@ create table kgUser(
        kgUserNext varchar2(100) default 1,    		 --预留字段
        kgUserSecond varchar2(100)				   --预留字段二
 );
-
+select * from kgUser where kgUserName='a' and kgUserPwd='a'
 create sequence seq_kgUserId start with 500;
 select * from kgUser;
 

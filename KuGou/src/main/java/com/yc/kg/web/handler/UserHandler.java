@@ -77,7 +77,7 @@ public class UserHandler {
 	public boolean login(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		KuUser kuser = getReqParam2Obj(request , KuUser.class);
 		HttpSession session = request.getSession();
-		if(userService.userlogin(kuser)!=null){
+		if(userService.userlogin(kuser)){
 			session.setAttribute("loginUser", kuser.getKgUserName());
 			return true;
 		}else{
