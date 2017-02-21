@@ -34,13 +34,17 @@ function logout(){
 }
 
 socket.onmessage = function(message){
-	$.messager.alert('信用卡消息',message.data,'warning');
+	$.messager.alert('歌曲消息',message.data,'warning');
 }
+
 loadSongStyleInfo();
+
+
 function loadSongStyleInfo() {
 	$.post("style/all", function(data) {
 		var styleAllStr = "";
 		var i=0;
+		findstyledetail(data[0].kuSongStyleId);
 		for (i=0; i < data.length; i++) {
 			styleAllStr += '<a href="javascript:void(0)" class="MenuItem" onclick="findstyledetail('+data[i].kuSongStyleId+')">'+ data[i].kuSongStyleName +'&nbsp;&nbsp;&nbsp;&nbsp;</a>';
 		}
@@ -51,7 +55,7 @@ function loadSongStyleInfo() {
 
 function findstyledetail(kuSongStyleId){
 	$.post("style/findStyle?kuSongStyleId="+kuSongStyleId, function(data) {
-		$("#tabC").empty();
+		$(".itemContent1").empty();
 //		alert(JSON.Stringify(data));
 //		 $.each(data.kuSinger, function(i, item) { 
 //			alert(item.kuSingerId);
@@ -69,14 +73,10 @@ function findstyledetail(kuSongStyleId){
 			 var song=jsonarray[i].kuSong.kuSongName;//歌曲表歌曲名
 			 var songSinger=singer+"--"+song;
 			 var SongSingerStr='';
-			 SongSingerStr+='<ul><li><a href=""><span class="songName">'+songSinger+'</span>'
-				 +'<span class="songTime">04:26</span><span class="icon playBtn icon-play"></span></a></li></ul>';
-		}	
-		$("#SongtabContent")[0].innerHTML = SongSingerStr;
+			 $(".itemContent1").append('<li><a href=""><span class="songName">'+songSinger+'</span>'
+				 +'<span class="songTime">04:26</span><span class="icon playBtn icon-play"></span></a></li>');
+		}
 	}, "json");
-	
-	
-	
 	
 }
 

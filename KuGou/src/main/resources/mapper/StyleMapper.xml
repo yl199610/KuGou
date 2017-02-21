@@ -46,16 +46,37 @@ and  kudetailstyleId=#{styleid}
 	
   <resultMap id="detailMap" type="KuSongDetail">
     <id property="kuSongDetailId" column="kuSongDetailId" />
+    <result property="ksongsingId" column="ksongsingId" />
+    <result property="kudetailsongId" column="kudetailsongId" />
+    <result property="kudetailstyleId" column="kudetailstyleId" />
     <result property="songplay" column="songplay" />
+    <result property="kusingstatus" column="kusingstatus" />
     <result property="statue" column="statue" />
     <result property="address" column="address" />
+    <result property="kusingstatus" column="kusingstatus" />
+    <result property="detailtime" column="detailtime" />
+    <result property="kunext" column="kunext" />
+    <result property="kusecond" column="kusecond" />
     <association property="KuSong" javaType="KuSong">
       <id property="kuSongId" column="kuSongId" />
       <result property="kuSongName" column="kuSongName" />
+      <result property="kuSongImg" column="kuSongImg" />
+      <result property="kuSongWords" column="kuSongWords" />
+      <result property="kuSongAddress" column="kuSongAddress" />
+      <result property="kuSongSongtime" column="kuSongSongtime" />
+      <result property="kuSongYear" column="kuSongYear" />
+      <result property="kuSongNext" column="kuSongNext" />
+      <result property="kuSongSecond" column="kuSongSecond" />
     </association>
     <association property="kuSinger" javaType="KuSinger">
       <id property="kuSingerId" column="kuSingerId" />
       <result property="kuSingerName" column="kuSingerName" />
+      <result property="kuSingerSex" column="kuSingerSex" />
+      <result property="kuSingerImg" column="kuSingerImg" />
+      <result property="kuSingerCode" column="kuSingerCode" />
+      <result property="kuSingerSingerstate" column="kuSingerSingerstate" />
+      <result property="kuSingerSingernext" column="kuSingerSingernext" />
+      <result property="kuSingerSingersecond" column="kuSingerSingersecond" />
     </association>
   </resultMap>
   
