@@ -142,6 +142,10 @@ create table kuSongDetail(
 );
 
 
+	select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+	join kuSong k on kd.kudetailsongId=k.kuSongId where kudetailstyleId=120
+	and ks.kuSingerSingernext!=0 and k.kuSongNext=1
+
 
 create sequence seq_kuSongDetail start with 10000;
 

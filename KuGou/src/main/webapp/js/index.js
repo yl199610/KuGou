@@ -1,5 +1,8 @@
 var socket = new WebSocket('ws://' + window.location.host + '/KuGou/pushmsg');
 
+$(document).ready(function() {
+	
+})
 //异步登录操作
 var loginStr=$("#userloginForm").html();
 function login(){
@@ -41,6 +44,7 @@ function loadSongStyleInfo() {
 	$.post("style/all", function(data) {
 		var styleAllStr = "";
 		var i=0;
+		findstyledetail(data[0].kuSongStyleId);
 		for (i=0; i < data.length; i++) {
 			styleAllStr += '<a href="javascript:void(0)" class="MenuItem" onclick="findstyledetail('+data[i].kuSongStyleId+')">'+ data[i].kuSongStyleName +'&nbsp;&nbsp;&nbsp;&nbsp;</a>';
 		}
@@ -51,7 +55,8 @@ function loadSongStyleInfo() {
 
 function findstyledetail(kuSongStyleId){
 	$.post("style/findStyle?kuSongStyleId="+kuSongStyleId, function(data) {
-		$("#tabC").empty();
+		//$(".itemContent1")[0].innerHTML='';
+		$(".itemContent1").empty();
 //		alert(JSON.Stringify(data));
 //		 $.each(data.kuSinger, function(i, item) { 
 //			alert(item.kuSingerId);
@@ -68,14 +73,16 @@ function findstyledetail(kuSongStyleId){
 			 var singer=jsonarray[i].kuSinger.kuSingerName;//歌手表的歌曲名
 			 var song=jsonarray[i].kuSong.kuSongName;//歌曲表歌曲名
 			 var songSinger=singer+"--"+song;
-			 var SongSingerStr='';
-			 SongSingerStr+='<ul><li><a href=""><span class="songName">'+songSinger+'</span>'
-				 +'<span class="songTime">04:26</span><span class="icon playBtn icon-play"></span></a></li></ul>';
+
+			 $(".itemContent1").append('<li style="display:block;margin:20px" ><a href=""> <span class="songName" >'+songSinger+'</span>'
+					 +'<div style="Float:right;"><span class="songTime" >04:26</span></div> <span class="icon playBtn icon-play"></span> </a></li>');
+			
 		}	
-		$("#SongtabContent")[0].innerHTML = SongSingerStr;
+
+
+		
+	
 	}, "json");
-	
-	
 	
 	
 }
