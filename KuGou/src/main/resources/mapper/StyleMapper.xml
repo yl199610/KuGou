@@ -85,5 +85,8 @@ and  kudetailstyleId=#{styleid}
 	join kuSong k on kd.kudetailsongId=k.kuSongId where kudetailstyleId=#{styleid}
 	and ks.kuSingerSingernext!=0 and k.kuSongNext=1
   </select>
+  
+  
+  
 	
 </mapper>

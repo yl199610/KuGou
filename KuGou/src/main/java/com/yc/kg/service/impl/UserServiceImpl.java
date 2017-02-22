@@ -43,6 +43,7 @@ public class UserServiceImpl implements UserService{
 
 	public List<KuUser> userlogin(KuUser user) {
 		return userMapper.getUser(user);
+
 	}
 
 	public int zhuche(KuUser user) {

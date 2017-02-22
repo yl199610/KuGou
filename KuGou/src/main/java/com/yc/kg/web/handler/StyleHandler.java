@@ -76,6 +76,7 @@ public class StyleHandler {
 	public List<KuSongDetail> findStyle(@RequestParam(name="kuSongStyleId")int styleid){
 		LogManager.getLogger().debug("请求styleHandler处理styleid....\n"+styleid);
 		List<KuSongDetail>details=styleService.findStyle(styleid);
+		
 		for (int i = 0; i < details.size(); i++) {
 			System.out.println("--------------\n"+details.get(i).getKuSinger());
 			details.get(i).getKuSong();

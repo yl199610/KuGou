@@ -1,5 +1,7 @@
 package com.yc.kg.mapper;
 
+
+
 import java.util.List;
 
 import com.yc.kg.entity.KuUser;
@@ -13,7 +15,9 @@ public interface UserMapper {
 
 	int updateUser(KuUser user);
 
+
 	List<KuUser> getUser(KuUser user);
+
 
 	int insertUser(KuUser user);
 

@@ -78,9 +78,11 @@ public class UserHandler {
 	public boolean login(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		KuUser kuser = getReqParam2Obj(request , KuUser.class);
 		HttpSession session = request.getSession();
+
 		List<KuUser> user=userService.userlogin(kuser);
 		System.out.println(user);
 		if(user.size()>0){
+
 			session.setAttribute("loginUser", kuser.getKgUserName());
 			return true;
 		}else{

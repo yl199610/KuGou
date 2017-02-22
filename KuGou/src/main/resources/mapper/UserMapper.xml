@@ -33,7 +33,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where kgUserId=#{kgUserId}
 	</update>
 	
-	<select id="getUser" parameterType="KuUser" resultType="KuUser">
+	<select id="getUser" parameterType="KuUser" resultType="int">
 		select * from kgUser where kgUserName=#{kgUserName} and kgUserPwd=#{kgUserPwd}
 	</select>
 

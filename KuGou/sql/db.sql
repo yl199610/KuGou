@@ -15,7 +15,7 @@ create table kgUser(
        kgUserNext varchar2(100) default 1,    		 --预留字段
        kgUserSecond varchar2(100)				   --预留字段二
 );
-
+select * from kgUser where kgUserName='a' and kgUserPwd='a'
 create sequence seq_kgUserId start with 500;
 select * from kgUser;
 
@@ -142,7 +142,14 @@ create table kuSongDetail(
 );
 
 
+	select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+	join kuSong k on kd.kudetailsongId=k.kuSongId where kudetailstyleId=4444
+	and ks.kuSingerSingernext!=0 and k.kuSongNext=1
 
+select * from (select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+	join kuSong k on kd.kudetailsongId=k.kuSongId where kudetailstyleId=4444
+	and ks.kuSingerSingernext!=0 and k.kuSongNext=1 order by dbms_random.value)where rownum<2
+	
 create sequence seq_kuSongDetail start with 10000;
 
 select * from kuSongDetail kd, kuSinger k,kuSong ks
