@@ -458,15 +458,14 @@
 							<span class="MenuItem active" data="2">韩国</span>
 							<span class="MenuItem" data="3">日本</span> -->
 						</div>
+					
+					<div style=' float:right'><a href="./play.jsp" ><em>全部播放</em></a></div>
+							
 						
-						
-						<button class="playAll">
-							<span class="icon icon-play"></span><em>全部播放</em>
-						</button>
 					</div>
 					
 					
-					<div class="itemContent1">
+					<div class="itemContent1" style="height: 800px;width: 650px;"><!--修改  -->
 					</div>
 					<div class="pages n">
 						<a class="prev">上一页</a>

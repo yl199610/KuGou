@@ -30,6 +30,22 @@ public class StyleServiceImpl implements StyleService{
 	}
 
 	@Override
+	public PaginationBean<KuSongDetail> listPartMainStyle(String currpage,
+			String pageSize) {
+		PaginationBean<KuSongDetail> songMainBean = new PaginationBean<KuSongDetail>();
+		if(currpage!=null){
+			songMainBean.setCurrPage(Integer.parseInt(currpage));
+		}
+		
+		if(pageSize!=null){
+			songMainBean.setPageSize(Integer.parseInt(pageSize));
+		}
+		return styleMapper.getStyleMainByPagination(songMainBean);
+	
+	}
+	
+	
+	@Override
 	public boolean addSongStyle(KuSongStyle style) {
 		return styleMapper.addSongStyleMsg(style);
 	}
@@ -56,12 +72,12 @@ public class StyleServiceImpl implements StyleService{
 
 	@Override
 	public List<KuSongDetail> findStyle(int styleid) {
-	
-		
-		
+
 		
 		return styleMapper.findStyle(styleid);
 	}
+
+
 
 
 	

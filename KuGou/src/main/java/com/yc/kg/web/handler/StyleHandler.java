@@ -31,6 +31,13 @@ public class StyleHandler {
 		return styleService.listPartStyle(page,rows);
 	}
 	
+	@RequestMapping("/mainlist")
+	@ResponseBody
+	public PaginationBean<KuSongDetail> mainlist(String page,String rows){
+		LogManager.getLogger().debug("请求styleHandler处理list....");
+		return styleService.listPartMainStyle(page,rows);
+	}
+	
 	@RequestMapping("/add")
 	@ResponseBody
 	public boolean add(KuSongStyle style){
