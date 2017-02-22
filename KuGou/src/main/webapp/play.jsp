@@ -45,6 +45,12 @@
 </div>
 <script src="src/js/smusic.min.js"></script>
 <script>
+
+
+
+
+
+
 var musicList = [
 	{
 		title : 'Sugar',

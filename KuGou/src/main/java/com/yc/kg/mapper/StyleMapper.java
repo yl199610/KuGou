@@ -9,6 +9,9 @@ import com.yc.kg.entity.PaginationBean;
 public interface StyleMapper {
 
 	PaginationBean<KuSongStyle> getStyleByPagination(PaginationBean<KuSongStyle> songBean);
+	
+	PaginationBean<KuSongDetail> getStyleMainByPagination(
+			PaginationBean<KuSongDetail> songMainBean);
 
 	boolean addSongStyleMsg(KuSongStyle style);
 
@@ -21,5 +24,7 @@ public interface StyleMapper {
 	List<KuSongStyle> getAllStyle();
 
 	List<KuSongDetail> findStyle(int styleid);
+
+	
 
 }
