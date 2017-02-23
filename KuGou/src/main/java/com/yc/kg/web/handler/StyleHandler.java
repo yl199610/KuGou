@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yc.kg.entity.KuSongDetail;
-import com.yc.kg.entity.KuSongDetail2;
 import com.yc.kg.entity.KuSongStyle;
 import com.yc.kg.entity.PaginationBean;
 import com.yc.kg.service.StyleService;
@@ -103,9 +102,9 @@ public class StyleHandler {
 	
 	@RequestMapping("/findAllStyle")
 	@ResponseBody
-	public List<KuSongDetail2> findAllStyle(){
+	public List<KuSongDetail> findAllStyle(){
 		LogManager.getLogger().debug("请求styleHandler处理styleid111111111....\n");
-		List<KuSongDetail2>details=styleService.findAllStyle();
+		List<KuSongDetail>details=styleService.findAllStyle();
 		System.out.println("detai11l"+details);
 //		for (int i = 0; i < details.size(); i++) {
 //			System.out.println("--------------\n"+details.get(i).getKuSinger());
