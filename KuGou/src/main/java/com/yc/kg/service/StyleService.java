@@ -3,6 +3,7 @@ package com.yc.kg.service;
 import java.util.List;
 
 import com.yc.kg.entity.KuSongDetail;
+import com.yc.kg.entity.KuSongDetail2;
 import com.yc.kg.entity.KuSongStyle;
 import com.yc.kg.entity.PaginationBean;
 
@@ -23,5 +24,7 @@ public interface StyleService {
 	List<KuSongDetail> findStyle(int styleid);
 
 	PaginationBean<KuSongDetail> listPartMainStyle(String page, String rows);
+
+	List<KuSongDetail2> findAllStyle();
 
 }

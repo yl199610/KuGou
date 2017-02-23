@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yc.kg.entity.KuSongDetail;
+import com.yc.kg.entity.KuSongDetail2;
 import com.yc.kg.entity.KuSongStyle;
 import com.yc.kg.entity.PaginationBean;
 import com.yc.kg.mapper.StyleMapper;
@@ -75,6 +76,14 @@ public class StyleServiceImpl implements StyleService{
 
 		
 		return styleMapper.findStyle(styleid);
+	}
+
+	@Override
+	public List<KuSongDetail2> findAllStyle() {
+		
+		
+		
+		return styleMapper.findAllStyle();
 	}
 
 

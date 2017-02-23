@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yc.kg.entity.KuSongDetail;
+import com.yc.kg.entity.KuSongDetail2;
 import com.yc.kg.entity.KuSongStyle;
 import com.yc.kg.entity.PaginationBean;
 import com.yc.kg.service.StyleService;
@@ -98,6 +99,31 @@ public class StyleHandler {
 //		System.out.println(ss);
 		return details;
 	}
+	
+	
+	@RequestMapping("/findAllStyle")
+	@ResponseBody
+	public List<KuSongDetail2> findAllStyle(){
+		LogManager.getLogger().debug("请求styleHandler处理styleid111111111....\n");
+		List<KuSongDetail2>details=styleService.findAllStyle();
+		System.out.println("detai11l"+details);
+//		for (int i = 0; i < details.size(); i++) {
+//			System.out.println("--------------\n"+details.get(i).getKuSinger());
+//			details.get(i).getKuSong();
+//		}
+//		for (int j = 0; j <1000; j++) {
+//			KuSongDetail kd=details.get(j);
+//			s.setSinger(kd.getKuSinger().get(j).getKuSingerName());
+//			s.setSong(kd.getKuSong().get(j).getKuSongName());
+//			System.out.println(kd.getKuSinger()+"-"+kd.getKuSong());
+//			ss.add(s);
+//		}
+//		System.out.println(ss);
+		return details;
+	}
+	
+	
+	
 	
 	
 }
