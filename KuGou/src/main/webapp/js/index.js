@@ -63,34 +63,41 @@ function findstyledetail(kuSongStyleId){
 		
 		$('#songInfo1').datagrid({
 			fitColumns : true,
-			/*url:'style/findStyle?kuSongStyleId='+kuSongStyleId,*/
-			url:'style/mainlist',
+			url:'style/findStyle?kuSongStyleId='+kuSongStyleId,
+			//url:'style/mainlist',
 			singleSelect : true,
 			pagination:true,
-			columns : [ [{
+			pageList:[5],
+			pageSize:5,
+			
+			pageSize:5,
+			columns : [ [ {
+				field : 'kuSongName',
+				title : '歌曲名',
+				width : 18,
+				align:'center',
+				formatter: function(value,row,index){
+					
+			    return row['kuSong']['kuSongName'];
+			} 
+			}, {
+				field : 'kuSingerName',
+				title : '歌手名',
+				width : 18,
+				align:'center',
+				formatter: function(value,row,index){
+					return row['kuSinger']['kuSingerName'];
+				} 
+				
+			}, {
 				field : 'operator',
 				title : '操作',
 				width : 40,
 				align:'center',
-				formatter: function(value,row,index){
-					s=s+1;
-					var str='';
-					if(s===1){		
-					for (  var i=0; i < data.length; i++) {
-						 var jsonarray = eval(data);	
-						 //歌曲时间   歌词路径(显示歌词)   歌曲路径(播放歌曲)   详细表id(增加点击率 或 跳转到播放器页面 点击播放全部跳转到播放器页面)
-						 var singer=jsonarray[i].kuSinger.kuSingerName;//歌手表的歌曲名
-						 var song=jsonarray[i].kuSong.kuSongName;//歌曲表歌曲名
-						 var songSinger=singer+"--"+song;
-						 str=str+'<li style="display:block;margin:20px" ><a  href="javascript:void(0)"> <span class="songName" style="Float:left;">'+songSinger+'</span></a>'+
-						 ' <audio style="Float:right;" src="music/6039.mp3" controls="controls"></audio></li>';//<span class="songTime" style="Float:right;" >04:26</span> 
-					} return str;
-					}else{
-						
-						return '';
-						
-					}
-	
+				formatter: function(value,row,index){	
+						//alert(row["kuSong"]["kuSongAddress"]);
+					return  '<li style="display:block;margin:10px" >'+' <audio style="Float:right;" src='+ row["kuSong"]["kuSongAddress"]+' controls="controls"></audio></li>';
+
 				}
 			} ]]
 		});/*完整*/

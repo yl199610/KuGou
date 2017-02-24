@@ -28,6 +28,7 @@ public class StyleHandler {
 	@ResponseBody
 	public PaginationBean<KuSongStyle> list(String page,String rows){
 		LogManager.getLogger().debug("请求styleHandler处理list....");
+		System.out.println(styleService.listPartStyle(page,rows));
 		return styleService.listPartStyle(page,rows);
 	}
 	
@@ -35,6 +36,7 @@ public class StyleHandler {
 	@ResponseBody
 	public PaginationBean<KuSongDetail> mainlist(String page,String rows){
 		LogManager.getLogger().debug("请求styleHandler处理list....");
+		//System.out.println("styleService.listPartMainStyle(page,rows)"+styleService.listPartMainStyle(page,rows));
 		return styleService.listPartMainStyle(page,rows);
 	}
 	
@@ -96,6 +98,7 @@ public class StyleHandler {
 //			ss.add(s);
 //		}
 //		System.out.println(ss);
+		System.out.println("detaile"+details);
 		return details;
 	}
 	
@@ -118,11 +121,8 @@ public class StyleHandler {
 //			ss.add(s);
 //		}
 //		System.out.println(ss);
+		System.out.println("detaile"+details);
 		return details;
 	}
-	
-	
-	
-	
 	
 }

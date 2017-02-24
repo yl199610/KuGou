@@ -19,6 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	
+	
 	<insert id="addSongMsg" parameterType="KuSong">
 		insert into KuSong values(seq_kuSong.nextval,#{kuSongName},#{kuSongImg},#{kuSongWords},#{kuSongAddress},#{kuSongSongtime},#{kuSongYear},1,#{kuSongSecond})
 	</insert>

@@ -67,6 +67,7 @@ and  kudetailstyleId=#{styleid}
     <association property="KuSong" javaType="KuSong">
       <id property="kuSongId" column="kuSongId" />
       <result property="kuSongName" column="kuSongName" />
+       <result property="kuSongAddress" column="kuSongAddress" />
     </association>
     <association property="kuSinger" javaType="KuSinger">
       <id property="kuSingerId" column="kuSingerId" />
