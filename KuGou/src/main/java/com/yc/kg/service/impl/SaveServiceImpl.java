@@ -1,5 +1,7 @@
 package com.yc.kg.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +32,16 @@ public class SaveServiceImpl implements SaveService{
 	@Override
 	public boolean addDetail(KuSongDetail kd) {
 		return saveMapper.insertDetail(kd);
+	}
+
+	@Override
+	public boolean saveSong(KgSave ks) {
+		return saveMapper.insertSave(ks);
+	}
+
+	@Override
+	public List<KgSave> findDetail(int id) {
+		return saveMapper.selectDetail(id);
 	}
 	
 	

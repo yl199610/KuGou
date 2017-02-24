@@ -1,8 +1,11 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%><!DOCTYPE html>
 <html><head>
+<link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
+<link type="text/css" rel="stylesheet" href="easyui/themes/default/easyui.css">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
-<title>全部精选集_精选集_乐库频道_酷狗网</title>
+<title>我的收藏</title>
 <meta name="keywords" content="酷狗2013正式版,精选集,精选集歌曲下载,歌手,明星,音乐,在线音乐,在线听歌,听歌,新专辑,港台,日本,韩国,欧美,英国">
 <meta name="description" content="酷狗官方网站是中国最新最全的在线正版音乐网站,提供最新的在线音乐服务、免费音乐下载、最新的音乐播放器下载。">
 <link rel="stylesheet" href="playlist_files/main_002.css" type="text/css">
@@ -27,9 +30,9 @@ DD_belatedPNG.fix('.icon,.logo');
     <h1 class="logo">酷狗音乐</h1>
     <div class="topNav fr">
         <ul>
-            <li><a target="_blank" href="./emailReg.html">注册</a></li>
+<!--             <li><a target="_blank" href="./emailReg.html">注册</a></li>
             <li><a href="" class="kuLogin" id="kuLogin">登录</a><a hidefocus="true" href="http://www.kugou.com/newuc/login/outlogin" class="logout" id="logout">退出登录</a></li>
-            <li><a target="_blank" href="./server.html">客服中心</a></li>
+  -->           <li><a target="_blank" href="./server.html">客服中心</a></li>
             <li><a target="_blank" href="./join.html">招贤纳士</a></li>
             <li><a target="_blank" href="http://vip.kugou.com/">会员中心 </a></li>
         </ul>
@@ -213,268 +216,24 @@ DD_belatedPNG.fix('.icon,.logo');
 </script>
 <!--精选集-->
 <div class="wrap album spe clear_fix">
-    <div class="l">
-        <strong>按时间</strong>
-        <dl id="dl">
-            <dt><a title="全部精选集" class="current" onclick="sdnClick(12129)" href="http://www.kugou.com/yy/special/index/1-0-0.html" hidefocus="true">全部</a></dt>
-            <dt><a title="最近七天精选集" onclick="sdnClick(12130)" href="http://www.kugou.com/yy/special/index/1-0-1.html" hidefocus="true">最近七天</a></dt>
-            <dt><a title="最近一月精选集" onclick="sdnClick(12131)" href="http://www.kugou.com/yy/special/index/1-0-2.html" hidefocus="true">最近一月</a></dt>
-            <dt><a title="最近一季精选集" onclick="sdnClick(12132)" href="http://www.kugou.com/yy/special/index/1-0-3.html" hidefocus="true">最近一季</a></dt>
-        </dl>
-    </div>
-
     <div class="r">
-        <div class="head">
+        <div class="head" style="background-color: #333">
             <strong id="album_title">全部精选集</strong>
-            <div class="sort">排序：
-                <select id="px" onchange="selectChange()">
-                    <option value="0" selected="selected">按时间</option>
-                    <option value="1">按浏览</option>
-                </select>
-            </div>
+            <input type="hidden" value="${loginUserId}" id="kuserSaveId" name="kuserSaveId">
         </div>
 
-        <ul id="ulAlbums">
-             
-            <li class="s_18069">
-            <div class="pic">
-                <a hidefocus="ture" title="我们结婚了 甜蜜大放送" href="http://www.kugou.com/yy/special/single/18069.html" onclick="sdnClick(12133)"><img alt="我们结婚了 甜蜜大放送" src="playlist_files/20130701174513957545.jpg"  _def="http://www.kugou.com/yy/static/images/default2.jpg" height="100" width="100"></a>
-            </div>
-            <div class="detail">
-                <div class="top"><em>制作人：华丽的落泪</em><strong><a title="我们结婚了 甜蜜大放送" href="http://www.kugou.com/yy/special/single/18069.html">我们结婚了 甜蜜大放送</a>
-                <!--<span>(0)</span>-->
-                </strong></div>
-                <div class="text">有一种俊男美女的搭配，叫幻想夫妇；有一种爱情，能跨越语言的障碍；有一种甜蜜，叫我们结婚了。在这个炎热的夏天，为大家送上【我们结婚了 甜蜜大放送】，让我们听着音乐，去寻找爱情。</div>
-                <div class="btn">
-                    <a href="javascript:void(0)" title="全部播放" onclick="play(18069,this);" class="playall" hidefocus="true">全部播放</a>
-                   <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_1" data-bd-bind="1482925584934">
-                        <em>分享到：</em>
-                        <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                        <!-- <a class="bds_tqq" data-cmd="tqq"></a> -->
-                        <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                        <a class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                        <a class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-                    </div>
-                </div>
-            </div>
-            </li>
-             
-            <li class="s_18086">
-            <div class="pic">
-                <a hidefocus="ture" title="酒吧歌手也有春天" href="http://www.kugou.com/yy/special/single/18086.html" onclick="sdnClick(12133)"><img alt="酒吧歌手也有春天" src="playlist_files/20130710173944930114.jpg" _def="http://www.kugou.com/yy/static/images/default2.jpg" height="100" width="100"></a>
-            </div>
-            <div class="detail">
-                <div class="top"><em>制作人：我是wolf</em><strong><a title="酒吧歌手也有春天" href="http://www.kugou.com/yy/special/single/18086.html">酒吧歌手也有春天</a>
-                <!--<span>(0)</span>-->
-                </strong></div>
-                <div class="text">许多热爱唱歌的人一直在用各种方式追求着自己的音乐梦想，在酒吧驻唱也是其中一种。许多人或许会因为是酒吧歌手就轻视这些追逐梦想的人，但其实他们都是值得尊重的，因为每一个努力的人，都是靠自己去争取机会，留下来奋斗的汗水，才成为那颗闪耀的明星。</div>
-                <div class="btn">
-                    <a href="javascript:void(0)" title="全部播放" onclick="play(18086,this);" class="playall" hidefocus="true">全部播放</a>
-                   <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_2" data-bd-bind="1482925584947">
-                        <em>分享到：</em>
-                        <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                        <!-- <a class="bds_tqq" data-cmd="tqq"></a> -->
-                        <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                        <a class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                        <a class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-                    </div>
-                </div>
-            </div>
-            </li>
-             
-            <li class="s_18082">
-            <div class="pic">
-                <a hidefocus="ture" title="热门电视剧半年大集合" href="http://www.kugou.com/yy/special/single/18082.html" onclick="sdnClick(12133)"><img alt="热门电视剧半年大集合" src="playlist_files/20130709143539668456.jpg" _def="http://www.kugou.com/yy/static/images/default2.jpg" height="100" width="100"></a>
-            </div>
-            <div class="detail">
-                <div class="top"><em>制作人：我是wolf</em><strong><a title="热门电视剧半年大集合" href="http://www.kugou.com/yy/special/single/18082.html">热门电视剧半年大集合</a>
-                <!--<span>(0)</span>-->
-                </strong></div>
-                <div class="text">2013上半年热门电视剧歌单大集合，每次在追电视剧的时候，最印象深刻的就是里面的歌曲，每当听起这些歌曲，脑海就会想起一些剧情和画面，这里面的歌曲，有你追过的电视剧吗？推荐曲目：曾沛慈- 爱情怎么喊停  苏盈之 - 不应该勇敢。</div>
-                <div class="btn">
-                    <a href="javascript:void(0)" title="全部播放" onclick="play(18082,this);" class="playall" hidefocus="true">全部播放</a>
-                   <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_3" data-bd-bind="1482925584957">
-                        <em>分享到：</em>
-                        <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                        <!-- <a class="bds_tqq" data-cmd="tqq"></a> -->
-                        <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                        <a class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                        <a class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-                    </div>
-                </div>
-            </div>
-            </li>
-             
-            <li class="s_18011">
-            <div class="pic">
-                <a hidefocus="ture" title="毕业了，你们还在一起吗" href="http://www.kugou.com/yy/special/single/18011.html" onclick="sdnClick(12133)"><img alt="毕业了，你们还在一起吗" src="playlist_files/20130524172455628408.jpg" _def="http://www.kugou.com/yy/static/images/default2.jpg" height="100" width="100"></a>
-            </div>
-            <div class="detail">
-                <div class="top"><em>制作人：MR.Q</em><strong><a title="毕业了，你们还在一起吗" href="http://www.kugou.com/yy/special/single/18011.html">毕业了，你们还在一起吗</a>
-                <!--<span>(0)</span>-->
-                </strong></div>
-                <div class="text">不知道还会不会在微风吹拂的校道里一起背单词，还会不会手拉手过马路，还会不会并坐在长板凳上一边吃冰棍一边咯咯地笑。曾经的海誓山盟，如今的不堪一击，是谁破坏了我们的爱？毕业了，分手了，是我们变得现实了还是我们的感情根本经不起现实的考验。</div>
-                <div class="btn">
-                    <a href="javascript:void(0)" title="全部播放" onclick="play(18011,this);" class="playall" hidefocus="true">全部播放</a>
-                   <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_4" data-bd-bind="1482925584963">
-                        <em>分享到：</em>
-                        <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                        <!-- <a class="bds_tqq" data-cmd="tqq"></a> -->
-                        <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                        <a class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                        <a class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-                    </div>
-                </div>
-            </div>
-            </li>
-             
-            <li class="s_18077">
-            <div class="pic">
-                <a hidefocus="ture" title="最值得收藏的背景音乐" href="http://www.kugou.com/yy/special/single/18077.html" onclick="sdnClick(12133)"><img alt="最值得收藏的背景音乐" src="playlist_files/20130705104555627674.jpg" _def="http://www.kugou.com/yy/static/images/default2.jpg" height="100" width="100"></a>
-            </div>
-            <div class="detail">
-                <div class="top"><em>制作人：好妖娆的悲伤</em><strong><a title="最值得收藏的背景音乐" href="http://www.kugou.com/yy/special/single/18077.html">最值得收藏的背景音乐</a>
-                <!--<span>(0)</span>-->
-                </strong></div>
-                <div class="text">有一种旋律总是徘徊在我们耳边，在我们的生活里。听广播时，看电视时出现吸引人的曲子，不禁让人想要追寻其曲目的根源。小编推荐最值得收藏的背景音乐精选集，这些，会是你一直在寻找的背景音乐吗？</div>
-                <div class="btn">
-                    <a href="javascript:void(0)" title="全部播放" onclick="play(18077,this);" class="playall" hidefocus="true">全部播放</a>
-                   <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_5" data-bd-bind="1482925584970">
-                        <em>分享到：</em>
-                        <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                        <!-- <a class="bds_tqq" data-cmd="tqq"></a> -->
-                        <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                        <a class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                        <a class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-                    </div>
-                </div>
-            </div>
-            </li>
-             
-            <li class="s_18079">
-            <div class="pic">
-                <a hidefocus="ture" title="秒杀各榜单的韩国舞曲" href="http://www.kugou.com/yy/special/single/18079.html" onclick="sdnClick(12133)"><img alt="秒杀各榜单的韩国舞曲" src="playlist_files/blank.gif" _def="http://www.kugou.com/yy/static/images/default2.jpg" height="100" width="100"></a>
-            </div>
-            <div class="detail">
-                <div class="top"><em>制作人：错位的梦想</em><strong><a title="秒杀各榜单的韩国舞曲" href="http://www.kugou.com/yy/special/single/18079.html">秒杀各榜单的韩国舞曲</a>
-                <!--<span>(0)</span>-->
-                </strong></div>
-                <div class="text">　　2013年，在韩国新人如雨后春笋般层出不穷的年代，在鸟叔洗脑神曲领衔的时代，不论是疯狂的G-Dragon，还是狼族少年EXO，抑或是不灭人气的少女时代，都用让人中毒的舞曲宣告自己的回归，一起来感受那些让人狂热的节奏吧！</div>
-                <div class="btn">
-                    <a href="javascript:void(0)" title="全部播放" onclick="play(18079,this);" class="playall" hidefocus="true">全部播放</a>
-                   <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_6" data-bd-bind="1482925584978">
-                        <em>分享到：</em>
-                        <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                        <!-- <a class="bds_tqq" data-cmd="tqq"></a> -->
-                        <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                        <a class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                        <a class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-                    </div>
-                </div>
-            </div>
-            </li>
-             
-            <li class="s_18085">
-            <div class="pic">
-                <a hidefocus="ture" title="爱神听到都会流泪的歌" href="http://www.kugou.com/yy/special/single/18085.html" onclick="sdnClick(12133)"><img alt="爱神听到都会流泪的歌" src="playlist_files/blank.gif" _def="http://www.kugou.com/yy/static/images/default2.jpg" height="100" width="100"></a>
-            </div>
-            <div class="detail">
-                <div class="top"><em>制作人：我是wolf</em><strong><a title="爱神听到都会流泪的歌" href="http://www.kugou.com/yy/special/single/18085.html">爱神听到都会流泪的歌</a>
-                <!--<span>(0)</span>-->
-                </strong></div>
-                <div class="text">每首伤心的歌，背后都有一个让人生疼的故事，也许它能勾起你努力忘记的回忆，每听到动情之处时，心痛的感觉让眼泪随之落下。走过诸多相似的风景，相同的地点，身边却早已经换了别人，如今也只能无可奈何地怀念着那些物是人非。</div>
-                <div class="btn">
-                    <a href="javascript:void(0)" title="全部播放" onclick="play(18085,this);" class="playall" hidefocus="true">全部播放</a>
-                   <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_7" data-bd-bind="1482925584987">
-                        <em>分享到：</em>
-                        <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                        <!-- <a class="bds_tqq" data-cmd="tqq"></a> -->
-                        <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                        <a class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                        <a class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-                    </div>
-                </div>
-            </div>
-            </li>
-             
-            <li class="s_18087">
-            <div class="pic">
-                <a hidefocus="ture" title="iTunes的那些夏日high歌" href="http://www.kugou.com/yy/special/single/18087.html" onclick="sdnClick(12133)"><img alt="iTunes的那些夏日high歌" src="playlist_files/blank.gif"  _def="http://www.kugou.com/yy/static/images/default2.jpg" height="100" width="100"></a>
-            </div>
-            <div class="detail">
-                <div class="top"><em>制作人：微凉</em><strong><a title="iTunes的那些夏日high歌" href="http://www.kugou.com/yy/special/single/18087.html">iTunes的那些夏日high歌</a>
-                <!--<span>(0)</span>-->
-                </strong></div>
-                <div class="text">炎炎夏天，有了空调就可以告别炎热？有了西瓜就可以脱离干渴？来点high歌怎么样！？沙滩、比基尼、热裤，iTunes夏日high歌，要你刺激，要你爽。正如iTunes的宗旨“娱乐从未如此简单”。</div>
-                <div class="btn">
-                    <a href="javascript:void(0)" title="全部播放" onclick="play(18087,this);" class="playall" hidefocus="true">全部播放</a>
-                   <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_8" data-bd-bind="1482925584992">
-                        <em>分享到：</em>
-                        <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                        <!-- <a class="bds_tqq" data-cmd="tqq"></a> -->
-                        <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                        <a class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                        <a class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-                    </div>
-                </div>
-            </div>
-            </li>
-             
-            <li class="s_18007">
-            <div class="pic">
-                <a hidefocus="ture" title="沧桑心事，熟男情歌" href="http://www.kugou.com/yy/special/single/18007.html" onclick="sdnClick(12133)"><img alt="沧桑心事，熟男情歌" src="playlist_files/blank.gif"  _def="http://www.kugou.com/yy/static/images/default2.jpg" height="100" width="100"></a>
-            </div>
-            <div class="detail">
-                <div class="top"><em>制作人：MR.Q</em><strong><a title="沧桑心事，熟男情歌" href="http://www.kugou.com/yy/special/single/18007.html">沧桑心事，熟男情歌</a>
-                <!--<span>(0)</span>-->
-                </strong></div>
-                <div class="text">曾经的幼稚青涩早已褪去，经历了世事的磨练愈发醇厚，成熟男子的心思就像美酒，愈久弥香。听着歌手的低吟浅唱，你，是否想起了以前的点点滴滴？</div>
-                <div class="btn">
-                    <a href="javascript:void(0)" title="全部播放" onclick="play(18007,this);" class="playall" hidefocus="true">全部播放</a>
-                   <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_9" data-bd-bind="1482925584998">
-                        <em>分享到：</em>
-                        <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                        <!-- <a class="bds_tqq" data-cmd="tqq"></a> -->
-                        <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                        <a class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                        <a class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-                    </div>
-                </div>
-            </div>
-            </li>
-             
-            <li class="s_18008">
-            <div class="pic">
-                <a hidefocus="ture" title="我们是荧幕情侣" href="http://www.kugou.com/yy/special/single/18008.html" onclick="sdnClick(12133)"><img alt="我们是荧幕情侣" src="playlist_files/blank.gif"  _def="http://www.kugou.com/yy/static/images/default2.jpg" height="100" width="100"></a>
-            </div>
-            <div class="detail">
-                <div class="top"><em>制作人：婉转的单纯</em><strong><a title="我们是荧幕情侣" href="http://www.kugou.com/yy/special/single/18008.html">我们是荧幕情侣</a>
-                <!--<span>(0)</span>-->
-                </strong></div>
-                <div class="text">《陆贞传奇》火爆荧屏。陈晓赵丽颖的“贞湛恋”牵动观众的心。还记得那些年，我们
-一起追过的剧吗？港台剧、大陆剧、日剧、韩剧……在剧里，荧幕情侣们相识、相知、相恋，过程或欢乐，或温馨，或悲伤……看过《一起来看流星雨》，就觉得张
-翰郑爽简直就是天生一对；看过《想你》，会觉得朴有天和尹恩惠演技高超得太合拍；看过《宫锁心玉》，就找不到比杨幂和冯绍峰更可爱的宫廷剧荧幕情侣了。让
-我们一起来盘点那些曾经令我们牵肠挂肚、念念不忘的经典银幕情侣吧！</div>
-                <div class="btn">
-                    <a href="javascript:void(0)" title="全部播放" onclick="play(18008,this);" class="playall" hidefocus="true">全部播放</a>
-                   <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_10" data-bd-bind="1482925585005">
-                        <em>分享到：</em>
-                        <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                        <!-- <a class="bds_tqq" data-cmd="tqq"></a> -->
-                        <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                        <a class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                        <a class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-                    </div>
-                </div>
-            </div>
-            </li>
-                    </ul>
+        <ul id="ulAlbums" style="align:center;">
+         </ul>
 
         <div class="nvg" id="nvg">
-            <span id="mypage"><a style="visibility:hidden" id="page_first" href="http://www.kugou.com/yy/special/index/1.html" title="首页" class="direct btnPage">首页</a><span style="visibility:hidden" class="PrePageSpan"><a id="page_pr_e" href="#" title="上一页" class="direct btnPage back">上一页</a></span><span id="page_1" class="current">1</span><a id="page_2" href="http://www.kugou.com/yy/special/index/2-0-0.html">2</a><a id="page_3" href="http://www.kugou.com/yy/special/index/3-0-0.html">3</a><a id="page_4" href="http://www.kugou.com/yy/special/index/4-0-0.html">4</a><a id="page_5" href="http://www.kugou.com/yy/special/index/5-0-0.html">5</a><span class="NextPageSpan"><a id="page_next_2" href="http://www.kugou.com/yy/special/index/2-0-0.html" title="下一页" class="direct btnPage">下一页</a></span><a id="page_last_5" href="http://www.kugou.com/yy/special/index/5-0-0.html" title="尾页" class="direct btnPage">尾页</a></span>
         </div>
     </div>
 </div>
+
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="js/playlist.js"></script>
 
 <!--脚步-->
 <link rel="stylesheet" data-embed="" href="playlist_files/footer.css">

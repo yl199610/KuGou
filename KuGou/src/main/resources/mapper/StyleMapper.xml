@@ -23,20 +23,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	
-	<!--  第二次分页-->
-	<select id="getStyleMainByPagination" parameterType="paginationBean" resultMap="paginationBeanMap1">
-		select count(1) total,ceil(count(1)/${pageSize}) totalPage,${pageSize} pageSize,${currPage} currPage from KuSongDetail
-	</select>
-	<resultMap type="paginationBean" id="paginationBeanMap1">
-		<collection property="rows" column="{pageSize=pageSize ,currPage=currPage}" select="getSongStyle1"/>
-	</resultMap>
-	
-	<select id="getSongStyle1" resultType="KuSongDetail">
-		select * from
-		(select m.*,rownum rn from
-		(select * from KuSongDetail order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
-	</select>
-
 		<insert id="addSongStyleMsg" parameterType="KuSongStyle">
 		insert into kuSongStyle values(seq_kuSongStyle.nextval,#{kuSongStyleName},1,#{kuSongStylesecond})
 	</insert>
@@ -102,6 +88,19 @@ and  kudetailstyleId=#{styleid}
   </select>
   
   
+  	<!--  第二次分页-->
+	<select id="getStyleMainByPagination" parameterType="paginationBean" resultMap="paginationBeanMap1">
+		select count(1) total,ceil(count(1)/${pageSize}) totalPage,${pageSize} pageSize,${currPage} currPage from KuSongDetail
+	</select>
+	<resultMap type="paginationBean" id="paginationBeanMap1">
+		<collection property="rows" column="{pageSize=pageSize ,currPage=currPage}" select="getSongStyle1"/>
+	</resultMap>
+	
+	<select id="getSongStyle1" resultType="KuSongDetail">
+		select * from
+		(select m.*,rownum rn from
+		(select * from KuSongDetail order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
+	</select>
   
 	
 </mapper>
