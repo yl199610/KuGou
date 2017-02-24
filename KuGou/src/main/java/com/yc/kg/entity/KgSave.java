@@ -6,15 +6,24 @@ public class KgSave {
     private Integer kgSaveSid;
     private String kgSavenext;
     private String kgSavesecond;
-    public KgSave() {}
-	public KgSave(Integer kgSaveId, Integer kuserSaveId, Integer kgSaveSid, String kgSavenext, String kgSavesecond) {
+    private KuSong kusong;
+
+    public KgSave() {
+	}
+    
+	public KgSave(Integer kgSaveId, Integer kuserSaveId, Integer kgSaveSid, String kgSavenext, String kgSavesecond,
+			KuSong kusong) {
+		super();
 		this.kgSaveId = kgSaveId;
 		this.kuserSaveId = kuserSaveId;
 		this.kgSaveSid = kgSaveSid;
 		this.kgSavenext = kgSavenext;
 		this.kgSavesecond = kgSavesecond;
+		this.kusong = kusong;
 	}
-	
+
+
+
 	public Integer getKgSaveId() {
 		return kgSaveId;
 	}
@@ -45,10 +54,19 @@ public class KgSave {
 	public void setKgSavesecond(String kgSavesecond) {
 		this.kgSavesecond = kgSavesecond;
 	}
+
+	public KuSong getKusong() {
+		return kusong;
+	}
+
+	public void setKusong(KuSong kusong) {
+		this.kusong = kusong;
+	}
+
 	@Override
 	public String toString() {
 		return "KgSave [kgSaveId=" + kgSaveId + ", kuserSaveId=" + kuserSaveId + ", kgSaveSid=" + kgSaveSid
-				+ ", kgSavenext=" + kgSavenext + ", kgSavesecond=" + kgSavesecond + "]";
+				+ ", kgSavenext=" + kgSavenext + ", kgSavesecond=" + kgSavesecond + ", kusong=" + kusong + "]";
 	}
-    
+
 }

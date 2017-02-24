@@ -70,19 +70,11 @@
 			delete data[i]['kunext'];
 			delete data[i]['kusecond'];
 			delete data[i]['detailtime'];
-			
 		} 
-	
 		new SMusic({
 			musicList:data
 		});
-		
-		
 	}, "json");
-
- var  musicList = [
-	
-];
 
 </script>
 

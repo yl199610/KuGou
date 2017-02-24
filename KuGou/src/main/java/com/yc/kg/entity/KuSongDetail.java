@@ -174,13 +174,11 @@ public class KuSongDetail {
 
 	@Override
 	public String toString() {
-		return "\nKuSongDetail [kuSongDetailId=" + kuSongDetailId + ", ksongsingId=" + ksongsingId + ", kudetailsongId="
+		return "KuSongDetail [kuSongDetailId=" + kuSongDetailId + ", ksongsingId=" + ksongsingId + ", kudetailsongId="
 				+ kudetailsongId + ", kudetailstyleId=" + kudetailstyleId + ", songplay=" + songplay + ", statue="
 				+ statue + ", address=" + address + ", kusingstatus=" + kusingstatus + ", detailtime=" + detailtime
 				+ ", kunext=" + kunext + ", kusecond=" + kusecond + ", KuSong=" + KuSong + ", kuSinger=" + kuSinger
 				+ "]";
 	}
-
-
 
 }

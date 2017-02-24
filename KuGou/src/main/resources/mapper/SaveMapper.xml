@@ -21,4 +21,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into KuSongDetail values(seq_kuSongDetail.nextval,#{ksongsingId},#{kudetailsongId},#{kudetailstyleId},#{songplay},0,#{address},#{kusingstatus},#{detailtime},#{kunext},#{kusecond})
 	</insert>
 	
+	<insert id="insertSave" parameterType="KgSave">
+		insert into kgSave values(seq_kgSaveId.nextval,#{kuserSaveId},#{kgSaveSid},#{kgSavenext},#{kgSavesecond})
+	</insert>	
+	
+  <resultMap id="songDetail" type="KgSave">
+    <id property="kgSaveId" column="kgSaveId" />
+    <result property="kuserSaveId" column="kuserSaveId" />
+    <result property="kgSaveSid" column="kgSaveSid" />
+    <result property="kgSavenext" column="kgSavenext" />
+    <result property="kgSavesecond" column="kgSavesecond" />
+    <collection property="kusong" ofType="KuSong">
+      <id property="kuSongId" column="kuSongId" />
+      <result property="kuSongName" column="kuSongName" />
+      <result property="kuSongImg" column="kuSongImg" />
+      <result property="kuSongWords" column="kuSongWords" />
+      <result property="kuSongAddress" column="kuSongAddress" />
+      <result property="kuSongSongtime" column="kuSongSongtime" />
+      <result property="kuSongYear" column="kuSongYear" />
+      <result property="kuSongNext" column="kuSongNext" />
+      <result property="kuSongSecond" column="kuSongSecond" />
+    </collection>
+  </resultMap>
+	<select id="selectDetail" parameterType="int" resultMap="songDetail">
+		select * from kgSave kg join kuSong k on k.kuSongId=kg.kgSaveSid where kuserSaveId=#{id} and kgSavesecond=1
+	</select>
+	
+	
 </mapper>

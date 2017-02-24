@@ -1,5 +1,11 @@
 package com.yc.kg.web.handler;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.websocket.server.HandshakeRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -15,8 +21,8 @@ import com.yc.kg.service.SongService;
 public class PushMsgHandler extends TextWebSocketHandler{
 
 	@Autowired
-	private SongService songService;	
-	
+	private SongService songService;
+
 	@Override//做推送消息处理向客户端发送消息
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
 		KuSong song= songService.pushSong();

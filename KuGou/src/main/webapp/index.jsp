@@ -53,7 +53,7 @@
 								<c:when test="${loginUser eq null }">
 								<span><a target="_blank" href="./reg.jsp">注册</a></span>
 									<label> 登录名 </label>
-									<input name="kgUserName" required="required"
+									<input name="kgUserName" required="required" id="kgUserName"
 										placeholder="输入用户名" />
 									<label> 密&#160;&#160;码 </label>
 									<input type="password"  name="kgUserPwd" 
@@ -62,8 +62,9 @@
 									<label id="error"></label>
 								</c:when>
 								<c:otherwise>
+									<a href="./playlist.jsp" target="_blank">我的收藏</a>&nbsp;
 									<label>欢迎<span style='color: green;'>${loginUser }</span>使用本网站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<a href='javascript:void(0)' onclick='logout()'>注销用户</a>
+									<a href='javascript:void(0)' onclick='logout()'>注销用户</a>
 								</c:otherwise>
 							</c:choose>
 						</form></li>
@@ -466,7 +467,6 @@
 					
 					
 					<div class="itemContent1" style="height: 800px;width: 650px;"><!--修改  -->
-						
 					</div>
 					<div class="pages n">
 						<a class="prev">上一页</a>

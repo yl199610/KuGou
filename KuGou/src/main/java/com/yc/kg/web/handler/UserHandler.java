@@ -80,10 +80,11 @@ public class UserHandler {
 		HttpSession session = request.getSession();
 
 		List<KuUser> user=userService.userlogin(kuser);
-		System.out.println(user);
+		
 		if(user.size()>0){
-
 			session.setAttribute("loginUser", kuser.getKgUserName());
+			session.setAttribute("loginUserId", user.get(0));
+			System.out.println("============"+session.getAttribute("loginUser"));
 			return true;
 		}else{
 			session.setAttribute("errorMsg", "用户名或密码错误");

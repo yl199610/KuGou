@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.yc.kg.entity.KuSong;
 import com.yc.kg.entity.KuSongDetail;
 import com.yc.kg.entity.KuSongStyle;
 import com.yc.kg.entity.PaginationBean;
@@ -80,7 +81,7 @@ public class StyleHandler {
 	}
 
 	
-	@RequestMapping("/findStyle")
+/*	@RequestMapping("/findStyle")
 	@ResponseBody
 	public List<KuSongDetail> findStyle(@RequestParam(name="kuSongStyleId")int styleid){
 		LogManager.getLogger().debug("请求styleHandler处理styleid....\n"+styleid);
@@ -90,38 +91,49 @@ public class StyleHandler {
 			System.out.println("--------------\n"+details.get(i).getKuSinger());
 			details.get(i).getKuSong();
 		}
-//		for (int j = 0; j <1000; j++) {
-//			KuSongDetail kd=details.get(j);
-//			s.setSinger(kd.getKuSinger().get(j).getKuSingerName());
-//			s.setSong(kd.getKuSong().get(j).getKuSongName());
-//			System.out.println(kd.getKuSinger()+"-"+kd.getKuSong());
-//			ss.add(s);
-//		}
-//		System.out.println(ss);
+		
+		@RequestMapping("/list")
+		@ResponseBody
+		public PaginationBean<KuSong> list(String page,String rows){
+			LogManager.getLogger().debug("请求songHandler处理list....");
+			System.out.println(songService.listPartSong(page,rows));
+			return songService.listPartSong(page,rows);
+		}
+		for (int j = 0; j <1000; j++) {
+			KuSongDetail kd=details.get(j);
+			s.setSinger(kd.getKuSinger().get(j).getKuSingerName());
+			s.setSong(kd.getKuSong().get(j).getKuSongName());
+			System.out.println(kd.getKuSinger()+"-"+kd.getKuSong());
+			ss.add(s);
+		}
+		System.out.println(ss);
 		System.out.println("detaile"+details);
 		return details;
+	}*/
+	
+	@RequestMapping("/findStyle")
+	@ResponseBody
+	public PaginationBean<KuSongDetail> findStyle(@RequestParam(name="kuSongStyleId")int styleid,String page,String rows){
+		LogManager.getLogger().debug("请求styleHandler处理styleid....\n"+styleid);
+		System.out.println("page"+page+"rows"+rows);
+		List<KuSongDetail>details=styleService.findStyle(styleid);
+		//List<KuSongDetail>details=styleService.findStyle(styleid);
+		
+
+		System.out.println("detaile"+details);
+		
+		//System.out.println(styleService.listPartStyle1(page,rows,styleid));
+		return styleService.listPartStyle1(page,rows);
 	}
+	
+	
 	
 	
 	@RequestMapping("/findAllStyle")
 	@ResponseBody
 	public List<KuSongDetail> findAllStyle(){
-		LogManager.getLogger().debug("请求styleHandler处理styleid111111111....\n");
+		LogManager.getLogger().debug("请求styleHandler处理styleid....\n");
 		List<KuSongDetail>details=styleService.findAllStyle();
-		System.out.println("detai11l"+details);
-//		for (int i = 0; i < details.size(); i++) {
-//			System.out.println("--------------\n"+details.get(i).getKuSinger());
-//			details.get(i).getKuSong();
-//		}
-//		for (int j = 0; j <1000; j++) {
-//			KuSongDetail kd=details.get(j);
-//			s.setSinger(kd.getKuSinger().get(j).getKuSingerName());
-//			s.setSong(kd.getKuSong().get(j).getKuSongName());
-//			System.out.println(kd.getKuSinger()+"-"+kd.getKuSong());
-//			ss.add(s);
-//		}
-//		System.out.println(ss);
-		System.out.println("detaile"+details);
 		return details;
 	}
 	

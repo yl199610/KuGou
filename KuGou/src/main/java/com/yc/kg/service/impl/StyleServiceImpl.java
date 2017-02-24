@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.yc.kg.entity.KuSong;
 import com.yc.kg.entity.KuSongDetail;
 import com.yc.kg.entity.KuSongStyle;
 import com.yc.kg.entity.PaginationBean;
@@ -72,21 +73,27 @@ public class StyleServiceImpl implements StyleService{
 
 	@Override
 	public List<KuSongDetail> findStyle(int styleid) {
-
-		
 		return styleMapper.findStyle(styleid);
 	}
 
 	@Override
 	public List<KuSongDetail> findAllStyle() {
-		
-		
-		
+
 		return styleMapper.findAllStyle();
 	}
 
-
-
-
+	@Override
+	public PaginationBean<KuSongDetail> listPartStyle1(String currpage, String pageSize) {
+		PaginationBean<KuSongDetail> songBean = new PaginationBean<KuSongDetail>();
+		if(currpage!=null){
+			songBean.setCurrPage(Integer.parseInt(currpage));
+		}
+		
+		if(pageSize!=null){
+			songBean.setPageSize(Integer.parseInt(pageSize));
+		}
+		return  styleMapper.listPartStyle1(songBean);
+	
+	}
 	
 }
