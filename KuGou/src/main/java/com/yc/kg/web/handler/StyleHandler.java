@@ -99,7 +99,7 @@ public class StyleHandler {
 		return details;
 	}
 	
-	@RequestMapping("/findStyle")
+	@RequestMapping("/findAllStyle")
 	@ResponseBody
 	public List<KuSongDetail> findAllStyle(){
 		LogManager.getLogger().debug("请求styleHandler处理styleid....\n");
