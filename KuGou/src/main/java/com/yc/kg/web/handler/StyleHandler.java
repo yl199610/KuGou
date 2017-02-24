@@ -99,5 +99,21 @@ public class StyleHandler {
 		return details;
 	}
 	
+	@RequestMapping("/findStyle")
+	@ResponseBody
+	public List<KuSongDetail> findAllStyle(){
+		LogManager.getLogger().debug("请求styleHandler处理styleid....\n");
+		List<KuSongDetail>details=styleService.findAllStyle();
+		System.out.println("--------details------\n"+details);
+//		for (int j = 0; j <1000; j++) {
+//			KuSongDetail kd=details.get(j);
+//			s.setSinger(kd.getKuSinger().get(j).getKuSingerName());
+//			s.setSong(kd.getKuSong().get(j).getKuSongName());
+//			System.out.println(kd.getKuSinger()+"-"+kd.getKuSong());
+//			ss.add(s);
+//		}
+//		System.out.println(ss);
+		return details;
+	}
 	
 }

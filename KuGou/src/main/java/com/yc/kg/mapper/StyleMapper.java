@@ -24,6 +24,6 @@ public interface StyleMapper {
 
 	List<KuSongDetail> findStyle(int styleid);
 
-	
+	List<KuSongDetail> findAllStyle();
 
 }

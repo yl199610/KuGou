@@ -252,7 +252,7 @@ DD_belatedPNG.fix('.icon,.logo');
         </div>
     </div>
 </div>
-<!--百度统计-->
+<!-- 
 <script>
    var _hmt = _hmt || [];
    (function() {
@@ -268,7 +268,7 @@ DD_belatedPNG.fix('.icon,.logo');
     d.src = "http://static.kgimg.com/common/js/min/hijacked-min.js";
     document.body.appendChild(d);
   }, 2000);
-</script>
+</script> -->
 
 
 <script type="text/javascript" src="playlist_files/playsong-min.js"></script>
@@ -406,4 +406,4 @@ with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElemen
 </script>
 <!-- Baidu Button END -->
 
-<div class="bdshare-slide-button-box bdshare-slide-style-r2" style="top: 250px; width: 0px; z-index: 99999; right: 0px;" data-bd-bind="1482925585011"><a href="#" onclick="return false;" class="bdshare-slide-button" style="left: -24px;"></a><div class="bdshare-slide-list-box" style="width: 0px; display: none;"><div class="bdshare-slide-top">分享到</div><div class="bdshare-slide-list"><ul class="bdshare-slide-list-ul" style="width: 226px;"></ul></div><div class="bdshare-slide-bottom" style="width: 226px;"><a href="#" onclick="return false;" class="slide-more" data-cmd="more">更多...</a></div></div></div><script src="playlist_files/hijacked-min.js"></script></body></html>
+<div class="bdshare-slide-button-box bdshare-slide-style-r2" style="top: 250px; width: 0px; z-index: 99999; right: 0px;" data-bd-bind="1482925585011"><a href="#" onclick="return false;" class="bdshare-slide-button" style="left: -24px;"></a><div class="bdshare-slide-list-box" style="width: 0px; display: none;"><div class="bdshare-slide-top">分享到</div><div class="bdshare-slide-list"><ul class="bdshare-slide-list-ul" style="width: 226px;"></ul></div><div class="bdshare-slide-bottom" style="width: 226px;"><a href="#" onclick="return false;" class="slide-more" data-cmd="more">更多...</a></div></div></div></body></html>

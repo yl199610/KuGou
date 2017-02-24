@@ -24,4 +24,6 @@ public interface StyleService {
 
 	PaginationBean<KuSongDetail> listPartMainStyle(String page, String rows);
 
+	List<KuSongDetail> findAllStyle();
+
 }

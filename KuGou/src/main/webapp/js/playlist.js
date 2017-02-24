@@ -8,7 +8,6 @@ function loadDetail(songid){
 		$("#ulAlbums").empty();
 		for (i=0; i < data.length; i++) {
 			 var jsonarray = eval(data);
-			 //歌曲时间   歌词路径(显示歌词)   歌曲路径(播放歌曲)   详细表id(增加点击率 或 跳转到播放器页面 点击播放全部跳转到播放器页面)
 			 var song=jsonarray[i].kusong.kuSongName;//歌曲表歌曲名
 			 var singer=data[i].kgSavenext;//歌手
 			 var path=jsonarray[i].kusong.kuSongAddress;//歌曲路径

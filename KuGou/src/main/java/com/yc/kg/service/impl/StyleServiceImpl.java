@@ -72,13 +72,12 @@ public class StyleServiceImpl implements StyleService{
 
 	@Override
 	public List<KuSongDetail> findStyle(int styleid) {
-
-		
 		return styleMapper.findStyle(styleid);
 	}
 
-
-
-
+	@Override
+	public List<KuSongDetail> findAllStyle() {
+		return styleMapper.findAllStyle();
+	}
 	
 }

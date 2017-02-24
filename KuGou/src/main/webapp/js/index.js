@@ -79,7 +79,9 @@ function findstyledetail(kuSongStyleId){
 			 $(".itemContent1").append('<li style="display:block;margin-top:10px;" ><span class="songName">'+songSinger+'</span>'
 					 +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
 					 +'<audio style="float:right;" src="music/6039.mp3" controls="controls"></audio></li>'
-					 +'<form action="save/save" method="post" id="saveForm"><input type="hidden" value="'+save+'" name="kgSaveSid" id="kgSaveSid"><input type="hidden" value="'+singer+'" name="kgSavenext" id="kgSavenext"><input type="submit" value="收藏" onclick="save('+save+')"/></form>');
+					 +'<form action="save/save" method="post" id="saveForm"><input type="hidden" value="'+save+'" name="kgSaveSid" id="kgSaveSid">'
+					 +'<input type="hidden" value="'+singer+'" name="kgSavenext" id="kgSavenext">'
+					 +'<input type="submit" value="收藏" onclick="save('+save+')"/></form>');
 		}	
 	}, "json");
 }
