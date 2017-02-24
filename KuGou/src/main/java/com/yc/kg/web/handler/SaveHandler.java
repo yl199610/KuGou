@@ -70,7 +70,14 @@ public class SaveHandler {
 		return saveService.findDetail(id);
 	}
 	
-
+	//取消收藏
+	@RequestMapping("/cancel")
+	@ResponseBody
+	public boolean cancelSave(){
+		LogManager.getLogger().debug("请求saveHandler处理save的用户id....");
+		return true;
+	}
+	
     @RequestMapping("download.do")
     public void downloadFile(HttpSession session,String fileName,HttpServletResponse response){  
         response.setCharacterEncoding("utf-8");  

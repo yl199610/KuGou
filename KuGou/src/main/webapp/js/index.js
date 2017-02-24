@@ -74,11 +74,12 @@ function findstyledetail(kuSongStyleId){
 			 //歌曲时间   歌词路径(显示歌词)   歌曲路径(播放歌曲)   详细表id(增加点击率 或 跳转到播放器页面 点击播放全部跳转到播放器页面)
 			 var singer=jsonarray[i].kuSinger.kuSingerName;//歌手表的歌曲名
 			 var song=jsonarray[i].kuSong.kuSongName;//歌曲表歌曲名
+			 var songaddress=jsonarray[i].kuSong.kuSongAddress;//歌曲地址
 			 var save=(jsonarray[i].kuSong.kuSongId);
 			 var songSinger=singer+"-"+song;
 			 $(".itemContent1").append('<li style="display:block;margin-top:10px;" ><span class="songName">'+songSinger+'</span>'
 					 +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
-					 +'<audio style="float:right;" src="music/6039.mp3" controls="controls"></audio></li>'
+					 +'<audio style="float:right;" src="'+songaddress+'" controls="controls"></audio></li>'
 					 +'<form action="save/save" method="post" id="saveForm"><input type="hidden" value="'+save+'" name="kgSaveSid" id="kgSaveSid">'
 					 +'<input type="hidden" value="'+singer+'" name="kgSavenext" id="kgSavenext">'
 					 +'<input type="submit" value="收藏" onclick="save('+save+')"/></form>');

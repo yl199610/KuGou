@@ -33,16 +33,16 @@ public class AdminHandler {
 	 * 忘记密码
 	 */
 	@RequestMapping("/forget")
-	public String forget(String username, String email, HttpServletRequest request) {
+	public String forget(String kgAdminName, String email, HttpServletRequest request) {
 		LogManager.getLogger().debug("请求UserHandler进行forget的操作....");
-		LogManager.getLogger().debug("请求数据username:" + username + ", email:" + email);
+		LogManager.getLogger().debug("请求数据username:" + kgAdminName + ", email:" + email);
 		try {
 			MimeMessage message = mailSender.createMimeMessage();
 			MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
 			helper.setFrom("studymail_test@163.com");
 			helper.setTo(email);
 			helper.setSubject("找回密码");
-			String hrefStr = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getServletContext().getContextPath() + "/user/getpassword?username=" + username;
+			String hrefStr = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getServletContext().getContextPath() + "/user/getpassword?username=" + kgAdminName;
 			System.out.println(hrefStr);
 			helper.setText("<a href='" + hrefStr + "'>找回密码</a><br>如果连接不可用拷贝" + hrefStr + "到地址栏...", true);
 			mailSender.send(message);
