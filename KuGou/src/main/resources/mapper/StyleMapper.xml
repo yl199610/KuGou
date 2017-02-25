@@ -44,7 +44,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from kuSongDetail kd, kuSinger k,kuSong ks where kd.ksongsingId=k.kuSingerId and kd.kudetailsongId=ks.kuSongId
 and  kudetailstyleId=#{styleid}
 	</select> -->
+
+  
+  <!--
+  <select id="findStyle" parameterType="int" resultMap="detailMap">
+  	select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+	join kuSong k on kd.kudetailsongId=k.kuSongId where kudetailstyleId=#{styleid}
+	and ks.kuSingerSingernext!=0 and k.kuSongNext=1
+  </select>
+  
+
+	<select id="getStyleMainByPagination" parameterType="paginationBean" resultMap="paginationBeanMap1">
+		select count(1) total,ceil(count(1)/${pageSize}) totalPage,${pageSize} pageSize,${currPage} currPage from KuSongDetail
+	</select>
+	<resultMap type="paginationBean" id="paginationBeanMap1">
+		<collection property="rows" column="{pageSize=pageSize ,currPage=currPage}" select="getSongStyle1"/>
+	</resultMap>
 	
+	<select id="getSongStyle1" resultType="KuSongDetail">
+		select * from
+		(select m.*,rownum rn from
+		(select * from KuSongDetail order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
+	</select> -->
+   <select id="findAllStyle"  resultMap="detailMap">
+  	select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+	join kuSong k on kd.kudetailsongId=k.kuSongId  where ks.kuSingerSingernext!=0 and k.kuSongNext=1
+  </select>
+  
+  <!-- index页面分页 -->
+  
+  <!-- 多表分页查询 -->	
   <resultMap id="detailMap" type="KuSongDetail">
     <id property="kuSongDetailId" column="kuSongDetailId" />
     <result property="ksongsingId" column="ksongsingId" />
@@ -80,33 +109,30 @@ and  kudetailstyleId=#{styleid}
       <result property="kuSingerSingersecond" column="kuSingerSingersecond" />
     </association>
   </resultMap>
-  
-  <select id="findStyle" parameterType="int" resultMap="detailMap">
-  	select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
-	join kuSong k on kd.kudetailsongId=k.kuSongId where kudetailstyleId=#{styleid}
-	and ks.kuSingerSingernext!=0 and k.kuSongNext=1
-  </select>
-  
-<!--
-	<select id="getStyleMainByPagination" parameterType="paginationBean" resultMap="paginationBeanMap1">
-		select count(1) total,ceil(count(1)/${pageSize}) totalPage,${pageSize} pageSize,${currPage} currPage from KuSongDetail
-	</select>
-	<resultMap type="paginationBean" id="paginationBeanMap1">
-		<collection property="rows" column="{pageSize=pageSize ,currPage=currPage}" select="getSongStyle1"/>
+
+  <resultMap type="paginationBean" id="paginationBeanMap1">
+		<collection property="rows" column="{pageSize=pageSize,currPage=currPage,kudetailstyleId=kudetailstyleId}" 
+		select="getKuSongDetails"/>
 	</resultMap>
 	
-	<select id="getSongStyle1" resultType="KuSongDetail">
+	<select id="getKuSongDetails" resultMap="detailMap">
 		select * from
 		(select m.*,rownum rn from
-		(select * from KuSongDetail order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
-	</select> -->
-   <select id="findAllStyle"  resultMap="detailMap">
-  	select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
-	join kuSong k on kd.kudetailsongId=k.kuSongId  where ks.kuSingerSingernext!=0 and k.kuSongNext=1
-  </select>
-  <select id="findFourStyle"  resultMap="detailMap">
-  	select * from (select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
-	join kuSong k on kd.kudetailsongId=k.kuSongId where ks.kuSingerSingernext!=0 and k.kuSongNext=1)where rownum&lt;5
-  </select>
+		(<include refid="selectKuSongDetail"/> order by 1 desc) m where ${currPage}*${pageSize}>=rownum) where rn>(${currPage}-1)*${pageSize}
+	</select>
 	
+	<sql id="selectKuSongDetail">
+		select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+		join kuSong k on kd.kudetailsongId=k.kuSongId  where kudetailstyleId=${kudetailstyleId} and ks.kuSingerSingernext!=0 and k.kuSongNext=1
+	</sql>
+		
+	 <select id="findStyle" parameterType="map" resultMap="paginationBeanMap1">
+  		select count(1) total,ceil(count(1)/${pageSize}) totalPage,${pageSize} pageSize,${currPage} currPage 
+  		,${kudetailstyleId} kudetailstyleId from (<include refid="selectKuSongDetail"/>)
+  	 </select>	
+  	 <!-- MV -->
+	  <select id="findFourStyle"  resultMap="detailMap">
+	  	select * from (select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+		join kuSong k on kd.kudetailsongId=k.kuSongId where ks.kuSingerSingernext!=0 and k.kuSongNext=1)where rownum&lt;3
+	  </select>
 </mapper>

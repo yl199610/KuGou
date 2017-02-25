@@ -19,7 +19,6 @@ public class SingerHandler {
 
 	@Autowired
 	private SingerService singerService;
-	
 	/**
 	 * 分页显示歌曲
 	 */

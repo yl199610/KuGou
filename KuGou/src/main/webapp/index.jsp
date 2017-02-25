@@ -88,7 +88,7 @@
 					<li><a href="./FM.html">电台</a></li>
 					<li><a href="./MV.html">MV</a></li>
 					<li><a href="./playlist.html">歌单</a></li>
-					<li><a href="./singer.html">歌手</a></li>
+					<li><a href="./singer.jsp">歌手</a></li>
 				</ul>
 				<ul class="subNav">
 					<li><a target="_blank"
@@ -486,11 +486,8 @@
 						<a target="_blank" href="http://www.kugou.com/mvweb/html/"
 							class="more fr">MV更多</a>
 					</div>
-					<div class="itemContent">
-
-
-
-						<div class="cpt cptBigL">
+					<div class="itemContenta">
+<!-- 						<div class="cpt cptBigL">
 							<a target="_blank"
 								href="http://www.kugou.com/mvweb/html/mv_593042.html"> 
 								<img
@@ -546,7 +543,7 @@
 								</div>
 							</a>
 						</div>
-
+ -->
 
 					</div>
 				</div>

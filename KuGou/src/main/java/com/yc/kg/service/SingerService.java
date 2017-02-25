@@ -19,4 +19,5 @@ public interface SingerService {
 
 	List<KuSinger> getSinger();
 
+
 }

@@ -20,11 +20,15 @@ public interface StyleService {
 
 	List<KuSongStyle> getAllStyle();
 
-	List<KuSongDetail> findStyle(int styleid);
+//	List<KuSongDetail> findStyle(int styleid);
 
 	PaginationBean<KuSongDetail> listPartMainStyle(String page, String rows);
 
 	List<KuSongDetail> findAllStyle();
+/*index界面分页*/
+	PaginationBean<KuSongDetail> listPartStyle1(String page, String rows);
+
+	PaginationBean<KuSongDetail> findStyle(int kuSongStyleId, String page,	String rows);
 
 	List<KuSongDetail> findFourdetail();
 

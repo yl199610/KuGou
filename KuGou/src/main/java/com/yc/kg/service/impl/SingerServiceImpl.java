@@ -52,6 +52,5 @@ public class SingerServiceImpl implements SingerService{
 	public List<KuSinger> getSinger() {
 		return singerMapper.getSingerMsg();
 	}
-	
-	
+
 }

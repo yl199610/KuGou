@@ -9,7 +9,7 @@
 <link type="text/css" rel="stylesheet" href="css/reg.css">
 </head>
 <body>
-	<img src="images/3.jpg">
+	<img src="images/log.jpg">
 	<div id="regDiv">
 		<form id="regForm" action ="user/zhuche" method="post" name="form1">
 			<table>

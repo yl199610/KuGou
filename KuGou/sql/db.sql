@@ -15,7 +15,8 @@ create table kgUser(
        kgUserNext varchar2(100) default 1,    		 --预留字段
        kgUserSecond varchar2(100)				   --预留字段二
 );
-select * from kgUser where kgUserName='a' and kgUserPwd='a'
+select * from kgUser where kgUserName='a' and kgUserPwd='a';
+select * from kuSongDetail
 create sequence seq_kgUserId start with 500;
 select * from kgUser;
 
@@ -36,6 +37,10 @@ create table kuSong(                			   --根据歌名来查询
        kuSongNext varchar2(100) default 1,     --预留字段
        kuSongSecond varchar2(100)			    --预留字段二
 );
+select * from
+		(select m.*,rownum rn from
+		(select * from kuSongDetail where kudetailstyleId=102 order by 1 desc) m where 1*5>=rownum) where rn>0
+
 select * from kuSong k join kgSave kg on kg.kgSaveSid=k.kuSongId where kuSongId=1000
 select * from kuSong kg join kuSong k on k.kuSongId=kg.kgSaveSid where kuserSaveId=500 and kgSavesecond=1
 create sequence seq_kuSong start with 1000;
@@ -148,13 +153,15 @@ create sequence seq_kuSongDetail start with 10000;
 select * from kuSongDetail kd, kuSinger k,kuSong ks
 where kd.ksongsingId=k.kuSingerId
 and kd.kudetailsongId=ks.kuSongId
-and  kudetailstyleId=4444
-
-
-insert into kuSongDetail values(seq_kuSongDetail.nextval,10000,1000,100,0,1,'music/6039.mp3',1,'1999-06-19',default,default);
-insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1001,101,0,1,'music/6039.mp3',1,'1999-06-19',default,default);
-insert into kuSongDetail values(seq_kuSongDetail.nextval,10002,1002,102,0,1,'music/6039.mp3',1,'1999-06-19',default,default);
-insert into kuSongDetail values(seq_kuSongDetail.nextval,10002,1001,103,0,1,'music/6039.mp3',1,'1999-06-19',default,default);
+and  kudetailstyleId=4444;
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1000,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10002,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10000,1000,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1001,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10002,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10003,1003,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10004,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
 
 select * from kuSongDetail kd, kuSinger k,kuSong ks where kd.ksongsingId=k.kuSingerId and kd.kudetailsongId=ks.kuSongId
 and  kudetailstyleId=103 and k.kuSingerSingernext!=0 and ks.kuSongNext=1
@@ -183,3 +190,10 @@ drop sequence seq_kuSongDetail;
 
 --评论表
 commit;
+
+select count(1) total,ceil(count(1)/${pageSize}) totalPage,${pageSize} pageSize,${currPage} currPage 
+  		from (select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+join kuSong k on kd.kudetailsongId=k.kuSongId  where kudetailstyleId=100 and ks.kuSingerSingernext!=0 and k.kuSongNext=1)
+
+select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+join kuSong k on kd.kudetailsongId=k.kuSongId  where kudetailstyleId=100 and ks.kuSingerSingernext!=0 and k.kuSongNext=1

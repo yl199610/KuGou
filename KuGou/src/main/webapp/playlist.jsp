@@ -1,10 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%><!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
 <html><head>
 <link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
 <link type="text/css" rel="stylesheet" href="easyui/themes/default/easyui.css">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
+<base href="/KuGou/">
 <title>我的收藏</title>
 <meta name="keywords" content="酷狗2013正式版,精选集,精选集歌曲下载,歌手,明星,音乐,在线音乐,在线听歌,听歌,新专辑,港台,日本,韩国,欧美,英国">
 <meta name="description" content="酷狗官方网站是中国最新最全的在线正版音乐网站,提供最新的在线音乐服务、免费音乐下载、最新的音乐播放器下载。">
@@ -17,7 +19,7 @@
 </script>
 <script src="playlist_files/share.js"></script><link rel="stylesheet" href="playlist_files/share_style0_16.css"><link rel="stylesheet" href="playlist_files/slide_share.css"></head>
 
-<body>
+<body style="background-image:url(images/bg1.jpg);">
 <link rel="stylesheet" data-embed="" href="playlist_files/header.css">
 <script type="text/javascript" src="playlist_files/jquery.js"></script>
 <!--[if IE 6]>

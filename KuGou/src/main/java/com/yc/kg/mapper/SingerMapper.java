@@ -19,4 +19,6 @@ public interface SingerMapper {
 
 	List<KuSinger> getSingerMsg();
 
+	List<KuSinger> getAllSinger();
+
 }

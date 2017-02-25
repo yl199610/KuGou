@@ -20,12 +20,13 @@ function loadDetail(songid){
 			 // var allpath=removeLastOne(address)+"/lrc.jsp?music="+path;
 			 var allpath="./lrc.jsp?music="+path;//wordpath="+spath+"& 歌词
 			 var songSinger=singer+"----"+song;
-			 $("#ulAlbums").append('<li style="background-color:#333;" class="s_180691">'+
-					 '<span style="margin-left:300px;font-size:20px;color:red">'+songSinger+'</span>'+
+			 $("#ulAlbums").append('<li style="background-color:#666;width:600px;" class="s_180691">'+
+					 '<span style="margin-left:20px;font-size:20px;color:red">'+songSinger+'</span>'+
+					 '<audio style="margin-top:20px;" src='+ path+' controls="controls"></audio>'+
 					 '<form action="save/download.do" method="post">'+
 					 '<input id="fileName" type="hidden" name="fileName" value="'+path+'"/>'+
 					 '<input type="submit" value="下载"></form><input type="submit" value="取消收藏" onclick="cancel('+id+')")>'+
-					 '</li><a style="color:red;" href="'+allpath+'" target="_blank">查看歌词</a>');
+					 '</li><a style="color:blue;" href="'+allpath+'" target="_blank">查看歌词</a>');
 		}
 	}, "json");
 }
