@@ -38,9 +38,7 @@ create table kuSong(                			   --根据歌名来查询
 );
 select * from kuSong k join kgSave kg on kg.kgSaveSid=k.kuSongId where kuSongId=1000
 select * from kuSong kg join kuSong k on k.kuSongId=kg.kgSaveSid where kuserSaveId=500 and kgSavesecond=1
-
 create sequence seq_kuSong start with 1000;
-
 insert into kuSong values(seq_kuSong.nextval,'笨小孩','4:12','lrc/1.lrc','music/6039.mp3','1995','80',default,'二');
 insert into kuSong values(seq_kuSong.nextval,'天下','3:15','lrc/1.lrc','music/6039.mp3','1993','90',1,'二');
 insert into kuSong values(seq_kuSong.nextval,'海阔天空','4:12','lrc/1.lrc','music/6039.mp3','2001','80',1,'二');
@@ -64,10 +62,12 @@ create table kgSave(
        kgSavesecond varchar2(100)			      --预留字段二
 );
 create sequence seq_kgSaveId start with 1000;
-select * from kgSave kg join kuSong k on k.kuSongId=kg.kgSaveSid where kuserSaveId=500 and kgSavenext=1
+select * from kgSave kg join kuSong k on k.kuSongId=kg.kgSaveSid where kuserSaveId=500 and kgSavesecond=0
 insert into kgSave values(seq_kgSaveId.nextval,500,1003,'刘德华',1);
 select seq_kgSaveId.nextval from dual;
+select * from (select m.*,rownum rn from (select * from kgSave kg join kuSong k on k.kuSongId=kg.kgSaveSid where kuserSaveId=500 and kgSavesecond=1 order by 1 desc) m where 1*10>=rownum) where rn>(1-1)*10 
 select * from kgSave;
+update kgSave set kgSavesecond=1 where kgSaveId=1000
 drop sequence seq_kgSaveId
 --管理员表(改)
 create table kgAdmin(
@@ -144,9 +144,7 @@ create table kuSongDetail(
        kusecond varchar2(100) default 1          			--预留字段二
 );
 select * from kgSave;
-
 create sequence seq_kuSongDetail start with 10000;
-
 select * from kuSongDetail kd, kuSinger k,kuSong ks
 where kd.ksongsingId=k.kuSingerId
 and kd.kudetailsongId=ks.kuSongId

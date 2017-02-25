@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class PaginationBean<T>{
 	private Integer currPage=1; //当前页
-	private Integer pageSize=10;//每页的数据条数
+	private Integer pageSize=5;//每页的数据条数
 	
 	//响应数据
 	private Integer total; //数据的总条数

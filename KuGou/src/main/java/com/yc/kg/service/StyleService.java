@@ -26,4 +26,6 @@ public interface StyleService {
 
 	List<KuSongDetail> findAllStyle();
 
+	List<KuSongDetail> findFourdetail();
+
 }

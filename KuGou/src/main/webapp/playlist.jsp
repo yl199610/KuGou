@@ -41,7 +41,7 @@ DD_belatedPNG.fix('.icon,.logo');
 <div class="navWrap">
     <div class="nav">
         <ul class="homeNav">
-            <li><a class="normal" href="./index.html">首页</a></li>
+            <li><a class="normal" href="./index.jsp">首页</a></li>
             <li><a class="normal" href="./top.html">榜单</a></li>
             <li><a class="normal" id="productCenter" href="./download.html">下载客户端</a></li>
             <li class="more" id="moreLi"><a href="http://www.kugou.com/yy/special/index/2-0-1.html#" class="icon icon-nav6" id="showMore">更多</a>
@@ -51,7 +51,7 @@ DD_belatedPNG.fix('.icon,.logo');
             <li><a href="./FM.html">电台</a></li>
             <li><a href="./MV.html">MV</a></li>
             <li><a href="./playlist.html">歌单</a></li>
-            <li><a href="./singer.html">歌手</a></li>
+            <li><a href="./singer.jsp">歌手</a></li>
         </ul>
         <ul class="subNav">
             <li><a target="_blank" href="http://fanxing.kugou.com/?action=spreadIndex&amp;id=3" class="icon icon-nav1">音乐直播</a></li>
@@ -76,7 +76,6 @@ DD_belatedPNG.fix('.icon,.logo');
                 }
                 cookieValue = document.cookie.substring(offset, end);
             }
-
         }
         var a = cookieValue.split("&");
         var o = {};

@@ -73,16 +73,16 @@ public class SaveHandler {
 	//取消收藏
 	@RequestMapping("/cancel")
 	@ResponseBody
-	public boolean cancelSave(){
-		LogManager.getLogger().debug("请求saveHandler处理save的用户id....");
-		return true;
+	public boolean cancelSave(@RequestParam(name="uid")int uid){
+		LogManager.getLogger().debug("请求saveHandler处理cancel的用户uid....");
+		return saveService.cancelDetail(uid);
 	}
 	
     @RequestMapping("download.do")
     public void downloadFile(HttpSession session,String fileName,HttpServletResponse response){  
         response.setCharacterEncoding("utf-8");  
         response.setContentType("multipart/form-data");  
-        response.setHeader("Content-Disposition", "attachment;fileName="+fileName);  
+        response.setHeader("Content-Disposition", "attachment;fileName="+fileName);
         try { 
         	System.out.println("============="+fileName);
         	String path=session.getServletContext().getRealPath("")+"/"+fileName;

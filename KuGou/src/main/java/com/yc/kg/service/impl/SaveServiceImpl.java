@@ -43,6 +43,11 @@ public class SaveServiceImpl implements SaveService{
 	public List<KgSave> findDetail(int id) {
 		return saveMapper.selectDetail(id);
 	}
+
+	@Override
+	public boolean cancelDetail(int uid) {
+		return saveMapper.cancelDetail(uid);
+	}
 	
 	
 }

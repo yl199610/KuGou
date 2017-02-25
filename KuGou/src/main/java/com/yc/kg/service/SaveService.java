@@ -16,4 +16,6 @@ public interface SaveService {
 
 	List<KgSave> findDetail(int id);
 
+	boolean cancelDetail(int uid);
+
 }

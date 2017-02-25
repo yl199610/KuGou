@@ -104,6 +104,9 @@ and  kudetailstyleId=#{styleid}
   	select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
 	join kuSong k on kd.kudetailsongId=k.kuSongId  where ks.kuSingerSingernext!=0 and k.kuSongNext=1
   </select>
-  
+  <select id="findFourStyle"  resultMap="detailMap">
+  	select * from (select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+	join kuSong k on kd.kudetailsongId=k.kuSongId where ks.kuSingerSingernext!=0 and k.kuSongNext=1)where rownum&lt;5
+  </select>
 	
 </mapper>

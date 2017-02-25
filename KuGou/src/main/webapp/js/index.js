@@ -82,10 +82,11 @@ function findstyledetail(kuSongStyleId){
 					 +'<audio style="float:right;" src="'+songaddress+'" controls="controls"></audio></li>'
 					 +'<form action="save/save" method="post" id="saveForm"><input type="hidden" value="'+save+'" name="kgSaveSid" id="kgSaveSid">'
 					 +'<input type="hidden" value="'+singer+'" name="kgSavenext" id="kgSavenext">'
-					 +'<input type="submit" value="收藏" onclick="save('+save+')"/></form>');
+					 +'<input id="save" type="submit" value="收藏" onclick="save('+save+')"/></form>');
 		}	
 	}, "json");
 }
+
 
 /*
 function findstyledetail(kuSongStyleId){
@@ -131,3 +132,21 @@ function findstyledetail(kuSongStyleId){
 };
 
 */
+//mv
+loadMv();
+
+function loadMv() {
+	$.post("style/mv", function(data) {
+		$(".itemContent").empty();
+		for (i=0; i < data.length; i++) {
+			 var jsonarray = eval(data);
+			 var singer=jsonarray[i].kuSinger.kuSingerName;//歌手表
+			 var song=jsonarray[i].kuSong.kuSongName;//歌曲表歌曲名
+			 var songimage=jsonarray[i].kuSinger.kuSingerImg;//歌曲图片
+			 $(".itemContent").append('<div class="cpt cptMidL"><a target="_blank" href="./mv.jsp">'+
+				'<img src="'+songimage+'" loading="1" class=" " height="84" width="154"><div class="cptB">'+
+				'<p class="songListName">'+song+'</p> <p class="songListSinger">'+singer+'</p>'+
+				'</div></a></div>');
+		}	
+	}, "json");
+}

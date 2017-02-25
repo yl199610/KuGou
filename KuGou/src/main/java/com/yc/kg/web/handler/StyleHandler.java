@@ -116,4 +116,12 @@ public class StyleHandler {
 		return details;
 	}
 	
+	
+	@RequestMapping("/mv")
+	@ResponseBody
+	public List<KuSongDetail> mv(){
+		LogManager.getLogger().debug("请求songHandler处理mv....\n");
+		System.out.println("------"+styleService.findFourdetail());
+		return styleService.findFourdetail();
+	}	
 }

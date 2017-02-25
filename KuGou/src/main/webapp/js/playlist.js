@@ -16,6 +16,7 @@ function loadDetail(songid){
 			 var singer=data[i].kgSavenext;//歌手
 			 var path=jsonarray[i].kusong.kuSongAddress;//歌曲路径
 			 var spath=jsonarray[i].kusong.kuSongWords;//歌词路径
+			 var id=data[i].kgSaveId;
 			 // var allpath=removeLastOne(address)+"/lrc.jsp?music="+path;
 			 var allpath="./lrc.jsp?music="+path;//wordpath="+spath+"& 歌词
 			 var songSinger=singer+"----"+song;
@@ -23,19 +24,19 @@ function loadDetail(songid){
 					 '<span style="margin-left:300px;font-size:20px;color:red">'+songSinger+'</span>'+
 					 '<form action="save/download.do" method="post">'+
 					 '<input id="fileName" type="hidden" name="fileName" value="'+path+'"/>'+
-					 '<input type="submit" value="下载"></form><input type="submit" value="取消收藏" onclick="cancel()")>'+
+					 '<input type="submit" value="下载"></form><input type="submit" value="取消收藏" onclick="cancel('+id+')")>'+
 					 '</li><a style="color:red;" href="'+allpath+'" target="_blank">查看歌词</a>');
 		}
 	}, "json");
 }
 
-function cancel(){
-	$.post("save/cancel",function(data){
-		alert("11--"+data);
-		if(data.trim() == "true"){
-			alert("--");
+function cancel(id){
+	$.post("save/cancel?uid="+id,function(data){
+		if(data){
+			alert("取消收藏成功");
+			window.location.reload();
 		}else{
-			alert("11111111111111");
+			alert("取消收藏失败!!!");
 		}
 	},"json");
 }

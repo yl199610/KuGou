@@ -29,7 +29,7 @@ public class SongHandler {
 	@ResponseBody
 	public PaginationBean<KuSong> list(String page,String rows){
 		LogManager.getLogger().debug("请求songHandler处理list....");
-		System.out.println(songService.listPartSong(page,rows));
+		System.out.println("-----------"+songService.listPartSong(page,rows));
 		return songService.listPartSong(page,rows);
 	}
 	

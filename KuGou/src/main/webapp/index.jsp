@@ -484,25 +484,20 @@
 							<b>推荐</b>MV
 						</h3>
 						<a target="_blank" href="http://www.kugou.com/mvweb/html/"
-							class="more fr">更多</a>
+							class="more fr">MV更多</a>
 					</div>
 					<div class="itemContent">
 
 
 
 						<div class="cpt cptBigL">
-
 							<a target="_blank"
-								href="http://www.kugou.com/mvweb/html/mv_593042.html"> <img
+								href="http://www.kugou.com/mvweb/html/mv_593042.html"> 
+								<img
 								src="index_files/20161223101646866205.jpg"
 								src="http://imge.kugou.com/mvhdpic/400/20161223/20161223101646866205.jpg"
 								_def="http://static.kgimg.com/public/root/images/mv_defalut.jpg"
 								loading="1" class=" " height="175" width="320">
-
-								<div class="Cover">
-									<div class="playBtn icon icon-play_b">播放</div>
-								</div>
-								<p class="cptBg"></p>
 								<div class="cptB">
 									<p class="songListName">若只如初见</p>
 									<p class="songListSinger">杨紫</p>

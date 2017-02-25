@@ -5,7 +5,6 @@
 	var tempstr=locurl.substring(start+1,end)
 	var temp=tempstr.split("=");
 	var pid=temp[1];
-	$("#Player").attr("src","music/"+pid);
 	var songs = pid;//可通过名字获取到歌名
 	doPost(songs.substr(6,8));// 加载第一首歌
 })
@@ -18,6 +17,8 @@ var lrc = [];
 var lrc = [];
 // * 向后台获取歌词
 function doPost(songName){
+	$("#playTime")
+	$("#Player").attr("src","music/"+songName);
 	var retLrc = [];
 	$.ajax({
 			type: "POST",

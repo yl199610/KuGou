@@ -79,5 +79,10 @@ public class StyleServiceImpl implements StyleService{
 	public List<KuSongDetail> findAllStyle() {
 		return styleMapper.findAllStyle();
 	}
+
+	@Override
+	public List<KuSongDetail> findFourdetail() {
+		return styleMapper.findFourStyle();
+	}
 	
 }

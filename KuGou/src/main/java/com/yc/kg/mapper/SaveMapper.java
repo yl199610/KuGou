@@ -16,4 +16,6 @@ public interface SaveMapper {
 
 	List<KgSave> selectDetail(int id);
 
+	boolean cancelDetail(int uid);
+
 }

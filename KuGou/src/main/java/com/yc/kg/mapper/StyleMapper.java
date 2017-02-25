@@ -26,4 +26,6 @@ public interface StyleMapper {
 
 	List<KuSongDetail> findAllStyle();
 
+	List<KuSongDetail> findFourStyle();
+
 }

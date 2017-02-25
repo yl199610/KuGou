@@ -47,7 +47,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from kgSave kg join kuSong k on k.kuSongId=kg.kgSaveSid where kuserSaveId=#{id} and kgSavesecond=1
 	</select>
 	
-	<update id="delSave" parameterType="int">
-		update kgSave set kgSavesecond=0 where kgSavesecond=1
+	<update id="cancelDetail" parameterType="int">
+		update kgSave set kgSavesecond=0 where kgSaveId=#{uid}
 	</update>
 </mapper>
