@@ -1,6 +1,7 @@
 package com.yc.kg.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import com.yc.kg.entity.KuSong;
 import com.yc.kg.entity.KuSongDetail;
@@ -23,7 +24,7 @@ public interface StyleMapper {
 
 	List<KuSongStyle> getAllStyle();
 
-	List<KuSongDetail> findStyle(int styleid);
+	PaginationBean<KuSongDetail> findStyle(Map<String, Object> map);
 
 	List<KuSongDetail> findAllStyle();
 //	PaginationBean<KuSongDetail> listPartStyle(String page, String rows);

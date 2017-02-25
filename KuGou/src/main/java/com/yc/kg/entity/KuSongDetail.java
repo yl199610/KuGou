@@ -1,6 +1,5 @@
 package com.yc.kg.entity;
 
-import java.util.List;
 
 public class KuSongDetail {
 	 private Integer kuSongDetailId;
@@ -16,31 +15,7 @@ public class KuSongDetail {
      private String kusecond;
      private KuSong KuSong;
      private KuSinger kuSinger;
-     
-	public KuSongDetail() {
-	}
-
-
-	public KuSongDetail(Integer kuSongDetailId, Integer ksongsingId, Integer kudetailsongId, Integer kudetailstyleId,
-			Integer songplay, Integer statue, String address, Integer kusingstatus, String detailtime, String kunext,
-			String kusecond, com.yc.kg.entity.KuSong kuSong, KuSinger kuSinger) {
-		super();
-		this.kuSongDetailId = kuSongDetailId;
-		this.ksongsingId = ksongsingId;
-		this.kudetailsongId = kudetailsongId;
-		this.kudetailstyleId = kudetailstyleId;
-		this.songplay = songplay;
-		this.statue = statue;
-		this.address = address;
-		this.kusingstatus = kusingstatus;
-		this.detailtime = detailtime;
-		this.kunext = kunext;
-		this.kusecond = kusecond;
-		KuSong = kuSong;
-		this.kuSinger = kuSinger;
-	}
-
-
+   
 	public Integer getKuSongDetailId() {
 		return kuSongDetailId;
 	}
@@ -151,7 +126,6 @@ public class KuSongDetail {
 	}
 
 
-
 	public KuSong getKuSong() {
 		return KuSong;
 	}
@@ -171,14 +145,19 @@ public class KuSongDetail {
 		this.kuSinger = kuSinger;
 	}
 
+	public KuSongDetail() {
+	}
+
 
 	@Override
 	public String toString() {
-		return "KuSongDetail [kuSongDetailId=" + kuSongDetailId + ", ksongsingId=" + ksongsingId + ", kudetailsongId="
-				+ kudetailsongId + ", kudetailstyleId=" + kudetailstyleId + ", songplay=" + songplay + ", statue="
-				+ statue + ", address=" + address + ", kusingstatus=" + kusingstatus + ", detailtime=" + detailtime
-				+ ", kunext=" + kunext + ", kusecond=" + kusecond + ", KuSong=" + KuSong + ", kuSinger=" + kuSinger
-				+ "]";
+		return "KuSongDetail [kuSongDetailId=" + kuSongDetailId
+				+ ", ksongsingId=" + ksongsingId + ", kudetailsongId="
+				+ kudetailsongId + ", kudetailstyleId=" + kudetailstyleId
+				+ ", songplay=" + songplay + ", statue=" + statue
+				+ ", address=" + address + ", kusingstatus=" + kusingstatus
+				+ ", detailtime=" + detailtime + ", kunext=" + kunext
+				+ ", kusecond=" + kusecond + ", KuSong=" + KuSong
+				+ ", kuSinger=" + kuSinger + "]";
 	}
-
 }

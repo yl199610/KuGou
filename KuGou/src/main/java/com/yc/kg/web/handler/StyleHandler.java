@@ -113,17 +113,33 @@ public class StyleHandler {
 	
 	@RequestMapping("/findStyle")
 	@ResponseBody
-	public PaginationBean<KuSongDetail> findStyle(@RequestParam(name="kuSongStyleId")int styleid,String page,String rows){
-		LogManager.getLogger().debug("请求styleHandler处理styleid....\n"+styleid);
+	public PaginationBean<KuSongDetail> findStyle(@RequestParam(name="kuSongStyleId")int kuSongStyleId,String page,String rows){
+		LogManager.getLogger().debug("请求styleHandler处理styleid....\n"+kuSongStyleId);
 		System.out.println("page"+page+"rows"+rows);
-		List<KuSongDetail>details=styleService.findStyle(styleid);
-		//List<KuSongDetail>details=styleService.findStyle(styleid);
 		
+		//查找对应风格的所有的歌曲
+		PaginationBean<KuSongDetail> details =styleService.findStyle(kuSongStyleId, page,rows);
+		
+		
+		/*//List<KuSongDetail>details=styleService.findStyle(styleid);
+		
+		//分页     
+		PaginationBean<KuSongDetail>istPart=styleService.listPartStyle1(page,rows);
+		//System.out.println("2"+details.get("KuSongDetail"));
+		System.out.println(istPart.getPageSize()+"大哥"+istPart.getPageSize()+"   11"+istPart.getTotal()+ "   11"+istPart.getTotalPage());
+		for (int i = 0; i < details.size(); i++) {
+			details.get(i).setCurrPage(2);
+			details.get(i).setPageSize(istPart.getPageSize());
+			details.get(i).setTotal(istPart.getTotal());
+			details.get(i).setTotalPage(istPart.getTotalPage());		
+		}
+		System.out.println("detail1"+details);
+		System.out.println("styleService.listPartStyle1"+styleService.listPartStyle1(page,rows));
 
-		System.out.println("detaile"+details);
-		
-		//System.out.println(styleService.listPartStyle1(page,rows,styleid));
-		return styleService.listPartStyle1(page,rows);
+		//System.out.println(styleService.listPartStyle1(page,rows)+"lisPartStyle");
+*/
+		System.out.println(details);
+		return details;
 	}
 	
 	

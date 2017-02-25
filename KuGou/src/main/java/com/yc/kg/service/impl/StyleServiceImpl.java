@@ -1,6 +1,8 @@
 package com.yc.kg.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -71,10 +73,10 @@ public class StyleServiceImpl implements StyleService{
 		return styleMapper.getAllStyle();
 	}
 
-	@Override
+	/*@Override
 	public List<KuSongDetail> findStyle(int styleid) {
 		return styleMapper.findStyle(styleid);
-	}
+	}*/
 
 	@Override
 	public List<KuSongDetail> findAllStyle() {
@@ -92,8 +94,19 @@ public class StyleServiceImpl implements StyleService{
 		if(pageSize!=null){
 			songBean.setPageSize(Integer.parseInt(pageSize));
 		}
+		System.out.println(songBean+"songBean111111");
 		return  styleMapper.listPartStyle1(songBean);
 	
+	}
+
+	@Override
+	public PaginationBean<KuSongDetail> findStyle(int styleid,
+			String page, String rows) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("kudetailstyleId", styleid);
+		map.put("currPage", page);
+		map.put("pageSize", rows);
+		return styleMapper.findStyle(map);
 	}
 	
 }

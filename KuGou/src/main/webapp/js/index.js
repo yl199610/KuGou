@@ -98,15 +98,14 @@ function findstyledetail(kuSongStyleId){
 			url:'style/findStyle?kuSongStyleId='+kuSongStyleId,
 			singleSelect : true,
 			pagination:true,
-			pageList:[5,10],
-			pageSize:5,
+			pageList:[4,6],
+			pageSize:6,
 			columns : [ [ {
 				field : 'kuSongName',
 				title : '歌曲名',
 				width : 18,
 				align:'center',
 				formatter: function(value,row,index){
-					
 			    return row['kuSong']['kuSongName'];
 			} 
 			}, {
@@ -124,8 +123,6 @@ function findstyledetail(kuSongStyleId){
 				width : 40,
 				align:'center',
 				formatter: function(value,row,index){	
-						//alert(row["kuSong"]["kuSongAddress"]);jsonarray[i].kuSong.kuSongId
-					alert(row["kuSong"]["kuSongId"]);
 					return  '<li style="display:block;margin:10px" >'+' <audio style="Float:right;" src='+ row["kuSong"]["kuSongAddress"]+' controls="controls"></audio></li>'+
 					'<form action="save/save" method="post" id="saveForm"><input type="hidden" value="'+row["kuSong"]["kuSongId"]+'" name="kgSaveSid" id="kgSaveSid">'
 					 +'<input type="hidden" value="'+row["kuSinger"]["kuSingerName"]+'" name="kgSavenext" id="kgSavenext">'
