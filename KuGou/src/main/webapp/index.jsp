@@ -63,8 +63,8 @@
 								</c:when>
 								<c:otherwise>
 									<a href="./playlist.jsp" target="_blank">我的收藏</a>&nbsp;
-									<label>欢迎<span style='color: green;'>${loginUser }</span>使用本网站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<a href='javascript:void(0)' onclick='logout()'>注销用户</a>
+									<label>欢迎<span style='color: green;'><a href="updateMsg.jsp?name=${loginUser}">${loginUser}</a></span>使用本网站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<a href='javascript:void(0)' onclick='logout()'>注销用户</a>
 								</c:otherwise>
 							</c:choose>
 						</form></li>

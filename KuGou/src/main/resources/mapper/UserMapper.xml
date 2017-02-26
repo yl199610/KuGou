@@ -33,6 +33,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where kgUserId=#{kgUserId}
 	</update>
 	
+	<update
+		id="updateUserMsg"
+		parameterType="KuUser">
+		update kgUser set
+		kgUserEmail=#{kgUserEmail},kgUserSex=#{kgUserSex},
+		kgUserBirthday=#{kgUserBirthday},kgUserNote=#{kgUserNote}
+		where kgUserName=#{kgUserName}
+	</update>
+	
+	<update
+		id="updateUserImg"
+		parameterType="KuUser">
+		update kgUser set
+		kgUserPic=#{kgUserPic}
+		where kgUserName=#{kgUserName}
+	</update>
+	
 	<select id="getUser" parameterType="KuUser" resultType="int">
 		select * from kgUser where kgUserName=#{kgUserName} and kgUserPwd=#{kgUserPwd}
 	</select>
@@ -46,6 +63,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findUser" parameterType="String" resultType="KuUser">
 		select * from kgUser where kgUserName=#{kgUserName}
 	</select>
+		<select id="getImg" parameterType="String" resultType="KuUser">
+		select * from kgUser where kgUserName=#{kgUserName}
+	</select>
 	
+	<update
+		id="updateUserPwd"
+		parameterType="KuUser">
+		update kgUser set
+		kgUserPwd=#{kgUserPwd}
+		where kgUserName=#{kgUserName}
+	</update>
 	
 </mapper>

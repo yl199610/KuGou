@@ -20,6 +20,15 @@ public interface UserService {
 	int zhuche(KuUser user);
 
 	KuUser findUser(String uname);
+	boolean modifyUserMsg(KuUser user);
+
+	boolean modifyUserImg(KuUser user);
+
+	KuUser getUserImg(String name);
+
+	boolean modifyUserPwd(KuUser user);
+
+
 
 
 }

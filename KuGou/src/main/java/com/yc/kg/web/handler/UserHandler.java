@@ -155,12 +155,55 @@ public class UserHandler {
 		}else{
 			KuUser user=userService.findUser(name);
 			if(user!=null){//查询出有这个用户名
-				System.out.println("================"+user);
 				return false;
 			}else{
-				System.out.println("%%%%%%%%%%%%%%5");
 				return true;
 			}
 		}
 	}
+	
+	
+	
+	@RequestMapping("/editform")
+	@ResponseBody
+	public boolean editform(KuUser user){
+			LogManager.getLogger().debug("请求UserHandler处理editform....\n"+user);
+			return userService.modifyUserMsg(user);
+		}
+	
+	@RequestMapping("/changeImg")
+	@ResponseBody
+	public boolean changeImg(@RequestParam(name="picData",required=false)MultipartFile picData,KuUser user){
+			LogManager.getLogger().debug("请求UserHandler处理changeImg....\n"+user);
+			if(picData!=null){
+				try {
+					picData.transferTo(new File(ServletUtil.UPLOAD_DIR,picData.getOriginalFilename()));
+					user.setKgUserPic("/"+ServletUtil.UPLOAD_DIR_NAME+"/"+picData.getOriginalFilename());//图片上传
+				System.out.println("picData.getOriginalFilename()"+picData.getOriginalFilename());
+				System.out.println("picData.ServletUtil.UPLOAD_DIR()"+ServletUtil.UPLOAD_DIR);
+				} catch (IllegalStateException | IOException e) {
+					e.printStackTrace();
+				}
+			}
+			return userService.modifyUserImg(user);
+		}
+	
+	@RequestMapping("/getuserImg")
+	@ResponseBody
+	public KuUser getuserImg(@RequestParam(name="name")String name){
+		LogManager.getLogger().debug("请求UserHandler处理getuserImg....\n"+name);
+		return userService.getUserImg(name);
+	}
+	
+	@RequestMapping("/changePwd")
+	@ResponseBody
+	public boolean changePwd(KuUser user,HttpSession session){
+		LogManager.getLogger().debug("请求UserHandler处理changePwd....\n"+user);
+		boolean flag=userService.modifyUserPwd(user);
+		if(flag){
+			session.removeAttribute("loginUser");
+		}
+		return flag;
+	}
+	
 }

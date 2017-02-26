@@ -380,7 +380,7 @@ function initUcpwd(){
     oPassword = Kg.$("#oPassword")[0],
     nPasswordStrong = Kg.$("#ePasswordStrong")[0],
 
-    newPassword =  Kg.$("#newPassword")[0],
+    kgUserPwd =  Kg.$("#kgUserPwd")[0],
     rePassword = Kg.$("#repassword")[0],
     ucCode = Kg.$("#uccode")[0],
     nickname = Kg.$("#nickname")[0],
@@ -395,7 +395,7 @@ function initUcpwd(){
     });
 
      /* 新密码 */
-    jns.bind(newPassword,"blur",function(){
+    jns.bind(kgUserPwd,"blur",function(){
         checkPwd.call(this);
     });
     /* 确认密码 */
@@ -442,7 +442,7 @@ function initUcpwd(){
             this.KgInputTips.success("");
         }
         
-        if(this.id=="newPassword"){
+        if(this.id=="kgUserPwd"){
             var lv = 0;
             if (pwd.match(/[a-z]/ig)) { lv++; }
             if (pwd.match(/[0-9]/ig)) { lv++; }
@@ -479,7 +479,7 @@ function initUcpwd(){
     }
      
     function checkRePwd(){
-        var repwdefaultWord=newPassword.value
+        var repwdefaultWord=kgUserPwd.value
         var pwd=this.value;
         if(pwd==''){
              this.isOk=false;
@@ -521,17 +521,17 @@ function initUcpwd(){
                 return false;
             }
         }
-        checkPwd.call(newPassword);
+        checkPwd.call(kgUserPwd);
         checkRePwd.call(rePassword) ;
         checkVerifyCode.call(ucCode);
         // 之前延时1秒用于接口检测合法性，为保证其有意义请求也延时1秒发送
         setTimeout(function(){
-            if(newPassword.isOk&&rePassword.isOk&&ucCode.isOk){           
+            if(kgUserPwd.isOk&&rePassword.isOk&&ucCode.isOk){           
                 if(oPassword){
-            Kg.post("../do/type=3",{"old":encodeURIComponent(oPassword.value),"new":encodeURIComponent(newPassword.value),"confirm":encodeURIComponent(rePassword.value),"vCode":ucCode.value},postSuccessHandle)
+            Kg.post("../do/type=3",{"old":encodeURIComponent(oPassword.value),"new":encodeURIComponent(kgUserPwd.value),"confirm":encodeURIComponent(rePassword.value),"vCode":ucCode.value},postSuccessHandle)
                 }
                 else{
-            Kg.post("../do/type=9",{"new":encodeURIComponent(newPassword.value),"confirm":encodeURIComponent(rePassword.value),"vCode":ucCode.value},postSuccessHandle)
+            Kg.post("../do/type=9",{"new":encodeURIComponent(kgUserPwd.value),"confirm":encodeURIComponent(rePassword.value),"vCode":ucCode.value},postSuccessHandle)
                 } 
             }
         }, 1001);
@@ -546,8 +546,8 @@ function initUcpwd(){
                     oPassword.value="";
                     oPassword.KgInputTips.notice("");
                 }
-                newPassword.value="";
-                newPassword.KgInputTips.notice("");
+                kgUserPwd.value="";
+                kgUserPwd.KgInputTips.notice("");
                 
                 rePassword.value="";
                 rePassword.KgInputTips.notice("");

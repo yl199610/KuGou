@@ -54,5 +54,23 @@ public class UserServiceImpl implements UserService{
 	public KuUser findUser(String uname) {
 		return userMapper.findUser(uname);
 	}
-	
+	@Override
+	public boolean modifyUserMsg(KuUser user) {
+		return userMapper.updateUserMsg(user)>0;
+	}
+
+	@Override
+	public boolean modifyUserImg(KuUser user) {
+		return userMapper.updateUserImg(user)>0;
+	}
+
+	@Override
+	public KuUser getUserImg(String name) {
+		return userMapper.getImg(name);
+	}
+
+	@Override
+	public boolean modifyUserPwd(KuUser user) {
+		return userMapper.updateUserPwd(user)>0;
+	}
 }

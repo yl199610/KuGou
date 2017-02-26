@@ -9,8 +9,8 @@ function login(){
 	var params=$("#userloginForm").serialize();//取到表单要提交的请求数据
 	$.post("user/login",params,function(data){
 		if(data){
-			$("#userloginForm").html("<a href='./playlist.jsp' target='_blank'>我的收藏</a>&nbsp;<label>欢迎<span style='color:green;'>"+$("#userloginForm [name='kgUserName']").val()+
-			"</span>使用本网站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:void(0)' onclick='logout()'>注销用户</a>");
+			$("#userloginForm").html("<a href='./playlist.jsp' target='_blank'>我的收藏</a>&nbsp;<label>欢迎<span style='color:green;'><a href='updateMsg.jsp?name="+
+					$("#userloginForm [name='kgUserName']").val()+"'>"+$("#userloginForm [name='kgUserName']").val()+"</a></span>使用本网站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:void(0)' onclick='logout()'>注销用户</a>");
 		}else{
 			$("#error").html("用户名或密码错误!!!");
 			$("#error").css({"color":"red"});

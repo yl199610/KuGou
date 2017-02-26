@@ -23,5 +23,11 @@ public interface UserMapper {
 
 	KuUser findUser(String kgUserName);
 
+	int updateUserMsg(KuUser user);
 
+	int updateUserImg(KuUser user);
+
+	KuUser getImg(String name);
+
+	int updateUserPwd(KuUser user);
 }

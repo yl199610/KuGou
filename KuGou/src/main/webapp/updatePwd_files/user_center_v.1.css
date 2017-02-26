@@ -173,17 +173,17 @@ a.a_link{ text-decoration:underline;}
 		.kg_uc_textbox_verifly{width: 175px;}
 	
 
-	.kg_uc_textbox_area .kg_uc_tips{ display:none;}
 	.kg_uc_mobile_textbox{ width:120px}
 	.kg_uc_textbox_area .send_btn{ height:30px; padding:0 10px; _padding:0;}
 
-	.kg_uc_tips{ line-height:1.5; padding:3px 5px; display:inline-block; *display:inline; *zoom:1;}
+	#kg_uc_tips{ line-height:1.5; padding:3px 5px; display:inline-block; *display:inline; *zoom:1;}
+	#kg_uc_tips2{ line-height:1.5; padding:3px 5px; display:inline-block; *display:inline; *zoom:1;}
 		.kg_uc_tips_icon{ float:left; display:none; width:12px; height:12px; overflow:hidden; margin-right:5px; margin-top:3px;}
 		.kg_uc_tips_txt{ color:#7b7b7b;}
 	.kg_uc_tips_error{ background:#fadada;}
 		.kg_uc_tips_error .kg_uc_tips_icon{ display:inline; background-position:0 -100px;}
 		.kg_uc_tips_error .kg_uc_tips_txt{ color:#d70f0f;}
-	.kg_uc_tips_success{ background:#def1db;}
+	.kg_uc_tips_success{ background:#20a10b; display:inline-block; *display:inline; *zoom:1; vertical-align:middle;height:28px;width:28px;}
 		.kg_uc_tips_success .kg_uc_tips_icon{ display:inline; background-position:-25px -100px;}
 		.kg_uc_tips_success .kg_uc_tips_txt{ color:#20a10b;}
 
@@ -294,4 +294,10 @@ a.a_link{ text-decoration:underline;}
 div.noborder{border: none;}
 .initHide{visibility: hidden;}
 
+.error{
+	background-color: red;
+}
 
+.nice{
+	background-color: green;
+}
