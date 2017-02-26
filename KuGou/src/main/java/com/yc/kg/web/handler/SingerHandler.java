@@ -19,8 +19,9 @@ public class SingerHandler {
 
 	@Autowired
 	private SingerService singerService;
+	
 	/**
-	 * 分页显示歌曲
+	 * 分页显示歌手
 	 */
 	@RequestMapping("/list")
 	@ResponseBody
@@ -53,7 +54,7 @@ public class SingerHandler {
 	@RequestMapping("/modify")
 	@ResponseBody
 	public boolean modify(KuSinger singer){
-		LogManager.getLogger().debug("请求songHandler处理modify....\n"+singer);
+		LogManager.getLogger().debug("请求singHandler处理modify....\n"+singer);
 		
 		System.out.println("singer============="+singer);
 		return singerService.modifySingerMsg(singer);
@@ -63,15 +64,16 @@ public class SingerHandler {
 	@RequestMapping("/add")
 	@ResponseBody
 	public boolean add(KuSinger singer){
-		LogManager.getLogger().debug("请求songHandler处理add....\n"+singer);
+		LogManager.getLogger().debug("请求singHandler处理add....\n"+singer);
 		return singerService.addsinger(singer);
 	}	
 	//获得歌手名称到下拉框
 	@RequestMapping("/getAllSing")
 	@ResponseBody
 	public List<KuSinger> get(){
-		LogManager.getLogger().debug("请求songHandler处理get....\n");
+		LogManager.getLogger().debug("请求singHandler处理get....\n");
 		return singerService.getSinger();
 	}		
+	
 	
 }

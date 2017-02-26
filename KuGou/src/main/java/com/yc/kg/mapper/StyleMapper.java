@@ -3,7 +3,6 @@ package com.yc.kg.mapper;
 import java.util.List;
 import java.util.Map;
 
-import com.yc.kg.entity.KuSong;
 import com.yc.kg.entity.KuSongDetail;
 import com.yc.kg.entity.KuSongStyle;
 import com.yc.kg.entity.PaginationBean;
@@ -33,5 +32,7 @@ public interface StyleMapper {
 	PaginationBean<KuSongDetail> listPartStyle1(PaginationBean<KuSongDetail> songStyleBeans);
 
 	List<KuSongDetail> findFourStyle();
+
+	List<KuSongDetail> findSongById(int skid);
 
 }

@@ -725,12 +725,9 @@
 						<div>
 							<ul class="firstUl clearFix" id="SingertabContent">
 								<li class="item">
-									<ul class="chinaSinger secondUl clearFix"
-										id="chinaSingerContent">
-										<li>
-
-											<div class="cpt cptMid">
-
+									<ul class="chinaSinger secondUl clearFix" id="chinaSingerContent">
+										<li id="chinaSingerContentLi">
+											<!-- <div class="cpt cptMid">
 												<a target="_blank" class="singerLink"
 													href="http://www.kugou.com/yy/singer/home/3060.html"> <img
 													class="singerImg " src="index_files/20161121115938576.jpg"
@@ -825,7 +822,7 @@
 												</a>
 											</div>
 
-
+ -->
 										</li>
 									</ul>
 									<div class="tabC" id="subMenu">
@@ -1263,5 +1260,6 @@
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/singer.js"></script>
 </body>
 </html>

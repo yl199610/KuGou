@@ -95,10 +95,10 @@ create table kuSinger(
        kuSingerName varchar2(50) not null,
        kuSingerSex varchar2(20),                       --性别
        kuSingerImg varchar2(400),		             --歌手图片
-       kuSingerCode varchar2(10),		             --助记码
+       kuSingerCode varchar2(10),		             --助记码   暂做歌手简介
        kuSingerSingerstate Integer default 0,          --代表用户的状态(增加删除用户只需要改状态)  
        kuSingerSingernext varchar2(100) default 1,  --预留字段
-       kuSingerSingersecond varchar2(100) default 1 --预留字段二
+       kuSingerSingersecond varchar2(100) default 1 --预留字段二  
 );
 
 select * from kuSinger;
@@ -112,7 +112,7 @@ insert into kuSinger values(seq_singer.nextval,'袁林','女','images/2.jpg','H'
 insert into kuSinger values(seq_singer.nextval,'钟泉清','男','images/2.jpg','H',0,default,default);
 insert into kuSinger values(seq_singer.nextval,'段海谭','女','images/2.jpg','H',0,default,default);
 insert into kuSinger values(seq_singer.nextval,'刘秋明','男','images/2.jpg','H',0,default,default);
-
+update kuSinger set kuSingerSingersecond='这是歌手的相关信息' where kuSingerId=10000;
 --update kuSinger set kuSingerName='hehehheh',kuSingerSex='男',kuSingerImg='images/2.jpg',
 		--kuSingerCode='H',kuSingerSingerstate=0,kuSingerSingernext='',kuSingerSingersecond=''
 		--where kuSingerId=3335;
@@ -145,15 +145,13 @@ create table kuSongDetail(
        address varchar(20),                          			--下载歌曲的地址
        kusingstatus Integer,                            			--状态  和上面的歌曲相同  歌曲的播放和不播放
        detailtime varchar(20),                     			 	--固定的歌发布时间
-       kunext varchar2(100) default 1,           			--预留字段
+       kunext varchar2(100) default 1,           			--预留字段   http://www.kugou.com/mvweb/html/
        kusecond varchar2(100) default 1          			--预留字段二
 );
 select * from kgSave;
 create sequence seq_kuSongDetail start with 10000;
-select * from kuSongDetail kd, kuSinger k,kuSong ks
-where kd.ksongsingId=k.kuSingerId
-and kd.kudetailsongId=ks.kuSongId
-and  kudetailstyleId=4444;
+select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+join kuSong k on kd.kudetailsongId=k.kuSongId  where ksongsingId=10000 and ks.kuSingerSingernext!=0 and k.kuSongNext=1
 insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
 insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1000,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
 insert into kuSongDetail values(seq_kuSongDetail.nextval,10002,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);

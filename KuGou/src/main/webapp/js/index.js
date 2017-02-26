@@ -52,8 +52,10 @@ function loadSongStyleInfo() {
 			styleAllStr += '<a href="javascript:void(0)" class="MenuItem" onmouseover="findstyledetail('+data[i].kuSongStyleId+')">'+ data[i].kuSongStyleName +'&nbsp;&nbsp;&nbsp;&nbsp;</a>';
 		}
 		$("#SongtabMenu")[0].innerHTML = styleAllStr ;
+		$("#tabMenu")[0].innerHTML = styleAllStr ;
 	}, "json");
 }
+
 
 /*function findstyledetail(kuSongStyleId){
 	$.post("style/findStyle?kuSongStyleId="+kuSongStyleId, function(data) {
@@ -146,10 +148,10 @@ function loadMv() {
 			 var singer=jsonarray[i].kuSinger.kuSingerName;//歌手表
 			 var song=jsonarray[i].kuSong.kuSongName;//歌曲表歌曲名
 			 var songimage=jsonarray[i].kuSinger.kuSingerImg;//歌曲图片
-			 $(".itemContenta").append('<div class="cpt cptMidL"><p></p><a target="_blank" href="./mv.jsp">'+
+			 $(".itemContenta").append('<div class="cpt cptMidL"><p></p><a target="_blank" href="http://www.kugou.com/mvweb/html/">'+
 				'<img src="'+songimage+'" loading="1" class=" "><div class="cptB">'+
 				'<p class="songListName">'+song+'</p> <p class="songListSinger">'+singer+'</p>'+
 				'</div></a></div>');
-		}	
+		}
 	}, "json");
 }

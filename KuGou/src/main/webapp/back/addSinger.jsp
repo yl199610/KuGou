@@ -14,7 +14,7 @@
 		<input name="kuSingerImg"  required="required" placeholder="请输入歌手图片" /><br />
 		<input name="kuSingerCode"  required="required" placeholder="请输入歌手助记码" /><br />
 		<input name="kuSingerSingerstate"  required="required" placeholder="请输入用户的状态" /><br /> 
-		<input name="kuSingerSingersecond"  required="required" placeholder="预留2" /><br />
+		<input name="kuSingerSingersecond"  required="required" placeholder="歌手简介" /><br />
 		<input type="submit" value="添加" onClick="addSinger()"/>
 	</form>
 	<script type="text/javascript" src="js/addSinger.js"></script>

@@ -32,4 +32,6 @@ public interface StyleService {
 
 	List<KuSongDetail> findFourdetail();
 
+	List<KuSongDetail> getSingersong(int skid);
+
 }

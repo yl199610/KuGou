@@ -161,4 +161,12 @@ public class StyleHandler {
 		System.out.println("------"+styleService.findFourdetail());
 		return styleService.findFourdetail();
 	}	
+	//通过歌手id获取歌曲
+	@RequestMapping("/singerSong")
+	@ResponseBody
+	public List<KuSongDetail> getSingerSong(@RequestParam(name="sid")int skid){
+		LogManager.getLogger().debug("请求singHandler处理song....\n"+skid);
+		System.out.println("-------------"+styleService.getSingersong(skid));
+		return styleService.getSingersong(skid);
+	}	
 }

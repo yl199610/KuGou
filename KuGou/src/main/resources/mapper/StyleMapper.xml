@@ -135,4 +135,10 @@ and  kudetailstyleId=#{styleid}
 	  	select * from (select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
 		join kuSong k on kd.kudetailsongId=k.kuSongId where ks.kuSingerSingernext!=0 and k.kuSongNext=1)where rownum&lt;3
 	  </select>
+	  <!--通过id查询歌曲  -->
+	  <select id="findSongById"  resultMap="detailMap">
+	  	 select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+join kuSong k on kd.kudetailsongId=k.kuSongId  where ksongsingId=#{skid} and ks.kuSingerSingernext!=0 and k.kuSongNext=1
+	  </select>
+	 
 </mapper>
