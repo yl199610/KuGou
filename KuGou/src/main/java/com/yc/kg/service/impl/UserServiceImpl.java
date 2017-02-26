@@ -49,6 +49,10 @@ public class UserServiceImpl implements UserService{
 	public int zhuche(KuUser user) {
 		return userMapper.insertUser(user);
 	}
-	
+
+	@Override
+	public KuUser findUser(String uname) {
+		return userMapper.findUser(uname);
+	}
 	
 }

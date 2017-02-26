@@ -21,5 +21,7 @@ public interface UserMapper {
 
 	int insertUser(KuUser user);
 
+	KuUser findUser(String kgUserName);
+
 
 }

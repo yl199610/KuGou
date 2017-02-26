@@ -19,5 +19,7 @@ public interface UserService {
 
 	int zhuche(KuUser user);
 
+	KuUser findUser(String uname);
+
 
 }

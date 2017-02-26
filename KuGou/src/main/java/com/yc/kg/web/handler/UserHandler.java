@@ -137,7 +137,6 @@ public class UserHandler {
 	@RequestMapping("/zhuche")
 	public String zhuche(KuUser user) {//ModelMap   逻辑操作和实体类    request.setAttribute
 		LogManager.getLogger().debug("请求userHandler注册用户3...");
-	
 		System.out.println("注册号suer"+user);
 		if(userService.zhuche(user)>0){
 			return "redirect:/zhuchesuccess.jsp";
@@ -145,5 +144,23 @@ public class UserHandler {
 			return "redirect:/page/manage.jsp";
 		}
 	}
-
+	
+	@RequestMapping("/check")
+	@ResponseBody
+	public boolean check(@RequestParam(name="uname",required=false)String name) {
+		LogManager.getLogger().debug("请求userHandler查询用户名是否重复...name"+name);
+		if(name==""||name==null){//不通过
+			System.out.println("=====-----------------");
+			return false;
+		}else{
+			KuUser user=userService.findUser(name);
+			if(user!=null){//查询出有这个用户名
+				System.out.println("================"+user);
+				return false;
+			}else{
+				System.out.println("%%%%%%%%%%%%%%5");
+				return true;
+			}
+		}
+	}
 }

@@ -16,10 +16,9 @@ create table kgUser(
        kgUserSecond varchar2(100)				   --预留字段二
 );
 select * from kgUser where kgUserName='a' and kgUserPwd='a';
-select * from kuSongDetail
+select * from kuSongDetail;
 create sequence seq_kgUserId start with 500;
 select * from kgUser;
-
 insert into kgUser(kgUserId,kgUserName,kgUserPwd,kgUserEmail,kgUserSex,kgUserBirthday) values(seq_kgUserId.nextval,'a','a','18473437551@163.com','男','1995-06-19')
 insert into kgUser values(seq_kgUserId.nextval,'a','a','18473437551@163.com',
 '男','1995-06-19','喜欢歌曲','images/1.jpg',0,'不收藏',default,'预留字段二');

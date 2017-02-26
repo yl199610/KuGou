@@ -8,28 +8,15 @@ $("#regForm img").click(function(){
 	$(this).attr("src", "vcode.jpg?" + new  Date().getTime());
 });
 
-
-
-/*function zhuche(){
-	alert(111);
-	$.get("user/zhuche",function(data){
-		alert(data);
-		$("#kgUserName").val(data.kgUserName);
-		$("#kgUserPwd").val(data.kgUserPwd);
-		$("#kgUserEmail").val(data.kgUserEmail);
-		$("#kgUserSex").val(data.kgUserSex);
-		$("#kgUserBirthday").val(data.kgUserBirthday);
-		$("#kgUserNote").val(data.kgUserNote);
-		$("#kgUserState").val(data.kgUserState);
-		$("#kgUserSong").val(data.kgUserSong);
-		$("#kgUserNext").val(data.kgUserNext);
-		$("#kgUserSecond").val(data.kgUserSecond);
-		if (row.kgUserPic) {
-			$("#pic").attr("src", data.kgUserPic);
+function validate(){
+	var name=$("#userName").val();
+	$.post("user/check?uname="+name,function(data){
+		var jsonarray=JSON.stringify(data);
+		if(jsonarray=="true"){
+			$("#showResult").html("");
+		}else{
+			$("#showResult").html("用户名已经存在");
+			$("#showResult").css("color","red");
 		}
 	},"json");
-	
-
-}*/
-
-
+}

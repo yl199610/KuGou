@@ -213,14 +213,9 @@
 						<a target="_blank"
 							href="http://www.kugou.com/yy/html/special.html" class="more fr">更多</a>
 					</div>
-					<div class="itemContent">
-
-
-
-
-						<div class="cpt cptBig">
-
-							<p class="cptT">
+					<div class="itemContent32" id="mypic">
+						<div class="cpt cptBig" id="bigpic">
+							<!-- <p class="cptT">
 								<span class="icon icon-select_icon"></span><span class="num">240.6万</span>
 							</p>
 
@@ -239,10 +234,10 @@
 							<div class="cptB">
 								<p class="songListName">这些好听的华语流行歌</p>
 								<p class="songListSinger">陌人陌言</p>
-							</div>
-						</div>
+							</div>-->
+						</div> 
 
-
+<!-- 
 						<div class="cpt cptMid">
 
 							<p class="cptT">
@@ -343,7 +338,7 @@
 								<p class="songListSinger">口香糖</p>
 							</div>
 						</div>
-
+ -->
 
 					</div>
 				</div>

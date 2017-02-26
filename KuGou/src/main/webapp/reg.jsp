@@ -6,6 +6,11 @@
 <meta charset="UTF-8">
 <base href="/KuGou/">
 <title>登注册面</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">    
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
 <link type="text/css" rel="stylesheet" href="css/reg.css">
 </head>
 <body>
@@ -13,7 +18,9 @@
 	<div id="regDiv">
 		<form id="regForm" action ="user/zhuche" method="post" name="form1">
 			<table>
-				<tr><td>用户名</td><td><input name="kgUserName"required="required"/></td></tr>
+				<tr><td>用户名</td><td><input id="userName" name="kgUserName"required="required" onblur="validate()"/>
+				<div style="float"right;" id="showResult"></div>
+				</td></tr>
 				<tr><td>密  码</td><td><input id="text2" type="password" name="kgUserPwd" required="required" />
 				<div id="div2" style="display:inline"> </div> 
 				</td></tr>
