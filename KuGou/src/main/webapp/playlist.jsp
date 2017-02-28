@@ -19,7 +19,7 @@
 </script>
 <script src="playlist_files/share.js"></script><link rel="stylesheet" href="playlist_files/share_style0_16.css"><link rel="stylesheet" href="playlist_files/slide_share.css"></head>
 
-<body style="background-image:url(images/bg1.jpg);">
+<body>
 <link rel="stylesheet" data-embed="" href="playlist_files/header.css">
 <script type="text/javascript" src="playlist_files/jquery.js"></script>
 <!--[if IE 6]>

@@ -23,7 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	
-		<insert id="addSongStyleMsg" parameterType="KuSongStyle">
+	<insert id="addSongStyleMsg" parameterType="KuSongStyle">
 		insert into kuSongStyle values(seq_kuSongStyle.nextval,#{kuSongStyleName},1,#{kuSongStylesecond})
 	</insert>
 	

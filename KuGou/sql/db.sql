@@ -129,7 +129,7 @@ insert into kuSongStyle values(seq_kuSongStyle.nextval,'韩国',default,default)
 insert into kuSongStyle values(seq_kuSongStyle.nextval,'华语',default,default);
 insert into kuSongStyle values(seq_kuSongStyle.nextval,'欧美',default,default);
 insert into kuSongStyle values(seq_kuSongStyle.nextval,'日本',default,default);
-
+update kuSongStyle set kuSongStylenext=1 where kuSongStyleId=103
 select * from kuSongStyle;
 
 
@@ -151,18 +151,31 @@ select * from kgSave;
 create sequence seq_kuSongDetail start with 10000;
 select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
 join kuSong k on kd.kudetailsongId=k.kuSongId  where ksongsingId=10000 and ks.kuSingerSingernext!=0 and k.kuSongNext=1
-insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
-insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1000,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
-insert into kuSongDetail values(seq_kuSongDetail.nextval,10002,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
-insert into kuSongDetail values(seq_kuSongDetail.nextval,10000,1000,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
-insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1001,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
-insert into kuSongDetail values(seq_kuSongDetail.nextval,10002,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
-insert into kuSongDetail values(seq_kuSongDetail.nextval,10003,1003,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
-insert into kuSongDetail values(seq_kuSongDetail.nextval,10004,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.mp4',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.webm',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1000,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.webm',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10002,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.webm',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10000,1000,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.webm',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1001,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.webm',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10002,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.webm',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10003,1003,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.webm',default);
+insert into kuSongDetail values(seq_kuSongDetail.nextval,10004,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.webm',default);
 
 select * from kuSongDetail kd, kuSinger k,kuSong ks where kd.ksongsingId=k.kuSingerId and kd.kudetailsongId=ks.kuSongId
 and  kudetailstyleId=103 and k.kuSingerSingernext!=0 and ks.kuSongNext=1
 select * from kuSongDetail;
+
+--评论表
+create table comments(
+	KuCommentId Integer  primary key,
+	kuSongDetailId Integer,
+	kgUserName varchar2(50),
+	kuSingerName  varchar2(50),
+	kuSongName varchar2(60),
+	kuContent  varchar2(1000)
+);
+create sequence seq_Comment_id start with 1;
+select  * from comments;
+--insert into comments values(seq_Comment_id.nextval,#{kuSongDetailId},#{kgUserName},#{kuSingerName},#{kuSongName},#{kuContent});
 
 
 select * from kuSongStyle;

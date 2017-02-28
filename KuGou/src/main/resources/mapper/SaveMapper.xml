@@ -50,4 +50,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="cancelDetail" parameterType="int">
 		update kgSave set kgSavesecond=0 where kgSaveId=#{uid}
 	</update>
+	
+	<select id="selectComment"  resultType="KgComment">
+		select * from comments
+	</select>
+	
+	<insert id="addComment" parameterType="KgComment">
+			insert into comments values(seq_Comment_id.nextval,#{kuSongDetailId},#{kgUserName},#{kuSingerName},#{kuSongName},#{kuContent})
+	</insert>
 </mapper>

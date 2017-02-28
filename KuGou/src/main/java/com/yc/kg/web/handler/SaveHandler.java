@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.yc.kg.entity.KgComment;
 import com.yc.kg.entity.KgSave;
 import com.yc.kg.entity.KuSongDetail;
 import com.yc.kg.entity.PaginationBean;
@@ -100,4 +103,45 @@ public class SaveHandler {
             e.printStackTrace();
         }  
     }  
+    
+	@RequestMapping("/saveComment")
+	public void addComment(HttpServletRequest request, HttpServletResponse response,HttpSession session,int kuSongDetailId,String kuSongName,String kuSingerName) throws ServletException, IOException{
+		System.out.println("==============saveComment");
+		request.setAttribute("kuSongDetailId", kuSongDetailId);
+		request.setAttribute("kuSingerName", kuSingerName);
+		request.setAttribute("kuSongName", kuSongName);
+		request.setAttribute("loginUser", session.getAttribute("loginUser"));
+		if(session.getAttribute("loginUserId")!=null){
+			System.out.println(session.getAttribute("loginUser")+"loginUser");
+			try {
+				request.getRequestDispatcher("/page/comment.jsp").forward(request, response);
+			} catch (ServletException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}else {
+			request.getRequestDispatcher("/page/saveFail.jsp").forward(request, response);
+
+		}
+	}
+	//添加评论
+	@RequestMapping("/comment")
+	@ResponseBody
+	public boolean addComment(KgComment kgComment){
+		LogManager.getLogger().debug("请求saveHandler处理add...."+kgComment);
+		return saveService.addComment(kgComment);
+	
+	}
+	  //显示评论
+  	@RequestMapping("/selectComment")
+  	@ResponseBody
+  	public List<KgComment> selectComment(){
+  		LogManager.getLogger().debug("请求saveHandler处理save的用户id....");
+  		System.out.println("==============="+saveService.selectComment());
+  		return saveService.selectComment();
+  	}
+    
+    
+    
 }  

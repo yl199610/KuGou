@@ -10,7 +10,7 @@
 		body {font-size: 12px;}
 		#holeLrc li {list-style: none;}
 		#holeLrc ul {text-align: center;}
-		#marq{font-size: 20px;}
+		#marq{font-size: 20px;bankground-color:white;}
 </style>
 </head>
 <body>
@@ -20,11 +20,12 @@
 		<label id="lab" style="font-weight: bold;"></label> <br>
 		<div id="lrcContent"></div>
 		<div id="holeLrc"style="background: #3c3c3c; color: #FFF; text-align: center; width: 500px; height: 500px;">
-				<marquee id="marq" loop="1" direction="up" scrolldelay="50"scrollamount="1" style="height: 500px;"> </marquee>
+				<marquee id="marq" loop="1" direction="up" scrolldelay="1"scrollamount="1" style="height: 500px;"> </marquee>
 		</div>
 	</center>
 </body>
 <script type="text/javascript" src="easyui/jquery.min.js"></script>
+
 <!-- 加载歌词 -->
 <script type="text/javascript" src="js/lrc.js"></script>
 <script type="text/javascript" src="js/mp3.js"></script>

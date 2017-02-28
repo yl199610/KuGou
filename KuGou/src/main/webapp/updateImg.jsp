@@ -27,7 +27,7 @@ DD_belatedPNG.fix('.icon,.logo');
    <h1 class="logo">酷狗音乐</h1>
     <div class="topNav fr">
         <ul>
-            <li style="display: none;"><a target="_blank" href="./emailReg.html">注册</a></li>
+            <li style="display: none;"><a target="_blank" href="./reg.jsp">注册</a></li>
             <li><a href="" class="kuLogin" id="kuLogin"></a><a hidefocus="true" href="index.jsp" class="logout" id="logout" style="display: inline-block;">返回首页</a></li>
             <li><a target="_blank" href="./server.html">客服中心</a></li>
             <li><a target="_blank" href="./join.html">招贤纳士</a></li>
@@ -38,7 +38,7 @@ DD_belatedPNG.fix('.icon,.logo');
 <div class="navWrap">
     <div class="nav">
         <ul class="homeNav">
-            <li><a class="normal" href="index.jsp">首页</a></li>
+            <li><a class="normal" href="./index.jsp">首页</a></li>
             <li><a class="normal" href="./top.html">榜单</a></li>
             <li><a class="normal" id="productCenter" href="./download.html">下载客户端</a></li>
             <li class="more" id="moreLi"><a href="" class="icon icon-nav6" id="showMore">更多</a>
@@ -48,7 +48,7 @@ DD_belatedPNG.fix('.icon,.logo');
             <li><a href="./FM.html">电台</a></li>
             <li><a href="./MV.html">MV</a></li>
             <li><a href="./playlist.html">歌单</a></li>
-            <li><a href="./singer.html">歌手</a></li>
+            <li><a href="./singer.jsp">歌手</a></li>
         </ul>
         <ul class="subNav">
             <li><a target="_blank" href="http://fanxing.kugou.com/?action=spreadIndex&id=3" class="icon icon-nav1">音乐直播</a></li>
@@ -175,7 +175,7 @@ function GetQueryString(name) {
 function chgPic(obj){
 	$("#pic").attr("src",window.URL.createObjectURL(obj.files[0]));
 }
-
+//修改
 function modifyuserImg(){
 $("#modifyImg").form({
 	url:"user/changeImg",

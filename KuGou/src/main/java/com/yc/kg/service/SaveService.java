@@ -2,6 +2,7 @@ package com.yc.kg.service;
 
 import java.util.List;
 
+import com.yc.kg.entity.KgComment;
 import com.yc.kg.entity.KgSave;
 import com.yc.kg.entity.KuSongDetail;
 import com.yc.kg.entity.PaginationBean;
@@ -17,5 +18,9 @@ public interface SaveService {
 	List<KgSave> findDetail(int id);
 
 	boolean cancelDetail(int uid);
+
+	List<KgComment> selectComment();
+
+	boolean addComment(KgComment kgComment);
 
 }

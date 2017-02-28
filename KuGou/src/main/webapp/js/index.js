@@ -121,17 +121,17 @@ function findstyledetail(kuSongStyleId){
 				formatter: function(value,row,index){
 					return row['kuSinger']['kuSingerName'];
 				} 
-				
 			}, {
 				field : 'operator',
 				title : '操作',
 				width : 44,
 				align:'center',
 				formatter: function(value,row,index){	
-					return  '<li style="display:block;margin:10px" >'+' <audio style="Float:right; width：260px;" src='+ row["kuSong"]["kuSongAddress"]+' controls="controls"></audio></li>'+
+					return  '<li style="display:block;margin:10px" >'+' <audio style="Float:left; width：200px;" src='+ row["kuSong"]["kuSongAddress"]+' controls="controls"></audio></li>'+
 					'<form action="save/save" method="post" id="saveForm"><input type="hidden" value="'+row["kuSong"]["kuSongId"]+'" name="kgSaveSid" id="kgSaveSid">'
 					 +'<input type="hidden" value="'+row["kuSinger"]["kuSingerName"]+'" name="kgSavenext" id="kgSavenext">'
-					 +'<input type="submit" value="收藏" onclick="save('+row["kuSong"]["kuSongId"]+')"/></form>';
+					 +'<input type="submit" value="收藏" onclick="save('+row["kuSong"]["kuSongId"]+')"/></form>'+
+					 '<a target="_blank" href="save/saveComment?kuSongDetailId='+row["kuSongDetailId"]+'&kuSongName='+row["kuSong"]["kuSongName"]+'&kuSingerName='+row["kuSinger"]["kuSingerName"]+'">评论</a>';
 				}
 			} ]]
 		});
@@ -148,7 +148,8 @@ function loadMv() {
 			 var singer=jsonarray[i].kuSinger.kuSingerName;//歌手表
 			 var song=jsonarray[i].kuSong.kuSongName;//歌曲表歌曲名
 			 var songimage=jsonarray[i].kuSinger.kuSingerImg;//歌曲图片
-			 $(".itemContenta").append('<div class="cpt cptMidL"><p></p><a target="_blank" href="http://www.kugou.com/mvweb/html/">'+
+			 var mv=jsonarray[i].kunext;
+			 $(".itemContenta").append('<div class="cpt cptMidL"><p></p><a target="_blank" href="./MV.jsp?MV='+mv+'">'+
 				'<img src="'+songimage+'" loading="1" class=" "><div class="cptB">'+
 				'<p class="songListName">'+song+'</p> <p class="songListSinger">'+singer+'</p>'+
 				'</div></a></div>');

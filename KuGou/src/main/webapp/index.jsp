@@ -68,7 +68,7 @@
 								</c:otherwise>
 							</c:choose>
 						</form></li>
-					<li><a target="_blank" href="./server.html">客服中心</a></li>
+					<li><a target="_blank" href="./talk.jsp">客服中心</a></li>
 					<li><a target="_blank" href="./join.html">招贤纳士</a></li>
 					<li><a target="_blank" href="./VIP.html">会员中心 </a></li>
 				</ul>
@@ -481,7 +481,7 @@
 						<a target="_blank" href="http://www.kugou.com/mvweb/html/"
 							class="more fr">MV更多</a>
 					</div>
-					<div class="itemContenta">
+					<div class="itemContenta" style="margin-left:45px;">
 <!-- 						<div class="cpt cptBigL">
 							<a target="_blank"
 								href="http://www.kugou.com/mvweb/html/mv_593042.html"> 

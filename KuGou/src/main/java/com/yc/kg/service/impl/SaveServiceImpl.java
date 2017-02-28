@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.yc.kg.entity.KgComment;
 import com.yc.kg.entity.KgSave;
 import com.yc.kg.entity.KuSongDetail;
 import com.yc.kg.entity.PaginationBean;
@@ -48,6 +49,18 @@ public class SaveServiceImpl implements SaveService{
 	public boolean cancelDetail(int uid) {
 		return saveMapper.cancelDetail(uid);
 	}
+
+
+	@Override
+	public List<KgComment> selectComment() {
+		return saveMapper.selectComment();
+	}
+
+	@Override
+	public boolean addComment(KgComment kgComment) {
+		return saveMapper.addComment(kgComment);
+	}
+	
 	
 	
 }
