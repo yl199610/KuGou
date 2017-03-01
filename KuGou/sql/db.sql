@@ -174,7 +174,7 @@ create table comments(
 	kuContent  varchar2(1000)
 );
 create sequence seq_Comment_id start with 1;
-select  * from comments;
+select * from comments where kuSongDetailId=10026
 --insert into comments values(seq_Comment_id.nextval,#{kuSongDetailId},#{kgUserName},#{kuSingerName},#{kuSongName},#{kuContent});
 
 

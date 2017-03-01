@@ -19,7 +19,7 @@ public interface SaveMapper {
 
 	boolean cancelDetail(int uid);
 
-	List<KgComment> selectComment();
+	List<KgComment> selectComment(int sid);
 
 	boolean addComment(KgComment kgComment);
 

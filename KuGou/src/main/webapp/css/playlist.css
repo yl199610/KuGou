@@ -1,0 +1,147 @@
+.blue.round::after {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #1e7db9, #2b85bd) repeat scroll 0 0;
+    box-shadow: 1px 0 1px rgba(255, 255, 255, 0.8) inset, 1px 0 1px rgba(18, 85, 128, 0.9);
+}
+.round::after {
+    border-radius: 10px;
+    content: "<";
+    display: inline-block;
+    font-size: 10px;
+    font-weight: normal;
+    height: 20px;
+    line-height: 18px;
+    margin-top: -10px;
+    padding-left: 3px;
+    position: absolute;
+    right: 10px;
+    text-shadow: -2px 0 1px #333;
+    top: 50%;
+    transform: rotate(-90deg);
+    width: 17px;
+}
+.button.blue {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #42a4e0, #2e88c0) repeat scroll 0 0;
+    border: 1px solid #1e7db9;
+    box-shadow: 0 1px 2px #8fcaee inset, 0 -1px 0 #497897 inset, 0 -2px 3px #8fcaee inset;
+}
+.button:nth-child(6n) {
+    margin-right: 0;
+}
+.round, .side, .tags {
+    padding-right: 30px;
+}
+.button {
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 38px;
+    margin: 0 20px 20px 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-shadow: 1px 1px 1px #333;
+    width: 140px;
+}
+
+
+.blue.larrow::before {
+    background: #1e7db9 none repeat scroll 0 0;
+}
+.larrow::before {
+    clip: rect(2px, 26px, auto, auto);
+    height: 27px;
+    left: -13px;
+    top: 6px;
+    width: 27px;
+}
+.rarrow::after, .rarrow::before, .larrow::after, .larrow::before {
+    content: "";
+    display: block;
+    height: 28px;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 28px;
+}
+.blue.larrow::after {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(left top , #42a4e0, #2e88c0) repeat scroll 0 0;
+    box-shadow: 0 -1px 0 #497897 inset, 0 -2px 0 #8fcaee inset, 1px 0 0 #8fcaee inset;
+}
+.larrow::after {
+    clip: rect(2px, 26px, auto, auto);
+    left: -12px;
+    top: 6px;
+}
+.rarrow::after, .rarrow::before, .larrow::after, .larrow::before {
+    content: "";
+    display: block;
+    height: 28px;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 28px;
+}
+.button.rarrow, .button.larrow {
+    overflow: visible;
+}
+.button.blue {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #42a4e0, #2e88c0) repeat scroll 0 0;
+    border: 1px solid #1e7db9;
+    box-shadow: 0 1px 2px #8fcaee inset, 0 -1px 0 #497897 inset, 0 -2px 3px #8fcaee inset;
+}
+.button:nth-child(6n) {
+    margin-right: 0;
+}
+.button {
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 38px;
+    margin: 0 20px 20px 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-shadow: 1px 1px 1px #333;
+    width: 140px;
+}
+
+
+.blue.tags::after {
+    background: #1e7db9 none repeat scroll 0 0;
+    border: 2px solid #54b1e9;
+}
+.tags::after {
+    color: #fff;
+    content: "FREE";
+    display: inline-block;
+    font-weight: normal;
+    height: 25px;
+    line-height: 28px;
+    position: absolute;
+    right: -33px;
+    text-shadow: none;
+    top: -3px;
+    transform: rotate(45deg) scale(0.7, 0.7);
+    width: 85px;
+}
+.button.blue {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #42a4e0, #2e88c0) repeat scroll 0 0;
+    border: 1px solid #1e7db9;
+    box-shadow: 0 1px 2px #8fcaee inset, 0 -1px 0 #497897 inset, 0 -2px 3px #8fcaee inset;
+}
+.button:nth-child(6n) {
+    margin-right: 0;
+}
+.round, .side, .tags {
+    padding-right: 30px;
+}
+.button {
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 38px;
+    margin: 0 20px 20px 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-shadow: 1px 1px 1px #333;
+    width: 140px;
+}

@@ -43,7 +43,7 @@
               <td> 请在下面进行评 论 :</td>
             </tr>
             <tr>
-              <td colspan="2"><textarea name="kuContent" id="kuContent" cols="70" rows="10" id="c"></textarea>
+              <td colspan="2"><textarea name="kuContent" id="kuContent" cols="60" rows="6" id="c"></textarea>
               </td>
             </tr>
             <tr>

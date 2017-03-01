@@ -25,7 +25,8 @@ function doPost(songName){
 			url: "lrcServlet?songName="+songName,
 			async:false,
 			success: function(e){
-				retLrc = eval(e)
+				retLrc = eval(e);
+				alert(retLrc);
 			},
 			error:function(e){
 				alert('获取歌词出错');

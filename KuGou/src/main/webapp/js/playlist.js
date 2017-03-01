@@ -20,13 +20,13 @@ function loadDetail(songid){
 			 // var allpath=removeLastOne(address)+"/lrc.jsp?music="+path;
 			 var allpath="./lrc.jsp?music="+path;//wordpath="+spath+"& 歌词
 			 var songSinger=singer+"----"+song;
-			 $("#ulAlbums").append('<li style="background-color:white;width:600px;" class="s_180691">'+
+			 $("#ulAlbums").append('<li style="background-color:white;width:770px;height:200px" class="s_180691">'+
 					 '<span style="margin-left:20px 20px;font-size:20px;color:red">'+songSinger+'</span>'+
 					 '&nbsp;&nbsp;&nbsp;&nbsp;<audio style="float:right;margin-top:20px;" src='+ path+' controls="controls"></audio>'+
 					 '<form action="save/download.do" method="post">'+
 					 '<input id="fileName" type="hidden" name="fileName" value="'+path+'"/>'+
-					 '<input type="submit" value="下载"></form><input type="submit" value="取消收藏" onclick="cancel('+id+')")>'+
-					 '&nbsp;&nbsp;&nbsp;<a style="color:blue;" href="'+allpath+'" target="_blank">查看歌词</a></li>');
+					 '<input type="submit" class="button blue round" value="下载"></form><input type="submit" value="取消收藏" class="button blue larrow" onclick="cancel('+id+')")>'+
+					 '&nbsp;&nbsp;&nbsp;<a class="button blue tags" style="color:blue;" href="'+allpath+'" target="_blank">查看歌词</a></li>');
 		}
 	}, "json");
 }

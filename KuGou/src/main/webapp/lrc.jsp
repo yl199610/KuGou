@@ -20,7 +20,7 @@
 		<label id="lab" style="font-weight: bold;"></label> <br>
 		<div id="lrcContent"></div>
 		<div id="holeLrc"style="background: #3c3c3c; color: #FFF; text-align: center; width: 500px; height: 500px;">
-				<marquee id="marq" loop="1" direction="up" scrolldelay="1"scrollamount="1" style="height: 500px;"> </marquee>
+				<marquee id="marq" loop="1" direction="up" scrolldelay="1"scrollamount="3.5" style="height: 500px;"> </marquee>
 		</div>
 	</center>
 </body>

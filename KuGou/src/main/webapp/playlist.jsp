@@ -4,6 +4,7 @@
 <html><head>
 <link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
 <link type="text/css" rel="stylesheet" href="easyui/themes/default/easyui.css">
+<link type="text/css" rel="stylesheet" href="css/playlist.css">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
 <base href="/KuGou/">

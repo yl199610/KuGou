@@ -51,8 +51,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update kgSave set kgSavesecond=0 where kgSaveId=#{uid}
 	</update>
 	
-	<select id="selectComment"  resultType="KgComment">
-		select * from comments
+	<select id="selectComment" parameterType="int" resultType="KgComment">
+		select * from comments where kuSongDetailId=#{sid}
 	</select>
 	
 	<insert id="addComment" parameterType="KgComment">

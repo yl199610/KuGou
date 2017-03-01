@@ -136,10 +136,10 @@ public class SaveHandler {
 	  //显示评论
   	@RequestMapping("/selectComment")
   	@ResponseBody
-  	public List<KgComment> selectComment(){
-  		LogManager.getLogger().debug("请求saveHandler处理save的用户id....");
-  		System.out.println("==============="+saveService.selectComment());
-  		return saveService.selectComment();
+  	public List<KgComment> selectComment(@RequestParam(name="sid")int sid){
+  		LogManager.getLogger().debug("请求saveHandler处理save的用户id...."+sid);
+  		System.out.println("==============="+saveService.selectComment(sid));
+  		return saveService.selectComment(sid);
   	}
     
     

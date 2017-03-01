@@ -52,8 +52,8 @@ public class SaveServiceImpl implements SaveService{
 
 
 	@Override
-	public List<KgComment> selectComment() {
-		return saveMapper.selectComment();
+	public List<KgComment> selectComment(int sid) {
+		return saveMapper.selectComment(sid);
 	}
 
 	@Override

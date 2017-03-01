@@ -19,7 +19,7 @@ public interface SaveService {
 
 	boolean cancelDetail(int uid);
 
-	List<KgComment> selectComment();
+	List<KgComment> selectComment(int sid);
 
 	boolean addComment(KgComment kgComment);
 
