@@ -167,7 +167,9 @@
     </div>
 </div>
 </div>	
-
+	 <script type="text/javascript" src="easyui/jquery.min.js"></script> 
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript">
 
  window.onload=myAutoRun();
@@ -235,7 +237,5 @@ function modifyuserinfo(){
 
 
 </script>
-	 <script type="text/javascript" src="easyui/jquery.min.js"></script> 
-	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+
 	</body></html>

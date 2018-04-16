@@ -9,7 +9,7 @@ function loadSingerInfo() {
 			'<img src="'+data[i].kuSingerImg+'" width="68" height="68"><i>'+i+'<em>st</em></i></a><strong>'+
 			'<a onclick="sdnClick(12070)" href="./singermsg.jsp" title="'+data[i].kuSingerName+'">'+data[i].kuSingerName+'</a></strong></li>');
 			
-			$("#chinaSingerContentLi").append('<div class="cpt cptSmall"><a target="_blank" class="singerLink" href="http://www.kugou.com/mvweb/html/">'+
+			$("#chinaSingerContentLi").append('<div class="cpt cptSmall"><a target="_blank" class="singerLink" href="./singermsg.jsp?singerid='+data[i].kuSingerId+'">'+
 					'<img class="singerImg " src="'+data[i].kuSingerImg+'" width="38" height="38" loading="1">'+
 					'<p class="cptBg"></p><div class="cptB"><p class="songListSinger">'+data[i].kuSingerName+'</p></div></a></div>');
 		}

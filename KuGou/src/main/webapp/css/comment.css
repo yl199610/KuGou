@@ -1,0 +1,17 @@
+#table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+div ul table tbody tr.next{
+	background-color:#EAF2D3;
+}
+
+div ul table tbody tr td.name{
+	color: blue;
+}
+
+div ul table tbody tr td lable{
+	font: 400 14px/16px Geneva,"宋体",Tahoma,sans-serif;
+	color: black;
+}

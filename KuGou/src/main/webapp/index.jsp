@@ -63,7 +63,7 @@
 								</c:when>
 								<c:otherwise>
 									<a href="./playlist.jsp" target="_blank">我的收藏</a>&nbsp;
-									<label>欢迎<span style='color: green;'><a href="updateMsg.jsp?name=${loginUser}">${loginUser}</a></span>使用本网站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<label>欢迎&nbsp;&nbsp;&nbsp;<span style='color: green;'><a href="updateMsg.jsp?name=${loginUser}">${loginUser}</a></span>&nbsp;&nbsp;&nbsp;使用本网站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										<a href='javascript:void(0)' onclick='logout()'>注销用户</a>
 								</c:otherwise>
 							</c:choose>
@@ -79,10 +79,8 @@
 				<ul class="homeNav">
 					<li><a class="normal active" href="./index.html">首页</a></li>
 					<li><a class="normal" href="./top.html">榜单</a></li>
-					<li><a class="normal" id="productCenter"
-						href="./download.html">下载客户端</a></li>
-					<li class="more" id="more"><a href="" class="iconMore"
-						id="showMore">更多</a></li>
+					<li><a class="normal" id="productCenter" href="./download.html">下载客户端</a></li>
+					<li class="more" id="more"><a href="" class="iconMore" id="showMore">更多</a></li>
 				</ul>
 				<ul class="secondMenu" id="secondMenu">
 					<li><a href="./FM.html">电台</a></li>
@@ -713,7 +711,7 @@
 						<div class="tabT" id="tabMenu">
 							<span class="active" data="0">华语</span><span data="1">欧美</span><span
 								data="2">日韩</span><span data="3"><a class="more"
-								href="http://www.kugou.com/yy/html/singer.html">更多</a></span>
+								href="http://www.kugou.com/yy/html/singer.html">更1</a></span>
 						</div>
 					</div>
 					<div class="itemContent">

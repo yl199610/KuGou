@@ -1,5 +1,5 @@
 $("#regDiv").dialog({
-	title : "用户添加",
+	title : "",
 	closable : true,
 	resizable:true,
 });

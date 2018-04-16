@@ -149,7 +149,8 @@ create table kuSongDetail(
 );
 select * from kgSave;
 create sequence seq_kuSongDetail start with 10000;
-select * from kuSongDetail kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
+select * from kuSongDetail where kudetailstyleId=100
+kd join kuSinger ks on ks.kuSingerId=kd.ksongsingId
 join kuSong k on kd.kudetailsongId=k.kuSongId  where ksongsingId=10000 and ks.kuSingerSingernext!=0 and k.kuSongNext=1
 insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1002,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.webm',default);
 insert into kuSongDetail values(seq_kuSongDetail.nextval,10001,1000,100,0,1,'music/6039.mp3',1,'1999-06-19','music/1.webm',default);
@@ -174,7 +175,6 @@ create table comments(
 	kuContent  varchar2(1000)
 );
 create sequence seq_Comment_id start with 1;
-select * from comments where kuSongDetailId=10026
 --insert into comments values(seq_Comment_id.nextval,#{kuSongDetailId},#{kgUserName},#{kuSingerName},#{kuSongName},#{kuContent});
 
 

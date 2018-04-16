@@ -9,8 +9,8 @@ function login(){
 	var params=$("#userloginForm").serialize();//取到表单要提交的请求数据
 	$.post("user/login",params,function(data){
 		if(data){
-			$("#userloginForm").html("<a href='./playlist.jsp' target='_blank'>我的收藏</a>&nbsp;<label>欢迎<span style='color:green;'><a href='updateMsg.jsp?name="+
-					$("#userloginForm [name='kgUserName']").val()+"'>"+$("#userloginForm [name='kgUserName']").val()+"</a></span>使用本网站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:void(0)' onclick='logout()'>注销用户</a>");
+			$("#userloginForm").html("<a href='./playlist.jsp' target='_blank'>我的收藏</a>&nbsp;&nbsp;&nbsp;<label>欢迎&nbsp;&nbsp;&nbsp;<span style='color:green;'><a href='updateMsg.jsp?name="+
+					$("#userloginForm [name='kgUserName']").val()+"'>"+$("#userloginForm [name='kgUserName']").val()+"</a></span>&nbsp;&nbsp;&nbsp;使用本网站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:void(0)' onclick='logout()'>注销用户</a>");
 		}else{
 			$("#error").html("用户名或密码错误!!!");
 			$("#error").css({"color":"red"});
@@ -103,8 +103,8 @@ function findstyledetail(kuSongStyleId){
 			url:'style/findStyle?kuSongStyleId='+kuSongStyleId,
 			singleSelect : true,
 			pagination:true,
-			pageList:[4,6],
-			pageSize:6,
+			pageList:[4],
+			pageSize:4,
 			columns : [ [ {
 				field : 'kuSongName',
 				title : '歌曲名',

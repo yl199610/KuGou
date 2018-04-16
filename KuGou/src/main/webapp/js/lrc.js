@@ -26,7 +26,6 @@ function doPost(songName){
 			async:false,
 			success: function(e){
 				retLrc = eval(e);
-				alert(retLrc);
 			},
 			error:function(e){
 				alert('获取歌词出错');
@@ -36,7 +35,8 @@ function doPost(songName){
 	loadHoleLrc(retLrc);
 }
 
-//获取完整歌词
+
+//获取完整歌词  
 function loadHoleLrc(_lrc){
 	var $ul = $("<ul>");
 	for(var i=0,len=lrc.length; i<len ; i++){
@@ -53,7 +53,8 @@ function loadHoleLrc(_lrc){
 	$ul.append("</ul>");
 	$("#marq").append($ul);
 	// 设置文字半透明
-	$("#marq li").css("opacity",0.5)
+	$("#marq li").css("opacity",0.5);
+	alert($("#marq").val());
 }
 
  // 加载歌词
@@ -112,3 +113,84 @@ function highLightLrc(i) {
 		opacity : 1
 	}, 1000);
 }
+
+
+//换肤
+var skins= [{
+    left:'images/lrc.jpg',
+    right:'images/lrc.jpg',
+    thumbnail:'images/lrc.jpg',
+    title:'经典雅致灰',
+    des:'灰色穿插于黑白之间，代表着幽暗、典雅、寂寞与空灵。'
+}, {
+    left:'images/lrc2.jpg',
+    right:'images/lrc2.jpg',
+    thumbnail:'images/lrc2.jpg',
+    title:'宁静幽雅蓝',
+    des:'蓝是一种纯净的颜色，代表着宁静、理智、淡泊、广阔与忧郁。'
+}, {
+    left:'images/lrc3.jpg',
+    right:'images/lrc3.jpg',
+    thumbnail:'images/lrc3.jpg',
+    title:'宁静幽雅蓝',
+    des:'灰色穿插于黑白之间，代表着幽暗、典雅、寂寞与空灵。'
+}, {
+    left:'images/lrc4.jpg',
+    right:'images/lrc4.jpg',
+    thumbnail:'images/lrc4.jpg',
+    title:'宁静幽雅蓝',
+    des:'蓝是一种纯净的颜色，代表着宁静、理智、淡泊、广阔与忧郁。'
+}, {
+    left:'images/lrc5.jpg',
+    right:'images/lrc5.jpg',
+    thumbnail:'images/lrc5.jpg',
+    title:'宁静幽雅蓝',
+    des:'灰色穿插于黑白之间，代表着幽暗、典雅、寂寞与空灵。'
+}
+
+];
+
+//页面加载完毕，为skin list添加项
+$(function(){
+for(var i=0;i<skins.length;i++) {
+    $("#SkinList").append(
+        "<div height=100px; class='media' onclick='skinToggle("+i+")'>" +
+        "<a href='javascript:void(0)' class='pull-left'>" +
+        "<img height=100px; src='" + skins[i].thumbnail + "' title='Toggle to change skin.'/>" +
+        "</a>" +
+        "<div class='media-body'>" +
+        "<h3 class='media-heading'>" + skins[i].title + "</h3>" +
+        "<p class='text-left'>" + skins[i].des + "</p>" +
+        "</div>" +
+        "</div>"+
+        "<hr/>"
+    );
+}
+//默认使用下标为0的皮肤
+skinToggle(0);
+});
+
+//skin list 下拉框显示控制
+var listShow=function(){
+$("#SkinList").css("display","block");
+
+$("#SkinList").css("backgrand-size","cover");
+};
+
+var listHide=function(){
+$("#SkinList").css("display","none");
+};
+
+//皮肤切换控制
+var skinToggle=function(index){
+var item=skins[index];
+console.log(index);
+$("#header").css("background","url("+item.top+")");
+$("#header").css("background-size","cover");
+
+$("#left-box").css("background","url("+item.left+")");
+$("#left-box").css("background-size","cover");
+
+$("#right-box").css("background","url("+item.right+")");
+$("#right-box").css("background-size","contain");
+};

@@ -26,7 +26,7 @@ function loadDetail(songid){
 					 '<form action="save/download.do" method="post">'+
 					 '<input id="fileName" type="hidden" name="fileName" value="'+path+'"/>'+
 					 '<input type="submit" class="button blue round" value="下载"></form><input type="submit" value="取消收藏" class="button blue larrow" onclick="cancel('+id+')")>'+
-					 '&nbsp;&nbsp;&nbsp;<a class="button blue tags" style="color:blue;" href="'+allpath+'" target="_blank">查看歌词</a></li>');
+					 '&nbsp;&nbsp;&nbsp;<a class="button blue tags" style="color:red;" href="'+allpath+'" target="_blank">查看歌词</a></li>');
 		}
 	}, "json");
 }

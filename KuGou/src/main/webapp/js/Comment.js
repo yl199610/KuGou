@@ -10,9 +10,10 @@ function check(){
 	var params=$("#myTable").serialize();//取到添加评论数据 
 	$.post("save/comment",params,function(data){			  		
 		if (data) {
-		$("#commentContent tr:first").before("<tr><td colspan='3'><lable>评论内容：&nbsp;</lable>" + $("#kuContent").val() 
-				+ "</td><td><lable>评论用户名：&nbsp;</lable>" + $("#kgUserName").val() + "</td></tr>");
-		}		
+			window.location.reload();
+			$("#commentContent tr:first").before("<tr><td colspan='3'><lable>评论内容：&nbsp;</lable>" + $("#kuContent").val() 
+					+ "</td><td><lable>评论用户名：&nbsp;</lable>" + $("#kgUserName").val() + "</td></tr>");
+			}		
 	},"json");
 	return false;
 }
@@ -27,8 +28,15 @@ var id=GetQueryString("kuSongDetailId");
 $.post("save/selectComment?sid="+id,function(data1){
 	if (data1) {
 		for(var i=0;i<data1.length;i++){
-			$("#commentContent tr:first").before("<tr><td colspan='3'><lable>评论内容：&nbsp;</lable>" + data1[i].kuContent
-				+ "</td><td><lable>评论用户名：&nbsp;</lable>" + data1[i].kgUserName + "</td></tr>");
+//			$("#commentContent tr:first").before("<tr><td colspan='3'><lable>评论内容：&nbsp;</lable>" + data1[i].kuContent
+//				+ "</td><td><lable>评论用户名：&nbsp;</lable>" + data1[i].kgUserName + "</td></tr>");
+			if((i & 1) != 0){$("#commentContent tr:first").before("<tr><td colspan='3'><lable>评论内容：&nbsp;</lable>" + data1[i].kuContent
+					+ "</td><td class='name'><lable>评论用户名：&nbsp;</lable>" + data1[i].kgUserName + "</td></tr>");
+			}else{
+				$("#commentContent tr:first").before("<tr class='next'><td colspan='3'><lable>评论内容：&nbsp;</lable>" + data1[i].kuContent
+						+ "</td><td class='name'><lable>评论用户名：&nbsp;</lable>" + data1[i].kgUserName + "</td></tr>");
+			}
+		
 		}
 	}
 },"json");
